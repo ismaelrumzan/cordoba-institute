@@ -1,101 +1,226 @@
-import Image from "next/image";
+import Link from "next/link"
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { Progress } from "@/components/ui/progress"
+import { ArrowRight, BookOpen, Clock } from "lucide-react"
+import { IslamicBadge } from "@/components/islamic-badge"
 
-export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+export default function HomePage() {
+  // Sample featured modules
+  const featuredModules = [
+    {
+      id: "introduction-overview",
+      title: "Introduction & Overview",
+      description: "Learn about the writing of history and overview of Islamic history from 622-2000 CE.",
+      progress: 75,
+      lessons: 3,
+      duration: "45 min",
+      level: "Beginner",
+    },
+    {
+      id: "prophetic-rashidun",
+      title: "Prophetic & Rashidun Period",
+      description: "Explore the world at the advent of Islam, the Prophet Muhammad ﷺ, and the Rashidun Caliphs.",
+      progress: 40,
+      lessons: 6,
+      duration: "1.5 hours",
+      level: "Beginner",
+    },
+    {
+      id: "high-caliphate",
+      title: "The High Caliphate Period",
+      description: "Study the Umayyads, Abbasids, and intellectual trends during the High Caliphate.",
+      progress: 10,
+      lessons: 6,
+      duration: "2 hours",
+      level: "Intermediate",
+    },
+    {
+      id: "middle-period",
+      title: "The Middle Period",
+      description: "Learn about the Age of Sultanates, Emirates & Khanates from 1066-1500 CE.",
+      progress: 0,
+      lessons: 7,
+      duration: "2.5 hours",
+      level: "Intermediate",
+    },
+  ]
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  // Sample achievements
+  const achievements = [
+    {
+      id: 1,
+      title: "First Module Completed",
+      icon: (
+        <div className="h-10 w-10 flex items-center justify-center bg-green-100 rounded-full text-green-600">
+          <IslamicBadge type="dome" size="md" />
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      ),
+      unlocked: true,
+    },
+    {
+      id: 2,
+      title: "5-Day Learning Streak",
+      icon: (
+        <div className="h-10 w-10 flex items-center justify-center bg-amber-100 rounded-full text-amber-500">
+          <IslamicBadge type="crescent" size="md" />
+        </div>
+      ),
+      unlocked: true,
+    },
+    {
+      id: 3,
+      title: "Quiz Master",
+      icon: (
+        <div className="h-10 w-10 flex items-center justify-center bg-purple-100 rounded-full text-purple-600">
+          <IslamicBadge type="star" size="md" />
+        </div>
+      ),
+      unlocked: false,
+    },
+  ]
+
+  return (
+    <div className="container mx-auto px-4 py-8">
+      <section className="mb-12">
+        <div className="relative overflow-hidden rounded-xl">
+          {/* Background image with overlay */}
+          <div className="absolute inset-0">
+            <img
+              src="https://images.unsplash.com/photo-1581074817932-3d200c90b961?q=80&w=2070&auto=format&fit=crop"
+              alt="Islamic architectural background"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-emerald-900/90 to-teal-800/80"></div>
+          </div>
+
+          {/* Content */}
+          <div className="relative p-8 md:p-12 text-white">
+            <h1 className="text-4xl font-bold mb-4">Islamic History Learning Journey</h1>
+            <p className="text-xl mb-6 max-w-3xl">
+              Explore the rich tapestry of Islamic history through interactive lessons, quizzes, and personalized
+              learning paths.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <Button size="lg" className="bg-white text-emerald-800 hover:bg-gray-100">
+                Continue Learning
+              </Button>
+              <Button size="lg" variant="outline" className="border-white text-white hover:bg-emerald-700/40">
+                View All Modules
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="mb-12">
+        <div className="flex justify-between items-center mb-6">
+          <h2 className="text-2xl font-bold">Your Learning Progress</h2>
+          <Link href="/dashboard">
+            <Button variant="ghost" className="flex items-center gap-2">
+              View Dashboard <ArrowRight className="h-4 w-4" />
+            </Button>
+          </Link>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {featuredModules.map((module) => (
+            <Card key={module.id} className="overflow-hidden">
+              <CardHeader className="pb-2">
+                <div className="flex justify-between items-start">
+                  <CardTitle className="text-lg">{module.title}</CardTitle>
+                  <Badge variant={module.level === "Beginner" ? "default" : "secondary"}>{module.level}</Badge>
+                </div>
+                <CardDescription>{module.description}</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="mb-4">
+                  <div className="flex justify-between text-sm mb-1">
+                    <span>Progress</span>
+                    <span>{module.progress}%</span>
+                  </div>
+                  <Progress value={module.progress} className="h-2" />
+                </div>
+                <div className="flex justify-between text-sm text-muted-foreground">
+                  <div className="flex items-center gap-1">
+                    <BookOpen className="h-4 w-4" />
+                    <span>{module.lessons} lessons</span>
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <Clock className="h-4 w-4" />
+                    <span>{module.duration}</span>
+                  </div>
+                </div>
+              </CardContent>
+              <CardFooter className="pt-2">
+                <Link href={`/modules/${module.id}`} className="w-full">
+                  <Button className="w-full">{module.progress > 0 ? "Continue" : "Start Learning"}</Button>
+                </Link>
+              </CardFooter>
+            </Card>
+          ))}
+        </div>
+      </section>
+
+      <section className="mb-12">
+        <h2 className="text-2xl font-bold mb-6">Your Achievements</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          {achievements.map((achievement) => (
+            <Card key={achievement.id} className={`${!achievement.unlocked ? "opacity-50" : ""}`}>
+              <CardContent className="pt-6 flex items-center gap-4">
+                {achievement.icon}
+                <div>
+                  <h3 className="font-medium">{achievement.title}</h3>
+                  <p className="text-sm text-muted-foreground">{achievement.unlocked ? "Unlocked" : "Locked"}</p>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-2xl font-bold mb-6">Recommended For You</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <Card>
+            <CardHeader>
+              <CardTitle>The World at The Advent of Islam</CardTitle>
+              <CardDescription>Explore the state of the world just before the emergence of Islam.</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <p className="text-muted-foreground">
+                Learn about the two great empires that dominated the world, the Eastern Roman Empire and the Persian
+                Empire, and how they competed for territory and military superiority.
+              </p>
+            </CardContent>
+            <CardFooter>
+              <Link href="/modules/world-advent-islam" className="w-full">
+                <Button className="w-full">Start Module</Button>
+              </Link>
+            </CardFooter>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>The Prophet Muhammad ﷺ</CardTitle>
+              <CardDescription>Learn about the life and mission of the final Messenger of God.</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <p className="text-muted-foreground">
+                Discover the early life of Muhammad ﷺ, his reception of revelation, the Makkan and Medinan periods, and
+                the establishment of the first Islamic Realm.
+              </p>
+            </CardContent>
+            <CardFooter>
+              <Link href="/modules/prophet-muhammad" className="w-full">
+                <Button className="w-full">Start Module</Button>
+              </Link>
+            </CardFooter>
+          </Card>
+        </div>
+      </section>
     </div>
-  );
+  )
 }
+
