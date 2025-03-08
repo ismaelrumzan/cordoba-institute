@@ -1,27 +1,36 @@
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Progress } from "@/components/ui/progress"
-import { ArrowRight, BookOpen, Clock } from "lucide-react"
-import { IslamicBadge } from "@/components/islamic-badge"
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Progress } from "@/components/ui/progress";
+import { ArrowRight, BookOpen, Clock } from "lucide-react";
+import { IslamicBadge } from "@/components/islamic-badge";
 
 export default function HomePage() {
   // Sample featured modules
   const featuredModules = [
     {
-      id: "introduction-overview",
-      title: "Introduction & Overview",
-      description: "Learn about the writing of history and overview of Islamic history from 622-2000 CE.",
+      id: "world-advent-islam",
+      title: "The World at The Advent of Islam",
+      description:
+        "Learn about the two great empires that dominated the world, the Eastern Roman Empire and the Persian Empire",
       progress: 75,
       lessons: 3,
       duration: "45 min",
       level: "Beginner",
     },
     {
-      id: "prophetic-rashidun",
-      title: "Prophetic & Rashidun Period",
-      description: "Explore the world at the advent of Islam, the Prophet Muhammad ﷺ, and the Rashidun Caliphs.",
+      id: "prophet-muhammad",
+      title: "The Prophet Muhammad",
+      description:
+        "Discover the early life of Muhammad ﷺ, his reception of revelation, the Makkan and Medinan periods.",
       progress: 40,
       lessons: 6,
       duration: "1.5 hours",
@@ -30,7 +39,8 @@ export default function HomePage() {
     {
       id: "high-caliphate",
       title: "The High Caliphate Period",
-      description: "Study the Umayyads, Abbasids, and intellectual trends during the High Caliphate.",
+      description:
+        "Study the Umayyads, Abbasids, and intellectual trends during the High Caliphate.",
       progress: 10,
       lessons: 6,
       duration: "2 hours",
@@ -39,13 +49,14 @@ export default function HomePage() {
     {
       id: "middle-period",
       title: "The Middle Period",
-      description: "Learn about the Age of Sultanates, Emirates & Khanates from 1066-1500 CE.",
+      description:
+        "Learn about the Age of Sultanates, Emirates & Khanates from 1066-1500 CE.",
       progress: 0,
       lessons: 7,
       duration: "2.5 hours",
       level: "Intermediate",
     },
-  ]
+  ];
 
   // Sample achievements
   const achievements = [
@@ -79,7 +90,7 @@ export default function HomePage() {
       ),
       unlocked: false,
     },
-  ]
+  ];
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -88,27 +99,37 @@ export default function HomePage() {
           {/* Background image with overlay */}
           <div className="absolute inset-0">
             <img
-              src="https://images.unsplash.com/photo-1581074817932-3d200c90b961?q=80&w=2070&auto=format&fit=crop"
+              src="/home-hero.webp"
               alt="Islamic architectural background"
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-emerald-900/90 to-teal-800/80"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-emerald-900/80 to-teal-800/30"></div>
           </div>
 
           {/* Content */}
           <div className="relative p-8 md:p-12 text-white">
-            <h1 className="text-4xl font-bold mb-4">Islamic History Learning Journey</h1>
+            <h1 className="text-4xl font-bold mb-4">
+              Islamic History Learning Journey
+            </h1>
             <p className="text-xl mb-6 max-w-3xl">
-              Explore the rich tapestry of Islamic history through interactive lessons, quizzes, and personalized
-              learning paths.
+              Explore the rich tapestry of Islamic history through interactive
+              lessons, quizzes, and personalized learning paths.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button size="lg" className="bg-white text-emerald-800 hover:bg-gray-100">
-                Continue Learning
-              </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-emerald-700/40">
-                View All Modules
-              </Button>
+              <Link href="/modules/world-advent-islam">
+                <Button
+                  size="lg"
+                  className="bg-white text-emerald-800 hover:bg-gray-100">
+                  Continue Learning
+                </Button>
+              </Link>
+              <Link href="/dashboard">
+                <Button
+                  size="lg"
+                  className="border-white text-white hover:bg-emerald-700/40">
+                  Go to Dashboard
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -130,7 +151,12 @@ export default function HomePage() {
               <CardHeader className="pb-2">
                 <div className="flex justify-between items-start">
                   <CardTitle className="text-lg">{module.title}</CardTitle>
-                  <Badge variant={module.level === "Beginner" ? "default" : "secondary"}>{module.level}</Badge>
+                  <Badge
+                    variant={
+                      module.level === "Beginner" ? "default" : "secondary"
+                    }>
+                    {module.level}
+                  </Badge>
                 </div>
                 <CardDescription>{module.description}</CardDescription>
               </CardHeader>
@@ -155,7 +181,9 @@ export default function HomePage() {
               </CardContent>
               <CardFooter className="pt-2">
                 <Link href={`/modules/${module.id}`} className="w-full">
-                  <Button className="w-full">{module.progress > 0 ? "Continue" : "Start Learning"}</Button>
+                  <Button className="w-full">
+                    {module.progress > 0 ? "Continue" : "Start Learning"}
+                  </Button>
                 </Link>
               </CardFooter>
             </Card>
@@ -167,12 +195,16 @@ export default function HomePage() {
         <h2 className="text-2xl font-bold mb-6">Your Achievements</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {achievements.map((achievement) => (
-            <Card key={achievement.id} className={`${!achievement.unlocked ? "opacity-50" : ""}`}>
+            <Card
+              key={achievement.id}
+              className={`${!achievement.unlocked ? "opacity-50" : ""}`}>
               <CardContent className="pt-6 flex items-center gap-4">
                 {achievement.icon}
                 <div>
                   <h3 className="font-medium">{achievement.title}</h3>
-                  <p className="text-sm text-muted-foreground">{achievement.unlocked ? "Unlocked" : "Locked"}</p>
+                  <p className="text-sm text-muted-foreground">
+                    {achievement.unlocked ? "Unlocked" : "Locked"}
+                  </p>
                 </div>
               </CardContent>
             </Card>
@@ -186,12 +218,16 @@ export default function HomePage() {
           <Card>
             <CardHeader>
               <CardTitle>The World at The Advent of Islam</CardTitle>
-              <CardDescription>Explore the state of the world just before the emergence of Islam.</CardDescription>
+              <CardDescription>
+                Explore the state of the world just before the emergence of
+                Islam.
+              </CardDescription>
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground">
-                Learn about the two great empires that dominated the world, the Eastern Roman Empire and the Persian
-                Empire, and how they competed for territory and military superiority.
+                Learn about the two great empires that dominated the world, the
+                Eastern Roman Empire and the Persian Empire, and how they
+                competed for territory and military superiority.
               </p>
             </CardContent>
             <CardFooter>
@@ -204,12 +240,15 @@ export default function HomePage() {
           <Card>
             <CardHeader>
               <CardTitle>The Prophet Muhammad ﷺ</CardTitle>
-              <CardDescription>Learn about the life and mission of the final Messenger of God.</CardDescription>
+              <CardDescription>
+                Learn about the life and mission of the final Messenger of God.
+              </CardDescription>
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground">
-                Discover the early life of Muhammad ﷺ, his reception of revelation, the Makkan and Medinan periods, and
-                the establishment of the first Islamic Realm.
+                Discover the early life of Muhammad ﷺ, his reception of
+                revelation, the Makkan and Medinan periods, and the
+                establishment of the first Islamic Realm.
               </p>
             </CardContent>
             <CardFooter>
@@ -221,6 +260,5 @@ export default function HomePage() {
         </div>
       </section>
     </div>
-  )
+  );
 }
-
