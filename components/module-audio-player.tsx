@@ -30,16 +30,10 @@ import { Card, CardContent } from "@/components/ui/card";
 interface ModuleAudioPlayerProps {
   title: string;
   audioSrc: string;
-  onToggleExpanded?: (expanded: boolean) => void;
 }
 
-export function ModuleAudioPlayer({
-  title,
-  audioSrc,
-  onToggleExpanded,
-}: ModuleAudioPlayerProps) {
+export function ModuleAudioPlayer({ title, audioSrc }: ModuleAudioPlayerProps) {
   const [isPlaying, setIsPlaying] = useState(false);
-  const [isExpanded, setIsExpanded] = useState(false);
   const [duration, setDuration] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
   const [volume, setVolume] = useState(80);
@@ -136,15 +130,6 @@ export function ModuleAudioPlayer({
     setCurrentTime(0);
     if (audioRef.current) {
       audioRef.current.currentTime = 0;
-    }
-  };
-
-  // Toggle expanded view
-  const toggleExpanded = () => {
-    const newExpandedState = !isExpanded;
-    setIsExpanded(newExpandedState);
-    if (onToggleExpanded) {
-      onToggleExpanded(newExpandedState);
     }
   };
 

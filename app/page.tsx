@@ -17,14 +17,14 @@ export default function HomePage() {
   // Sample featured modules
   const featuredModules = [
     {
-      id: "world-advent-islam",
-      title: "The World at The Advent of Islam",
+      id: "14-europe-during-the-high-caliphate-period",
+      title: "Europe During The High Caliphate Period",
       description:
-        "Learn about the two great empires that dominated the world, the Eastern Roman Empire and the Persian Empire",
+        "Explore Anglo-Saxon England during the High Caliphate, where Viking invasions, internal conflicts, and cultural exchanges shaped history, while the Franks and Christianity rose in Europe.",
       progress: 75,
-      lessons: 3,
-      duration: "45 min",
-      level: "Beginner",
+      lessons: 1,
+      duration: "20 min",
+      level: "Intermediate",
     },
     {
       id: "prophet-muhammad",
