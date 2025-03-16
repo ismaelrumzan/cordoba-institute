@@ -16,6 +16,8 @@ import {
 import { ModuleImage } from "@/components/module-image";
 import { HighlightBox } from "@/components/highlight-box";
 import { ModuleAudioPlayer } from "@/components/module-audio-player";
+import { GradeLevelSelector } from "@/components/grade-level-selector";
+import { GradeLevelWrapper } from "@/components/grade-level-wrapper";
 
 const sections = [
   { title: "Umayyads & Abbasids", status: "complete" },
@@ -75,6 +77,9 @@ export default function Chapter() {
           Europe During The High Caliphate Period
         </h1>
       </div>
+
+      <GradeLevelWrapper />
+
       <ModuleAudioPlayer
         title="Europe During The High Caliphate Period"
         audioSrc="/audio/module14.mp3"
@@ -205,6 +210,15 @@ export default function Chapter() {
                   Why do you think King Offa had the Islamic ’shahada’
                   (declaration of faith) engraved on his coins?
                 </HighlightBox>
+                <h2>Conclusion</h2>
+                <p>
+                  The High Caliphate period saw a lot of changes in the
+                  Christian world. The Roman Catholic Church emerged as the
+                  dominant force in Europe, and the Vikings established
+                  themselves as a major power. Despite the violence and turmoil,
+                  the Vikings left behind a rich legacy, which is still
+                  celebrated today in many parts of the world.
+                </p>
               </div>
             </TabsContent>
 
