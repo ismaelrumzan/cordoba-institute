@@ -1,74 +1,92 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Brain, Target } from "lucide-react"
+import { useState, useEffect } from "react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Brain, Target } from "lucide-react";
 
 interface AiQuizFeedbackProps {
-  score: number
-  totalQuestions: number
+  score: number;
+  totalQuestions: number;
 }
 
 export function AiQuizFeedback({ score, totalQuestions }: AiQuizFeedbackProps) {
-  const [isLoading, setIsLoading] = useState(true)
-  const [feedback, setFeedback] = useState<any>(null)
+  const [isLoading, setIsLoading] = useState(true);
+  const [feedback, setFeedback] = useState<any>(null);
 
-  const percentage = Math.round((score / totalQuestions) * 100)
+  const percentage = Math.round((score / totalQuestions) * 100);
 
   useEffect(() => {
     // Simulate API call to get AI feedback
     const fetchFeedback = async () => {
-      setIsLoading(true)
+      setIsLoading(true);
       // In a real app, this would be an API call to your AI service
-      await new Promise((resolve) => setTimeout(resolve, 1500))
+      await new Promise((resolve) => setTimeout(resolve, 1500));
 
       // Generate feedback based on score
       if (percentage >= 80) {
         setFeedback({
           performance: "Excellent",
-          strengths: ["Strong understanding of pre-Islamic world history", "Good knowledge of ancient empires"],
+          strengths: [
+            "Strong understanding of pre-Islamic world history",
+            "Good knowledge of ancient empires",
+          ],
           areasToImprove: ["Deepen understanding of religious contexts"],
           recommendations: [
             "Explore the cultural exchanges between empires",
             "Study the religious landscape in more detail",
           ],
-        })
+        });
       } else if (percentage >= 60) {
         setFeedback({
           performance: "Good",
           strengths: ["Basic understanding of major empires"],
-          areasToImprove: ["Knowledge of religious contexts", "Understanding of nomadic peoples"],
+          areasToImprove: [
+            "Knowledge of religious contexts",
+            "Understanding of nomadic peoples",
+          ],
           recommendations: [
             "Review the section on the Eastern Roman and Persian Empires",
             "Study the religious beliefs of pre-Islamic Arabia",
           ],
-        })
+        });
       } else {
         setFeedback({
           performance: "Needs Improvement",
           strengths: ["Attempting to learn about this important period"],
-          areasToImprove: ["Core knowledge of pre-Islamic world", "Understanding of major empires"],
+          areasToImprove: [
+            "Core knowledge of pre-Islamic world",
+            "Understanding of major empires",
+          ],
           recommendations: [
             "Revisit the entire module with focus on the major empires",
             "Take notes on key concepts and review them regularly",
             "Use the additional resources provided in the module",
           ],
-        })
+        });
       }
 
-      setIsLoading(false)
-    }
+      setIsLoading(false);
+    };
 
-    fetchFeedback()
-  }, [percentage])
+    fetchFeedback();
+  }, [percentage]);
 
   if (isLoading) {
     return (
       <Card>
         <CardHeader>
           <CardTitle className="text-lg">Analyzing your answers...</CardTitle>
-          <CardDescription>Our AI is generating personalized feedback based on your quiz performance</CardDescription>
+          <CardDescription>
+            Our AI is generating personalized feedback based on your quiz
+            performance
+          </CardDescription>
         </CardHeader>
         <CardContent>
           <div className="flex justify-center py-6">
@@ -88,7 +106,7 @@ export function AiQuizFeedback({ score, totalQuestions }: AiQuizFeedbackProps) {
           </div>
         </CardContent>
       </Card>
-    )
+    );
   }
 
   return (
@@ -99,7 +117,9 @@ export function AiQuizFeedback({ score, totalQuestions }: AiQuizFeedbackProps) {
             <Brain className="h-5 w-5 text-primary" />
             AI Performance Analysis
           </CardTitle>
-          <CardDescription>Based on your score of {percentage}%</CardDescription>
+          <CardDescription>
+            Based on your score of {percentage}%
+          </CardDescription>
         </CardHeader>
         <CardContent>
           <div className="mt-2">
@@ -112,8 +132,7 @@ export function AiQuizFeedback({ score, totalQuestions }: AiQuizFeedbackProps) {
                       ? "bg-blue-100 text-blue-800 hover:bg-blue-100"
                       : "bg-amber-100 text-amber-800 hover:bg-amber-100"
                 }
-              `}
-            >
+              `}>
               {feedback.performance}
             </Badge>
           </div>
@@ -143,11 +162,13 @@ export function AiQuizFeedback({ score, totalQuestions }: AiQuizFeedbackProps) {
           <div className="mt-4">
             <h3 className="text-sm font-medium mb-2">Recommendations</h3>
             <ul className="space-y-1">
-              {feedback.recommendations.map((recommendation: string, index: number) => (
-                <li key={index} className="text-sm flex items-start gap-2">
-                  <span className="text-blue-500">•</span> {recommendation}
-                </li>
-              ))}
+              {feedback.recommendations.map(
+                (recommendation: string, index: number) => (
+                  <li key={index} className="text-sm flex items-start gap-2">
+                    <span className="text-blue-500">•</span> {recommendation}
+                  </li>
+                )
+              )}
             </ul>
           </div>
         </CardContent>
@@ -170,18 +191,23 @@ export function AiQuizFeedback({ score, totalQuestions }: AiQuizFeedbackProps) {
             </div>
 
             <div className="p-3 bg-slate-50 rounded-md border">
-              <h4 className="font-medium text-sm">Explore Additional Resources</h4>
-              <p className="text-xs text-muted-foreground mt-1">Check the supplementary materials in the module</p>
+              <h4 className="font-medium text-sm">
+                Explore Additional Resources
+              </h4>
+              <p className="text-xs text-muted-foreground mt-1">
+                Check the supplementary materials in the module
+              </p>
             </div>
 
             <div className="p-3 bg-slate-50 rounded-md border">
               <h4 className="font-medium text-sm">Continue to Next Module</h4>
-              <p className="text-xs text-muted-foreground mt-1">Move on to "The Prophet Muhammad ﷺ" module</p>
+              <p className="text-xs text-muted-foreground mt-1">
+                Move on to "The Prophet Muhammad ﷺ" module
+              </p>
             </div>
           </div>
         </CardContent>
       </Card>
     </div>
-  )
+  );
 }
-
