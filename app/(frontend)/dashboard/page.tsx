@@ -267,7 +267,7 @@ export default function DashboardPage() {
                           <h3 className="font-semibold">{module.title}</h3>
                           {module.completed && (
                             <Badge
-                              variant="success"
+                              variant="default"
                               className="bg-green-100 text-green-800 hover:bg-green-100">
                               Completed
                             </Badge>

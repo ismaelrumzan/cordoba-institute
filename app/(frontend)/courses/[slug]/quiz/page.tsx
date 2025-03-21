@@ -1,22 +1,29 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Progress } from "@/components/ui/progress"
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
-import { Label } from "@/components/ui/label"
-import { ArrowLeft, CheckCircle2, History, XCircle } from "lucide-react"
-import AIQuizFeedback from "@/components/ai-quiz-feedback"
-import { IslamicBadge } from "@/components/islamic-badge"
+import { useState } from "react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Progress } from "@/components/ui/progress";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Label } from "@/components/ui/label";
+import { ArrowLeft, CheckCircle2, History, XCircle } from "lucide-react";
+import { AiQuizFeedback } from "@/components/ai-quiz-feedback";
+import { IslamicBadge } from "@/components/islamic-badge";
 
 export default function QuizPage() {
-  const [currentQuestion, setCurrentQuestion] = useState(0)
-  const [selectedAnswer, setSelectedAnswer] = useState("")
-  const [submitted, setSubmitted] = useState(false)
-  const [score, setScore] = useState(0)
-  const [quizCompleted, setQuizCompleted] = useState(false)
+  const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [selectedAnswer, setSelectedAnswer] = useState("");
+  const [submitted, setSubmitted] = useState(false);
+  const [score, setScore] = useState(0);
+  const [quizCompleted, setQuizCompleted] = useState(false);
 
   const questions = [
     {
@@ -40,7 +47,8 @@ export default function QuizPage() {
       correctAnswer: "b",
     },
     {
-      question: "The House of Wisdom (Bayt al-Hikma) was established in which city?",
+      question:
+        "The House of Wisdom (Bayt al-Hikma) was established in which city?",
       options: [
         { id: "a", text: "Damascus" },
         { id: "b", text: "Cairo" },
@@ -69,28 +77,28 @@ export default function QuizPage() {
       ],
       correctAnswer: "c",
     },
-  ]
+  ];
 
-  const currentQ = questions[currentQuestion]
-  const isCorrect = submitted && selectedAnswer === currentQ.correctAnswer
+  const currentQ = questions[currentQuestion];
+  const isCorrect = submitted && selectedAnswer === currentQ.correctAnswer;
 
   const handleSubmit = () => {
     if (!submitted) {
-      setSubmitted(true)
+      setSubmitted(true);
       if (selectedAnswer === currentQ.correctAnswer) {
-        setScore(score + 1)
+        setScore(score + 1);
       }
     } else {
       // Move to next question or finish quiz
       if (currentQuestion < questions.length - 1) {
-        setCurrentQuestion(currentQuestion + 1)
-        setSelectedAnswer("")
-        setSubmitted(false)
+        setCurrentQuestion(currentQuestion + 1);
+        setSelectedAnswer("");
+        setSubmitted(false);
       } else {
-        setQuizCompleted(true)
+        setQuizCompleted(true);
       }
     }
-  }
+  };
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -101,16 +109,24 @@ export default function QuizPage() {
             <span className="text-xl font-bold">Islamic History Explorer</span>
           </div>
           <nav className="hidden md:flex items-center gap-6">
-            <Link href="/" className="text-sm font-medium transition-colors hover:text-primary">
+            <Link
+              href="/"
+              className="text-sm font-medium transition-colors hover:text-primary">
               Home
             </Link>
-            <Link href="/courses" className="text-sm font-medium transition-colors hover:text-primary">
+            <Link
+              href="/courses"
+              className="text-sm font-medium transition-colors hover:text-primary">
               Courses
             </Link>
-            <Link href="/library" className="text-sm font-medium transition-colors hover:text-primary">
+            <Link
+              href="/library"
+              className="text-sm font-medium transition-colors hover:text-primary">
               Library
             </Link>
-            <Link href="/community" className="text-sm font-medium transition-colors hover:text-primary">
+            <Link
+              href="/community"
+              className="text-sm font-medium transition-colors hover:text-primary">
               Community
             </Link>
           </nav>
@@ -119,12 +135,18 @@ export default function QuizPage() {
       <main className="flex-1 container py-12">
         <div className="mx-auto max-w-3xl">
           <div className="mb-8">
-            <Link href="/courses/golden-age" className="inline-flex items-center text-sm font-medium text-primary">
+            <Link
+              href="/courses/golden-age"
+              className="inline-flex items-center text-sm font-medium text-primary">
               <ArrowLeft className="mr-1 h-4 w-4" />
               Back to Module
             </Link>
-            <h1 className="mt-2 text-3xl font-bold">The Golden Age of Islam: Knowledge Quiz</h1>
-            <p className="text-muted-foreground">Test your knowledge about the Islamic Golden Age</p>
+            <h1 className="mt-2 text-3xl font-bold">
+              The Golden Age of Islam: Knowledge Quiz
+            </h1>
+            <p className="text-muted-foreground">
+              Test your knowledge about the Islamic Golden Age
+            </p>
           </div>
 
           {!quizCompleted ? (
@@ -138,7 +160,10 @@ export default function QuizPage() {
                     Score: {score}/{currentQuestion + (submitted ? 1 : 0)}
                   </span>
                 </div>
-                <Progress value={(currentQuestion / questions.length) * 100} className="h-2" />
+                <Progress
+                  value={(currentQuestion / questions.length) * 100}
+                  className="h-2"
+                />
               </div>
 
               <Card className="mb-6">
@@ -149,39 +174,49 @@ export default function QuizPage() {
                   <RadioGroup
                     value={selectedAnswer}
                     onValueChange={submitted ? undefined : setSelectedAnswer}
-                    className="space-y-3"
-                  >
+                    className="space-y-3">
                     {currentQ.options.map((option) => {
-                      const isOptionCorrect = option.id === currentQ.correctAnswer
-                      let className = "flex items-center space-x-2 rounded-lg border p-4 cursor-pointer"
+                      const isOptionCorrect =
+                        option.id === currentQ.correctAnswer;
+                      let className =
+                        "flex items-center space-x-2 rounded-lg border p-4 cursor-pointer";
 
                       if (submitted) {
                         if (option.id === selectedAnswer) {
                           className += isOptionCorrect
                             ? " border-green-500 bg-green-50 dark:bg-green-950/20"
-                            : " border-red-500 bg-red-50 dark:bg-red-950/20"
+                            : " border-red-500 bg-red-50 dark:bg-red-950/20";
                         } else if (isOptionCorrect) {
-                          className += " border-green-500 bg-green-50 dark:bg-green-950/20"
+                          className +=
+                            " border-green-500 bg-green-50 dark:bg-green-950/20";
                         }
                       } else {
-                        className += " hover:bg-muted"
+                        className += " hover:bg-muted";
                       }
 
                       return (
                         <div key={option.id} className={className}>
-                          <RadioGroupItem value={option.id} id={option.id} disabled={submitted} className="sr-only" />
+                          <RadioGroupItem
+                            value={option.id}
+                            id={option.id}
+                            disabled={submitted}
+                            className="sr-only"
+                          />
                           <Label
                             htmlFor={option.id}
-                            className="flex flex-1 items-center justify-between cursor-pointer"
-                          >
+                            className="flex flex-1 items-center justify-between cursor-pointer">
                             <span>{option.text}</span>
-                            {submitted && isOptionCorrect && <CheckCircle2 className="h-5 w-5 text-green-500" />}
-                            {submitted && option.id === selectedAnswer && !isOptionCorrect && (
-                              <XCircle className="h-5 w-5 text-red-500" />
+                            {submitted && isOptionCorrect && (
+                              <CheckCircle2 className="h-5 w-5 text-green-500" />
                             )}
+                            {submitted &&
+                              option.id === selectedAnswer &&
+                              !isOptionCorrect && (
+                                <XCircle className="h-5 w-5 text-red-500" />
+                              )}
                           </Label>
                         </div>
-                      )
+                      );
                     })}
                   </RadioGroup>
                 </CardContent>
@@ -190,15 +225,16 @@ export default function QuizPage() {
                     variant="outline"
                     onClick={() => {
                       if (currentQuestion > 0 && !submitted) {
-                        setCurrentQuestion(currentQuestion - 1)
-                        setSelectedAnswer("")
+                        setCurrentQuestion(currentQuestion - 1);
+                        setSelectedAnswer("");
                       }
                     }}
-                    disabled={currentQuestion === 0 || submitted}
-                  >
+                    disabled={currentQuestion === 0 || submitted}>
                     Previous
                   </Button>
-                  <Button onClick={handleSubmit} disabled={!selectedAnswer && !submitted}>
+                  <Button
+                    onClick={handleSubmit}
+                    disabled={!selectedAnswer && !submitted}>
                     {submitted
                       ? currentQuestion < questions.length - 1
                         ? "Next Question"
@@ -211,7 +247,9 @@ export default function QuizPage() {
               {submitted && (
                 <Card>
                   <CardHeader>
-                    <CardTitle>{isCorrect ? "Correct!" : "Incorrect"}</CardTitle>
+                    <CardTitle>
+                      {isCorrect ? "Correct!" : "Incorrect"}
+                    </CardTitle>
                   </CardHeader>
                   <CardContent>
                     <p>
@@ -249,7 +287,10 @@ export default function QuizPage() {
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-4">
-                    <Progress value={(score / questions.length) * 100} className="h-4" />
+                    <Progress
+                      value={(score / questions.length) * 100}
+                      className="h-4"
+                    />
 
                     <div className="rounded-lg bg-muted p-6 text-center">
                       <h3 className="text-xl font-bold mb-2">
@@ -275,7 +316,9 @@ export default function QuizPage() {
                         <div className="mt-4 flex justify-center">
                           <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm text-primary">
                             <IslamicBadge type="star" size="sm" />
-                            <span>Achievement Unlocked: Golden Age Scholar</span>
+                            <span>
+                              Achievement Unlocked: Golden Age Scholar
+                            </span>
                           </div>
                         </div>
                       )}
@@ -286,7 +329,7 @@ export default function QuizPage() {
 
               {/* AI-Powered Quiz Analysis */}
               <div className="mb-6">
-                <AIQuizFeedback
+                <AiQuizFeedback
                   quizId="golden-age-quiz"
                   score={score}
                   totalQuestions={questions.length}
@@ -307,7 +350,8 @@ export default function QuizPage() {
                             : index === 3
                               ? "Scientific Contributions"
                               : "Islamic Civilization",
-                    difficulty: index < 2 ? "easy" : index < 4 ? "medium" : "hard",
+                    difficulty:
+                      index < 2 ? "easy" : index < 4 ? "medium" : "hard",
                   }))}
                 />
               </div>
@@ -317,10 +361,10 @@ export default function QuizPage() {
       </main>
       <footer className="border-t bg-muted/40">
         <div className="container py-6 text-center text-sm text-muted-foreground">
-          &copy; {new Date().getFullYear()} Islamic History Explorer. All rights reserved.
+          &copy; {new Date().getFullYear()} Islamic History Explorer. All rights
+          reserved.
         </div>
       </footer>
     </div>
-  )
+  );
 }
-
