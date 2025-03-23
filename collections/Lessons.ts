@@ -1,81 +1,106 @@
-import { slugField } from '@/fields/slug'
-import type { CollectionConfig } from 'payload'
+import { authenticated } from "@/access/authenticated";
+import { anyone } from "@/access/anyone";
+import { slugField } from "@/fields/slug";
+import { generatePreviewPath } from "@/utilities/generate-preview-path";
+import type { CollectionConfig } from "payload";
 
 export const Lessons: CollectionConfig = {
-  slug: 'lessons',
+  slug: "lessons",
   admin: {
-    useAsTitle: 'title',
+    useAsTitle: "title",
+    preview: (data, { req }) =>
+      generatePreviewPath({
+        slug: typeof data?.slug === "string" ? data.slug : "",
+        collection: "lessons",
+        req,
+      }),
+    livePreview: {
+      url: ({ data, req }) => {
+        const path = generatePreviewPath({
+          slug: typeof data?.slug === "string" ? data.slug : "",
+          collection: "lessons",
+          req,
+        });
+        return path;
+      },
+    },
+  },
+  access: {
+    create: authenticated,
+    delete: authenticated,
+    read: anyone,
+    update: authenticated,
   },
   fields: [
     {
-      name: 'title',
-      type: 'text',
+      name: "title",
+      type: "text",
       required: true,
     },
     {
-      name: 'content',
-      type: 'array',
+      name: "content",
+      type: "array",
       fields: [
         {
-          name: 'learningcontent',
-          type: 'richText',
+          name: "learningcontent",
+          type: "richText",
         },
         {
-          name: 'level',
-          type: 'radio',
+          name: "level",
+          type: "radio",
           options: [
-            { label: 'Grade 6 and lower', value: '6less' },
-            { label: 'Grade 7 and higher', value: '7higher' },
+            { label: "Grade 6 and lower", value: "6less" },
+            { label: "Grade 7 and higher", value: "7higher" },
           ],
         },
         {
-          name: 'audio',
-          type: 'upload',
-          relationTo: 'media',
+          name: "audio",
+          type: "upload",
+          relationTo: "media",
         },
       ],
     },
     {
-      name: 'resources',
-      type: 'array',
+      name: "resources",
+      type: "array",
       admin: {
-        position: 'sidebar',
+        position: "sidebar",
       },
       fields: [
         {
-          name: 'title',
-          type: 'text',
+          name: "title",
+          type: "text",
         },
         {
-          name: 'description',
-          type: 'richText',
+          name: "description",
+          type: "richText",
         },
         {
-          name: 'type',
-          type: 'select',
-          options: ['book', 'video', 'link'],
+          name: "type",
+          type: "select",
+          options: ["book", "video", "link"],
         },
         {
-          name: 'src',
-          type: 'text',
+          name: "src",
+          type: "text",
         },
       ],
     },
     {
-      name: 'modules',
-      type: 'array',
+      name: "modules",
+      type: "array",
       admin: {
-        position: 'sidebar',
+        position: "sidebar",
       },
-      fields: [{ name: 'module', type: 'relationship', relationTo: 'modules' }],
+      fields: [{ name: "module", type: "relationship", relationTo: "modules" }],
     },
     {
-      name: 'quizzes',
-      type: 'array',
+      name: "quizzes",
+      type: "array",
       admin: {
-        position: 'sidebar',
+        position: "sidebar",
       },
-      fields: [{ name: 'quiz', type: 'relationship', relationTo: 'quizzes' }],
+      fields: [{ name: "quiz", type: "relationship", relationTo: "quizzes" }],
     },
     ...slugField(),
   ],
@@ -87,4 +112,4 @@ export const Lessons: CollectionConfig = {
     },
     maxPerDoc: 50,
   },
-}
+};

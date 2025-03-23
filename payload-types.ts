@@ -498,6 +498,17 @@ export interface PayloadMigrationsSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "CaptionBlock".
+ */
+export interface CaptionBlock {
+  title?: string | null;
+  alignment?: ('justify-start' | 'justify-center' | 'justify-end') | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'captionblock';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "auth".
  */
 export interface Auth {

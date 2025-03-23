@@ -25,13 +25,13 @@ export function GradeLevelSelector({ onChange }: GradeLevelSelectorProps) {
   // Update URL with the new grade level
 
   useEffect(() => {
-    const isyoung = pathname.includes("/young");
-    if (isyoung) {
+    if (pathname.includes("/6less")) {
       setGradeLevel("elementary");
       if (onChange) {
         onChange("elementary");
       }
-    } else {
+    }
+    if (pathname.includes("/7higher")) {
       setGradeLevel("secondary");
       if (onChange) {
         onChange("secondary");
@@ -41,12 +41,12 @@ export function GradeLevelSelector({ onChange }: GradeLevelSelectorProps) {
 
   const handleChange = (level: "elementary" | "secondary") => {
     setGradeLevel(level);
+    const rootpath = pathname.split("/").slice(0, -1).join("/");
     if (level === "elementary") {
-      router.push(`${pathname}/young`);
-    } else {
-      const currentpath = pathname;
-      const newPath = currentpath.replace(/\/young$/, "");
-      router.push(newPath);
+      router.push(`${rootpath}/6less`);
+    }
+    if (level == "secondary") {
+      router.push(`${rootpath}/7higher`);
     }
     if (onChange) {
       onChange(level);
