@@ -11,6 +11,7 @@ export interface QuizQuestion {
   correctAnswer: string | string[]; // Can be a single string or array of strings
   type: "single" | "multiple"; // Type of question
   explanation?: string;
+  slug?: string;
 }
 
 interface QuizQuestionProps {
@@ -80,8 +81,8 @@ export function QuizQuestionComponent({
                   ? isOptionCorrect(option)
                     ? "bg-green-50 border-green-200"
                     : isOptionSelected(option)
-                    ? "bg-red-50 border-red-200"
-                    : "bg-gray-50"
+                      ? "bg-red-50 border-red-200"
+                      : "bg-gray-50"
                   : "hover:bg-gray-50"
               }`}>
               <RadioGroupItem
@@ -116,8 +117,8 @@ export function QuizQuestionComponent({
                   ? isOptionCorrect(option)
                     ? "bg-green-50 border-green-200"
                     : isOptionSelected(option)
-                    ? "bg-red-50 border-red-200"
-                    : "bg-gray-50"
+                      ? "bg-red-50 border-red-200"
+                      : "bg-gray-50"
                   : "hover:bg-gray-50"
               }`}>
               <Checkbox

@@ -46,26 +46,9 @@ type Args = {
   }>;
 };
 
-const sections = [
-  { title: "Umayyads & Abbasids", status: "complete" },
-  { title: "Harun the Good & The Abbasids", status: "complete" },
-  ,
-  { title: "Baghdad & City Life in the High Caliphate", status: "complete" },
-  ,
-  { title: "Intellectual Trends in the High Caliphate", status: "complete" },
-  ,
-  { title: "Europe During The High Caliphate Period", status: "progress" },
-  ,
-  { title: "Economies of the Muslim & Christian Worlds", status: "incomplete" },
-];
+const sections: any[] = [];
 
-const concepts = [
-  "Christianity split into Western (Catholic) and Eastern (Orthodox) regions, with the Pope asserting supremacy in the West.",
-  "Europe's dark ages was marked by limited learning and widespread illiteracy, with knowledge preserved mainly within the Church",
-  "Barbarian tribes formed small kingdoms; Charlemagne was declared Holy Roman Emperor, symbolizing the West's aspiration for civilization and fostering relations with the Abbasid Caliphate.",
-  "Vikings raided and settled across Europe, later integrating by adopting local customs, religions, and governance.",
-  "Offa of Mercia minted coins with the Islamic shahada, reflecting trade ties with the Muslim world.",
-];
+const concepts: any[] = [];
 
 export default async function Lesson({ params: paramsPromise }: Args) {
   const { slug = "", grade = "" } = await paramsPromise;
@@ -232,7 +215,7 @@ export default async function Lesson({ params: paramsPromise }: Args) {
                 </ul>
 
                 <div className="mt-6">
-                  <Link href="/assessments/14-europe-during-the-high-caliphate-period">
+                  <Link href={`/assessments/${slug}/${grade}`}>
                     <Button className="w-full">Take Module Quiz</Button>
                   </Link>
                 </div>
