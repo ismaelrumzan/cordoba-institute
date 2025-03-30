@@ -38,27 +38,21 @@ export const Lessons: CollectionConfig = {
       required: true,
     },
     {
-      name: "content",
-      type: "array",
-      fields: [
-        {
-          name: "learningcontent",
-          type: "richText",
-        },
-        {
-          name: "level",
-          type: "radio",
-          options: [
-            { label: "Grade 6 and lower", value: "6less" },
-            { label: "Grade 7 and higher", value: "7higher" },
-          ],
-        },
-        {
-          name: "audio",
-          type: "upload",
-          relationTo: "media",
-        },
+      name: "level",
+      type: "radio",
+      options: [
+        { label: "Grade 6 and lower", value: "6less" },
+        { label: "Grade 7 and higher", value: "7higher" },
       ],
+    },
+    {
+      name: "audio",
+      type: "upload",
+      relationTo: "media",
+    },
+    {
+      name: "learningcontent",
+      type: "richText",
     },
     {
       name: "resources",
@@ -87,12 +81,20 @@ export const Lessons: CollectionConfig = {
       ],
     },
     {
-      name: "modules",
-      type: "array",
+      name: "module",
+      type: "relationship",
+      relationTo: "modules",
       admin: {
         position: "sidebar",
       },
-      fields: [{ name: "module", type: "relationship", relationTo: "modules" }],
+    },
+    {
+      name: "keyconcepts",
+      label: "Key Concepts",
+      type: "richText",
+      admin: {
+        position: "sidebar",
+      },
     },
     {
       name: "quizzes",

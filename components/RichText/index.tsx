@@ -32,7 +32,7 @@ export default function RichText(props: Props) {
       <RichTextWithoutBlocks
         converters={jsxConverters}
         className={cn(
-          "max-w-none prose text-lg sm:text-xl [&_h1]:mb-5 [&_h2]:my-3 [&_p]:my-3 [&_h3]:my-3 [&_h4]:my-3 [&_h5]:my-2",
+          "max-w-none prose [&_h1]:mb-5 [&_h2]:my-3 [&_p]:my-3 [&_h3]:my-3 [&_h4]:my-3 [&_h5]:my-2",
           className
         )}
         {...rest}

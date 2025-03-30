@@ -10,13 +10,19 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Brain, Target } from "lucide-react";
+import Link from "next/link";
 
 interface AiQuizFeedbackProps {
   score: number;
   totalQuestions: number;
+  moduleLink?: string;
 }
 
-export function AiQuizFeedback({ score, totalQuestions }: AiQuizFeedbackProps) {
+export function AiQuizFeedback({
+  score,
+  totalQuestions,
+  moduleLink = "",
+}: AiQuizFeedbackProps) {
   const [isLoading, setIsLoading] = useState(true);
   const [feedback, setFeedback] = useState<any>(null);
 
@@ -183,24 +189,29 @@ export function AiQuizFeedback({ score, totalQuestions }: AiQuizFeedbackProps) {
         </CardHeader>
         <CardContent>
           <div className="space-y-3">
-            <div className="p-3 bg-slate-50 rounded-md border">
-              <h4 className="font-medium text-sm">Review Module Content</h4>
-              <p className="text-xs text-muted-foreground mt-1">
-                Focus on the sections where you had difficulty in the quiz
-              </p>
+            <div className="p-3 bg-slate-50 rounded-md border hover:bg-slate-100">
+              <Link href={moduleLink}>
+                <h4 className="font-medium text-sm">Review Lesson Content</h4>
+                <p className="text-xs text-muted-foreground mt-1">
+                  Focus on the sections where you had difficulty in the quiz
+                </p>
+              </Link>
+            </div>
+
+            <div className="p-3 bg-slate-50 rounded-md border hover:bg-slate-100">
+              <Link href={moduleLink}>
+                <h4 className="font-medium text-sm">
+                  Explore Additional Resources
+                </h4>
+
+                <p className="text-xs text-muted-foreground mt-1">
+                  Check the supplementary materials in the lesson
+                </p>
+              </Link>
             </div>
 
             <div className="p-3 bg-slate-50 rounded-md border">
-              <h4 className="font-medium text-sm">
-                Explore Additional Resources
-              </h4>
-              <p className="text-xs text-muted-foreground mt-1">
-                Check the supplementary materials in the module
-              </p>
-            </div>
-
-            <div className="p-3 bg-slate-50 rounded-md border">
-              <h4 className="font-medium text-sm">Continue to Next Module</h4>
+              <h4 className="font-medium text-sm">Continue to Next Lesson</h4>
               <p className="text-xs text-muted-foreground mt-1">
                 Move on to "The Prophet Muhammad ﷺ" module
               </p>

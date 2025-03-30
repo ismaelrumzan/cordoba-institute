@@ -43,7 +43,7 @@ export async function GET(
     },
   });
 
-  const lesson_doc = (query.docs?.[0] as LessonDoc) || null;
+  const lesson_doc = (query.docs?.[0] as unknown as LessonDoc) || null;
 
   let level_slug;
 

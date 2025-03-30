@@ -17,6 +17,7 @@ import { Media } from "./collections/Media";
 import { Lessons } from "./collections/Lessons";
 import { Modules } from "./collections/Modules";
 import { Quizzes } from "./collections/Quizzes";
+import { Tags } from "./collections/Tags";
 import { CaptionBlock } from "./blocks/caption/config";
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -28,7 +29,7 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
-  collections: [Users, Media, Modules, Lessons, Quizzes],
+  collections: [Users, Media, Modules, Lessons, Quizzes, Tags],
   editor: lexicalEditor({
     features: ({ defaultFeatures }) => [
       ...defaultFeatures,

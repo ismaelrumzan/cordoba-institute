@@ -72,6 +72,7 @@ export interface Config {
     modules: Module;
     lessons: Lesson;
     quizzes: Quiz;
+    tags: Tag;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
@@ -83,6 +84,7 @@ export interface Config {
     modules: ModulesSelect<false> | ModulesSelect<true>;
     lessons: LessonsSelect<false> | LessonsSelect<true>;
     quizzes: QuizzesSelect<false> | QuizzesSelect<true>;
+    tags: TagsSelect<false> | TagsSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
@@ -177,6 +179,7 @@ export interface Module {
     };
     [k: string]: unknown;
   } | null;
+  lessons?: (string | Lesson)[] | null;
   slug?: string | null;
   slugLock?: boolean | null;
   updatedAt: string;
@@ -189,28 +192,23 @@ export interface Module {
 export interface Lesson {
   id: string;
   title: string;
-  content?:
-    | {
-        learningcontent?: {
-          root: {
-            type: string;
-            children: {
-              type: string;
-              version: number;
-              [k: string]: unknown;
-            }[];
-            direction: ('ltr' | 'rtl') | null;
-            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-            indent: number;
-            version: number;
-          };
-          [k: string]: unknown;
-        } | null;
-        level?: ('6less' | '7higher') | null;
-        audio?: (string | null) | Media;
-        id?: string | null;
-      }[]
-    | null;
+  level?: ('6less' | '7higher') | null;
+  audio?: (string | null) | Media;
+  learningcontent?: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
   resources?:
     | {
         title?: string | null;
@@ -234,12 +232,22 @@ export interface Lesson {
         id?: string | null;
       }[]
     | null;
-  modules?:
-    | {
-        module?: (string | null) | Module;
-        id?: string | null;
-      }[]
-    | null;
+  module?: (string | null) | Module;
+  keyconcepts?: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
   quizzes?:
     | {
         quiz?: (string | null) | Quiz;
@@ -282,6 +290,20 @@ export interface Quiz {
     };
     [k: string]: unknown;
   } | null;
+  tags?: (string | Tag)[] | null;
+  slug?: string | null;
+  slugLock?: boolean | null;
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "tags".
+ */
+export interface Tag {
+  id: string;
+  title?: string | null;
   slug?: string | null;
   slugLock?: boolean | null;
   updatedAt: string;
@@ -314,6 +336,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'quizzes';
         value: string | Quiz;
+      } | null)
+    | ({
+        relationTo: 'tags';
+        value: string | Tag;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -397,6 +423,7 @@ export interface MediaSelect<T extends boolean = true> {
 export interface ModulesSelect<T extends boolean = true> {
   title?: T;
   description?: T;
+  lessons?: T;
   slug?: T;
   slugLock?: T;
   updatedAt?: T;
@@ -408,14 +435,9 @@ export interface ModulesSelect<T extends boolean = true> {
  */
 export interface LessonsSelect<T extends boolean = true> {
   title?: T;
-  content?:
-    | T
-    | {
-        learningcontent?: T;
-        level?: T;
-        audio?: T;
-        id?: T;
-      };
+  level?: T;
+  audio?: T;
+  learningcontent?: T;
   resources?:
     | T
     | {
@@ -425,12 +447,8 @@ export interface LessonsSelect<T extends boolean = true> {
         src?: T;
         id?: T;
       };
-  modules?:
-    | T
-    | {
-        module?: T;
-        id?: T;
-      };
+  module?: T;
+  keyconcepts?: T;
   quizzes?:
     | T
     | {
@@ -458,6 +476,19 @@ export interface QuizzesSelect<T extends boolean = true> {
         id?: T;
       };
   feedback?: T;
+  tags?: T;
+  slug?: T;
+  slugLock?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "tags_select".
+ */
+export interface TagsSelect<T extends boolean = true> {
+  title?: T;
   slug?: T;
   slugLock?: T;
   updatedAt?: T;

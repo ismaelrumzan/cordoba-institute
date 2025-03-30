@@ -14,105 +14,32 @@ import {
 import { Progress } from "@/components/ui/progress";
 import { ArrowLeft } from "lucide-react";
 import { AiQuizFeedback } from "@/components/ai-quiz-feedback";
-import {
-  QuizQuestionComponent,
-  type QuizQuestion,
-} from "@/components/quiz-questions";
+import { QuizQuestionComponent } from "@/components/quiz-questions";
+import { Lesson, Quiz as QuizType } from "@/payload-types";
 
-export default function WorldAdventIslamAssessment() {
+export function Quiz({
+  questions,
+  title,
+  slug,
+  level,
+}: {
+  questions: { id: string; quiz: QuizType }[];
+  title: string;
+  slug: string;
+  level: string;
+}) {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedAnswers, setSelectedAnswers] = useState<(string | string[])[]>(
     []
   );
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [score, setScore] = useState(0);
-
-  const questions: QuizQuestion[] = [
-    {
-      question:
-        "What were the two main parts of the Christian world during the High Caliphate period?",
-      options: [
-        "Western (Latin) and Eastern (Greek)",
-        "North and South",
-        "East and West Rome",
-      ],
-      correctAnswer: "Western (Latin) and Eastern (Greek)",
-      type: "single",
-      explanation:
-        "The Christian world was divided into Western (Latin) and Eastern (Greek) during the High Caliphate.",
-    },
-    {
-      question: "Who was the leader of the western church?",
-      options: ["The King", "The Pope", "The Emperor"],
-      correctAnswer: "The Pope",
-      type: "single",
-      explanation:
-        "The Pope was the leader of the western church during this period.",
-    },
-    {
-      question: "The Eastern Roman Empire's capital was Baghdad.",
-      options: ["True", "False"],
-      correctAnswer: "False",
-      type: "single",
-      explanation:
-        "The capital of the Eastern Roman Empire was Constantinople, not Baghdad.",
-    },
-    {
-      question: "What was the 'Dark Ages' known for?",
-      options: [
-        "Lots of learning and progress",
-        "Few people could read or write",
-        "Big celebrations",
-      ],
-      correctAnswer: "Few people could read or write",
-      type: "single",
-      explanation:
-        "During the Dark Ages, learning declined, and most people could not read or write.",
-    },
-    {
-      question: "Who did the Franks promise to protect?",
-      options: ["The Vikings", "The Pope", "The Normans"],
-      correctAnswer: "The Pope",
-      type: "single",
-      explanation:
-        "The Franks promised to protect the Pope, who in return gave their king the title of Holy Roman Emperor.",
-    },
-    {
-      question: "Vikings came from Scandinavia.",
-      options: ["True", "False"],
-      correctAnswer: "True",
-      type: "single",
-      explanation: "The Vikings originated from Scandinavia.",
-    },
-    {
-      question: "How did Vikings become part of the places they settled in?",
-      options: [
-        "Marrying local people",
-        "Ignoring local customs",
-        "Learning local languages",
-        "Taking on local religions",
-      ],
-      correctAnswer: [
-        "Marrying local people",
-        "Learning local languages",
-        "Taking on local religions",
-      ],
-      type: "multiple",
-      explanation:
-        "Vikings assimilated by marrying locals, learning their languages, and adopting their religions.",
-    },
-    {
-      question: "What did Charlemagne send to Harun Rashid?",
-      options: ["Soldiers", "Gifts", "Books"],
-      correctAnswer: "Gifts",
-      type: "single",
-      explanation: "Charlemagne sent gifts to Harun Rashid to strengthen ties.",
-    },
-  ];
-
+  const moduleLink = `/modules/${slug}/${level}`;
   // Initialize selected answers if not already done
   if (selectedAnswers.length === 0) {
-    setSelectedAnswers(questions.map((q) => (q.type === "multiple" ? [] : "")));
+    setSelectedAnswers(
+      questions.map((q) => (q.quiz.type === "multiple" ? [] : ""))
+    );
   }
 
   const handleAnswerSelect = (answer: string | string[]) => {
@@ -140,19 +67,28 @@ export default function WorldAdventIslamAssessment() {
 
   const handleSubmit = () => {
     let correctAnswers = 0;
-
     questions.forEach((question, index) => {
       const selected = selectedAnswers[index];
 
-      if (question.type === "single") {
-        if (selected === question.correctAnswer) {
+      if (question.quiz.type === "single") {
+        if (
+          selected ===
+          question.quiz.answers?.filter((ans) => ans.correct)[0].title
+        ) {
           correctAnswers++;
         }
-      } else if (question.type === "multiple") {
+      } else if (question.quiz.type === "multiple") {
         // For multiple-choice, check if selected answers match exactly
-        if (Array.isArray(selected) && Array.isArray(question.correctAnswer)) {
+        if (
+          Array.isArray(selected) &&
+          Array.isArray(question.quiz.answers?.filter((ans) => ans.correct))
+        ) {
           const selectedSet = new Set(selected);
-          const correctSet = new Set(question.correctAnswer);
+          const correctSet = new Set(
+            question.quiz.answers
+              ?.filter((ans) => ans.correct)
+              .map((ans) => ans.title)
+          );
 
           // Check if sets are equal (same size and all elements match)
           if (
@@ -177,14 +113,12 @@ export default function WorldAdventIslamAssessment() {
     return (
       <div className="container mx-auto px-4 py-8">
         <div className="flex items-center gap-2 mb-6">
-          <Link href="/modules/14-europe-during-the-high-caliphate-period/young">
+          <Link href={moduleLink}>
             <Button variant="ghost" size="sm" className="gap-1">
               <ArrowLeft className="h-4 w-4" /> Back to Module
             </Button>
           </Link>
-          <h1 className="text-2xl font-bold">
-            Europe During The High Caliphate Period - Assessment
-          </h1>
+          <h1 className="text-2xl font-bold">{title} - Assessment</h1>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -214,7 +148,7 @@ export default function WorldAdventIslamAssessment() {
                     <Card key={index} className="border">
                       <CardContent className="p-4">
                         <QuizQuestionComponent
-                          question={q}
+                          question={q.quiz}
                           selectedAnswer={selectedAnswers[index]}
                           onAnswerSelect={() => {}} // No-op since results are read-only
                           isSubmitted={true}
@@ -225,7 +159,7 @@ export default function WorldAdventIslamAssessment() {
                 </div>
               </CardContent>
               <CardFooter className="flex justify-between">
-                <Link href="/modules/14-europe-during-the-high-caliphate-period/young">
+                <Link href={moduleLink}>
                   <Button variant="outline">Back to Module</Button>
                 </Link>
                 <Link href="/modules/prophet-muhammad">
@@ -236,7 +170,11 @@ export default function WorldAdventIslamAssessment() {
           </div>
 
           <div>
-            <AiQuizFeedback score={score} totalQuestions={questions.length} />
+            <AiQuizFeedback
+              score={score}
+              totalQuestions={questions.length}
+              moduleLink={moduleLink}
+            />
           </div>
         </div>
       </div>
@@ -246,14 +184,12 @@ export default function WorldAdventIslamAssessment() {
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="flex items-center gap-2 mb-6">
-        <Link href="/modules/14-europe-during-the-high-caliphate-period/young">
+        <Link href={moduleLink}>
           <Button variant="ghost" size="sm" className="gap-1">
             <ArrowLeft className="h-4 w-4" /> Back to Module
           </Button>
         </Link>
-        <h1 className="text-2xl font-bold">
-          Europe During The High Caliphate Period - Assessment
-        </h1>
+        <h1 className="text-2xl font-bold">{title} - Assessment</h1>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -263,9 +199,9 @@ export default function WorldAdventIslamAssessment() {
               <CardTitle>
                 Question {currentQuestion + 1} of {questions.length}
               </CardTitle>
-              <CardDescription>
-                {questions[currentQuestion].type === "multiple"
-                  ? "Select all correct answers"
+              <CardDescription className="text-red-600 font-semibold">
+                {questions[currentQuestion].quiz.type === "multiple"
+                  ? "Select all possible correct answers"
                   : "Select the correct answer"}
               </CardDescription>
             </CardHeader>
@@ -280,7 +216,7 @@ export default function WorldAdventIslamAssessment() {
 
               <div className="mb-6">
                 <QuizQuestionComponent
-                  question={questions[currentQuestion]}
+                  question={questions[currentQuestion].quiz}
                   selectedAnswer={selectedAnswers[currentQuestion]}
                   onAnswerSelect={handleAnswerSelect}
                   isSubmitted={false}
@@ -320,8 +256,8 @@ export default function WorldAdventIslamAssessment() {
                       currentQuestion === index
                         ? "default"
                         : isAnswerSelected()
-                        ? "outline"
-                        : "secondary"
+                          ? "outline"
+                          : "secondary"
                     }
                     className="h-10 w-10 p-0"
                     onClick={() => setCurrentQuestion(index)}>

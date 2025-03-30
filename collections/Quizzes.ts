@@ -1,26 +1,35 @@
-import { slugField } from '@/fields/slug'
-import type { CollectionConfig } from 'payload'
+import { slugField } from "@/fields/slug";
+import type { CollectionConfig } from "payload";
+import { authenticated } from "@/access/authenticated";
+import { anyone } from "@/access/anyone";
 
 export const Quizzes: CollectionConfig = {
-  slug: 'quizzes',
+  slug: "quizzes",
   admin: {
-    useAsTitle: 'title',
+    useAsTitle: "title",
+  },
+  access: {
+    create: authenticated,
+    delete: authenticated,
+    read: anyone,
+    update: authenticated,
   },
   fields: [
-    { name: 'title', type: 'text' },
-    { name: 'type', type: 'select', options: ['t/f', 'single', 'multiple'] },
+    { name: "title", type: "text" },
+    { name: "type", type: "select", options: ["t/f", "single", "multiple"] },
     {
-      name: 'answers',
-      type: 'array',
+      name: "answers",
+      type: "array",
       fields: [
-        { name: 'title', type: 'text' },
-        { name: 'correct', type: 'checkbox' },
+        { name: "title", type: "text" },
+        { name: "correct", type: "checkbox" },
       ],
     },
     {
-      name: 'feedback',
-      type: 'richText',
+      name: "feedback",
+      type: "richText",
     },
+    { name: "tags", type: "relationship", relationTo: "tags", hasMany: true },
     ...slugField(),
   ],
   versions: {
@@ -31,4 +40,4 @@ export const Quizzes: CollectionConfig = {
     },
     maxPerDoc: 50,
   },
-}
+};
