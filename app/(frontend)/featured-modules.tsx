@@ -58,7 +58,9 @@ export function FeaturedModules({ modules }: { modules: Module[] }) {
                 {level_lessons && level_lessons.length > 0 && (
                   <ul className="list-disc list-outside ml-4 mt-2">
                     {level_lessons.map((item) => (
-                      <li className="underline hover:no-underline">
+                      <li
+                        className="underline hover:no-underline"
+                        key={item.id}>
                         <Link href={`/lessons/${item.slug}/${selectedLevel}`}>
                           {item.title}
                         </Link>

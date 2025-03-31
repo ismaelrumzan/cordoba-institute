@@ -2,8 +2,7 @@ import configPromise from "@payload-config";
 import { getPayload } from "payload";
 import { draftMode } from "next/headers";
 import { RefreshRouteOnSave } from "@/components/refresh-route";
-import React, { cache } from "react";
-import { Button } from "@/components/ui/button";
+import React, { cache, Suspense } from "react";
 import {
   Accordion,
   AccordionContent,
@@ -54,40 +53,32 @@ import {
 } from "@payloadcms/richtext-lexical/lexical";
 import Link from "next/link";
 import RichText from "@/components/RichText";
-import { Lesson as LessonType, Media, Module } from "@/payload-types";
 import { Badge } from "@/components/ui/badge";
+import { BackLink } from "./back-link";
+import { Module } from "@/payload-types";
 
 type Args = {
   params: Promise<{
     slug?: string;
     grade?: string;
-  }>;
-  searchParams: Promise<{
-    assignment?: string;
-    lesson?: string;
+    id?: string;
   }>;
 };
 
-export default async function Assignment({
-  params: paramsPromise1,
-  searchParams: paramsPromise2,
-}: Args) {
-  const { slug = "", grade = "" } = await paramsPromise1;
-  const { assignment = "", lesson = "" } = await paramsPromise2;
+export default async function Assignment({ params: paramsPromise }: Args) {
+  const { slug = "", grade = "", id = "" } = await paramsPromise;
   const queryContent = await queryAssignment({ slug });
   const filteredAssignment = queryContent.assignments?.filter(
-    (item) => item.id === assignment
+    (item) => item.id === id
   )[0];
   return (
     <>
       <RefreshRouteOnSave />
       <div className="container mx-auto px-4 py-8">
         <div className="flex items-center gap-2 mb-6">
-          <Link href={`/lessons/${lesson}/${grade}`}>
-            <Button variant="ghost" size="sm" className="gap-1">
-              <ArrowLeft className="h-4 w-4" /> Back to lesson
-            </Button>
-          </Link>
+          <Suspense>
+            <BackLink grade={grade} />
+          </Suspense>
           <h1 className="text-2xl font-bold">{filteredAssignment?.title}</h1>
         </div>
 
@@ -151,15 +142,22 @@ export async function generateStaticParams() {
   });
 
   const { docs } = pages;
+  const params: {
+    slug: string | null | undefined;
+    level: string;
+    id: string | null | undefined;
+  }[] = [];
 
-  return docs
-    .map((doc) => {
-      // Skip items without a slug
-      if (!doc.slug) return null;
-      // Return the params object with optional grade
-      return {
-        slug: doc.slug,
-      };
-    })
-    .filter(Boolean);
+  docs.forEach((doc) => {
+    const module = doc as Module;
+    module.assignments?.forEach((item) => {
+      params.push({
+        slug: module.slug,
+        level: item.level || "7higher",
+        id: item.id,
+      });
+    });
+  });
+
+  return params;
 }

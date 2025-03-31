@@ -7,10 +7,10 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { useRouter, usePathname, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { Lesson, Module } from "@/payload-types";
+import { Module } from "@/payload-types";
 import { extractLessons } from "@/lib/utils";
 
 export function FeaturedLessons({ data }: { data: Module[] }) {
@@ -25,7 +25,7 @@ export function FeaturedLessons({ data }: { data: Module[] }) {
       <h2 className="text-2xl font-bold mb-6">Featured Lessons</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {lessons.map((item) => (
-          <Card>
+          <Card key={item.id}>
             <CardHeader>
               <CardTitle>{item.title}</CardTitle>
             </CardHeader>

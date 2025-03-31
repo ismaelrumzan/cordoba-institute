@@ -268,7 +268,7 @@ export default async function Lesson({ params: paramsPromise }: Args) {
                     {assignments.map((item) => (
                       <li key={item.id} className="hover:underline">
                         <Link
-                          href={`/modules/${module.slug}/${grade}/assignment?lesson=${slug}&assignment=${item.id}`}>
+                          href={`/modules/${module.slug}/${grade}/${item.id}?lesson=${slug}`}>
                           {item.title}
                         </Link>
                       </li>
