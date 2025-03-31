@@ -38,6 +38,10 @@ export const Lessons: CollectionConfig = {
       required: true,
     },
     {
+      name: "description",
+      type: "text",
+    },
+    {
       name: "level",
       type: "radio",
       options: [

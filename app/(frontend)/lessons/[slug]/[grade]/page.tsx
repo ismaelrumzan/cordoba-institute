@@ -4,18 +4,25 @@ import { draftMode } from "next/headers";
 import { RefreshRouteOnSave } from "@/components/refresh-route";
 import React, { cache } from "react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+} from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Progress } from "@/components/ui/progress";
 import {
   ArrowLeft,
   ArrowRight,
   BookOpen,
+  ClipboardList,
   CheckCircle,
   Loader,
   Video,
   LinkIcon,
   CircleX,
+  FileText,
 } from "lucide-react";
 import { ModuleAudioPlayer } from "@/components/module-audio-player";
 import { GradeLevelWrapper } from "@/components/grade-level-wrapper";
@@ -65,28 +72,28 @@ export default async function Lesson({ params: paramsPromise }: Args) {
   prevLesson =
     moduleLessons[moduleLessons.findIndex((item) => item.slug === slug) - 1] ||
     -1;
+  const assignments = module.assignments?.filter(
+    (item) => item.level === grade
+  );
   return (
     <>
       <RefreshRouteOnSave />
       <div className="container mx-auto px-4 py-8">
         <div className="flex items-center gap-2 mb-6">
-          <Link href="/dashboard">
+          <Link href="/">
             <Button variant="ghost" size="sm" className="gap-1">
               <ArrowLeft className="h-4 w-4" /> Back
             </Button>
           </Link>
           <h1 className="text-2xl font-bold">{queryContent.title}</h1>
         </div>
-
         <GradeLevelWrapper />
-
         {moduleLessons[currentLessonIndex].audio && (
           <ModuleAudioPlayer
             title={queryContent.title}
             audioSrc={audioContent?.url as string}
           />
         )}
-
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="lg:col-span-2">
             <Tabs defaultValue="content">
@@ -190,7 +197,7 @@ export default async function Lesson({ params: paramsPromise }: Args) {
 
             <div className="flex justify-between mt-6">
               {prevLesson?.id ? (
-                <Link href={`/modules/${prevLesson.slug}/${grade}`}>
+                <Link href={`/lessons/${prevLesson.slug}/${grade}`}>
                   <Button variant="outline" className="gap-2">
                     <ArrowLeft className="h-4 w-4" /> Previous Lesson
                   </Button>
@@ -201,7 +208,7 @@ export default async function Lesson({ params: paramsPromise }: Args) {
                 </Button>
               )}
               {nextLesson?.id ? (
-                <Link href={`/modules/${nextLesson.slug}/${grade}`}>
+                <Link href={`/lessons/${nextLesson.slug}/${grade}`}>
                   <Button className="gap-2">
                     Next Lesson <ArrowRight className="h-4 w-4" />
                   </Button>
@@ -213,54 +220,14 @@ export default async function Lesson({ params: paramsPromise }: Args) {
               )}
             </div>
           </div>
-
           <div>
-            <Card>
-              <CardContent className="p-6">
-                <h3 className="text-lg font-bold mb-4">
-                  {module.title} Progress
-                </h3>
-                <div className="mb-6">
-                  <div className="flex justify-between text-sm mb-1">
-                    <span>Completion</span>
-                    <span>{`${progress * 100} %`}</span>
-                  </div>
-                  <Progress value={progress * 100} className="h-2" />
-                </div>
-
-                <h4 className="font-medium text-sm mb-2">Lessons</h4>
-                <ul className="space-y-2">
-                  {moduleLessons.map((section, i) => {
-                    let icon = <CircleX className="h-4 w-4 text-green-500" />;
-                    if (i < currentLessonIndex) {
-                      icon = <CheckCircle className="h-4 w-4 text-green-500" />;
-                    }
-                    if (i === currentLessonIndex) {
-                      icon = <Loader className="h-4 w-4 text-green-500" />;
-                    }
-                    return (
-                      <li className="flex items-center gap-2 text-sm">
-                        {icon}
-                        <span>{section?.title}</span>
-                      </li>
-                    );
-                  })}
-                </ul>
-                {moduleLessons[currentLessonIndex].quizzes &&
-                  moduleLessons[currentLessonIndex].quizzes.length > 0 && (
-                    <div className="mt-6">
-                      <Link href={`/assessments/${slug}/${grade}`}>
-                        <Button className="w-full">Take Module Quiz</Button>
-                      </Link>
-                    </div>
-                  )}
-              </CardContent>
-            </Card>
-
             {moduleLessons[currentLessonIndex].keyconcepts && (
-              <Card className="mt-6">
-                <CardContent className="p-6">
-                  <h3 className="text-lg font-bold mb-4">Key Concepts</h3>
+              <Card className="mb-6">
+                <CardHeader className="flex flex-row items-center gap-2">
+                  <ClipboardList className="h-6 w-6 text-amber-600 mt-0.5" />
+                  <h2 className="text-xl font-medium">Lesson Review</h2>
+                </CardHeader>
+                <CardContent>
                   <RichText
                     className="text-sm [&_ul]:list-outside [&_ul]:ml-3"
                     data={
@@ -268,6 +235,43 @@ export default async function Lesson({ params: paramsPromise }: Args) {
                         .keyconcepts as SerializedEditorState<SerializedLexicalNode>
                     }
                   />
+                </CardContent>
+                <CardFooter>
+                  {moduleLessons[currentLessonIndex].quizzes &&
+                    moduleLessons[currentLessonIndex].quizzes.length > 0 && (
+                      <div>
+                        <Link href={`/quizzes/${slug}/${grade}`}>
+                          <Button className="w-full">Take Lesson Quiz</Button>
+                        </Link>
+                      </div>
+                    )}
+                </CardFooter>
+              </Card>
+            )}
+            {assignments && assignments.length > 0 && (
+              <Card className="bg-amber-50">
+                <CardHeader className="flex flex-row items-center gap-2">
+                  <FileText className="h-6 w-6 text-amber-600 mt-0.5" />
+                  <h2 className="text-xl font-medium">
+                    End of Module Assignment
+                  </h2>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-amber-700 mb-3">
+                    Once you have completed all the lessons in the{" "}
+                    {module.title} modulde, complete an assignment from the
+                    selection below to deepen your understanding.
+                  </p>
+                  <ul className="list-disc ml-3 text-sm">
+                    {assignments.map((item) => (
+                      <li key={item.id} className="hover:underline">
+                        <Link
+                          href={`/modules/${module.slug}/${grade}/assignment?lesson=${slug}&assignment=${item.id}`}>
+                          {item.title}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
                 </CardContent>
               </Card>
             )}

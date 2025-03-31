@@ -34,7 +34,7 @@ export function Quiz({
   );
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [score, setScore] = useState(0);
-  const moduleLink = `/modules/${slug}/${level}`;
+  const moduleLink = `/lessons/${slug}/${level}`;
   // Initialize selected answers if not already done
   if (selectedAnswers.length === 0) {
     setSelectedAnswers(
@@ -115,7 +115,7 @@ export function Quiz({
         <div className="flex items-center gap-2 mb-6">
           <Link href={moduleLink}>
             <Button variant="ghost" size="sm" className="gap-1">
-              <ArrowLeft className="h-4 w-4" /> Back to Module
+              <ArrowLeft className="h-4 w-4" /> Back to Lesson
             </Button>
           </Link>
           <h1 className="text-2xl font-bold">{title} - Assessment</h1>
@@ -160,7 +160,7 @@ export function Quiz({
               </CardContent>
               <CardFooter className="flex justify-between">
                 <Link href={moduleLink}>
-                  <Button variant="outline">Back to Module</Button>
+                  <Button variant="outline">Back to Lesson</Button>
                 </Link>
                 <Link href="/modules/prophet-muhammad">
                   <Button>Next Module</Button>
@@ -186,10 +186,10 @@ export function Quiz({
       <div className="flex items-center gap-2 mb-6">
         <Link href={moduleLink}>
           <Button variant="ghost" size="sm" className="gap-1">
-            <ArrowLeft className="h-4 w-4" /> Back to Module
+            <ArrowLeft className="h-4 w-4" /> Back to Lesson
           </Button>
         </Link>
-        <h1 className="text-2xl font-bold">{title} - Assessment</h1>
+        <h1 className="text-2xl font-bold">{title}</h1>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -197,7 +197,7 @@ export function Quiz({
           <Card>
             <CardHeader>
               <CardTitle>
-                Question {currentQuestion + 1} of {questions.length}
+                Quiz Question {currentQuestion + 1} of {questions.length}
               </CardTitle>
               <CardDescription className="text-red-600 font-semibold">
                 {questions[currentQuestion].quiz.type === "multiple"

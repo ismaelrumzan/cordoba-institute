@@ -33,7 +33,6 @@ export function QuizQuestionComponent({
   onAnswerSelect,
   isSubmitted,
 }: QuizQuestionProps) {
-  console.log(question);
   // For multiple choice questions
   const handleCheckboxChange = (option: string, checked: boolean) => {
     if (!Array.isArray(selectedAnswer)) {

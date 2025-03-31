@@ -241,7 +241,7 @@ export default function DashboardPage() {
             <p className="text-sm text-muted-foreground mb-3">
               {recommendations.nextModule.reason}
             </p>
-            <Link href={`/modules/${recommendations.nextModule.id}`}>
+            <Link href={`/lessons/${recommendations.nextModule.id}`}>
               <Button className="w-full">Start Module</Button>
             </Link>
           </CardContent>
@@ -290,7 +290,7 @@ export default function DashboardPage() {
                           value={module.progress}
                           className="h-2 w-full"
                         />
-                        <Link href={`/modules/${module.id}`} className="mt-2">
+                        <Link href={`/lessons/${module.id}`} className="mt-2">
                           <Button size="sm">
                             {module.progress > 0 ? "Continue" : "Start"}
                           </Button>

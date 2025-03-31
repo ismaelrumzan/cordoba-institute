@@ -179,7 +179,31 @@ export interface Module {
     };
     [k: string]: unknown;
   } | null;
+  order?: number | null;
   lessons?: (string | Lesson)[] | null;
+  assignments?:
+    | {
+        level?: ('6less' | '7higher') | null;
+        title?: string | null;
+        description?: string | null;
+        content?: {
+          root: {
+            type: string;
+            children: {
+              type: string;
+              version: number;
+              [k: string]: unknown;
+            }[];
+            direction: ('ltr' | 'rtl') | null;
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+            indent: number;
+            version: number;
+          };
+          [k: string]: unknown;
+        } | null;
+        id?: string | null;
+      }[]
+    | null;
   slug?: string | null;
   slugLock?: boolean | null;
   updatedAt: string;
@@ -423,7 +447,17 @@ export interface MediaSelect<T extends boolean = true> {
 export interface ModulesSelect<T extends boolean = true> {
   title?: T;
   description?: T;
+  order?: T;
   lessons?: T;
+  assignments?:
+    | T
+    | {
+        level?: T;
+        title?: T;
+        description?: T;
+        content?: T;
+        id?: T;
+      };
   slug?: T;
   slugLock?: T;
   updatedAt?: T;

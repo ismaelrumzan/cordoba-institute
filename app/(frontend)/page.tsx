@@ -1,5 +1,7 @@
 import Link from "next/link";
+import configPromise from "@payload-config";
 import { Button } from "@/components/ui/button";
+import RichText from "@/components/RichText";
 import {
   Card,
   CardContent,
@@ -12,86 +14,27 @@ import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { ArrowRight, BookOpen, Clock } from "lucide-react";
 import { IslamicBadge } from "@/components/islamic-badge";
+import { cache } from "react";
+import { draftMode } from "next/headers";
+import { getPayload } from "payload";
+import {
+  SerializedEditorState,
+  SerializedLexicalNode,
+} from "@payloadcms/richtext-lexical/lexical";
+import { Lesson, Module } from "@/payload-types";
+import { GradeLevelWrapper } from "@/components/grade-level-wrapper";
+import { extractLessons } from "@/lib/utils";
 
-export default function HomePage() {
-  // Sample featured modules
-  const featuredModules = [
-    {
-      id: "14-europe-during-the-high-caliphate-period",
-      title: "Europe During The High Caliphate Period",
-      description:
-        "Explore Anglo-Saxon England during the High Caliphate, where Viking invasions, internal conflicts, and cultural exchanges shaped history, while the Franks and Christianity rose in Europe.",
-      progress: 75,
-      lessons: 1,
-      duration: "20 min",
-      level: "Intermediate",
-    },
-    {
-      id: "prophet-muhammad",
-      title: "The Prophet Muhammad",
-      description:
-        "Discover the early life of Muhammad ﷺ, his reception of revelation, the Makkan and Medinan periods.",
-      progress: 40,
-      lessons: 6,
-      duration: "1.5 hours",
-      level: "Beginner",
-    },
-    {
-      id: "high-caliphate",
-      title: "The High Caliphate Period",
-      description:
-        "Study the Umayyads, Abbasids, and intellectual trends during the High Caliphate.",
-      progress: 10,
-      lessons: 6,
-      duration: "2 hours",
-      level: "Intermediate",
-    },
-    {
-      id: "middle-period",
-      title: "The Middle Period",
-      description:
-        "Learn about the Age of Sultanates, Emirates & Khanates from 1066-1500 CE.",
-      progress: 0,
-      lessons: 7,
-      duration: "2.5 hours",
-      level: "Intermediate",
-    },
-  ];
-
-  // Sample achievements
-  const achievements = [
-    {
-      id: 1,
-      title: "First Module Completed",
-      icon: (
-        <div className="h-10 w-10 flex items-center justify-center bg-green-100 rounded-full text-green-600">
-          <IslamicBadge type="dome" size="md" />
-        </div>
-      ),
-      unlocked: true,
-    },
-    {
-      id: 2,
-      title: "5-Day Learning Streak",
-      icon: (
-        <div className="h-10 w-10 flex items-center justify-center bg-amber-100 rounded-full text-amber-500">
-          <IslamicBadge type="crescent" size="md" />
-        </div>
-      ),
-      unlocked: true,
-    },
-    {
-      id: 3,
-      title: "Quiz Master",
-      icon: (
-        <div className="h-10 w-10 flex items-center justify-center bg-purple-100 rounded-full text-purple-600">
-          <IslamicBadge type="star" size="md" />
-        </div>
-      ),
-      unlocked: false,
-    },
-  ];
-
+export default async function HomePage() {
+  const modules = await queryModules();
+  const modulesWithLessons = modules.filter(
+    (item) => item.lessons && item.lessons?.length > 0
+  ) as Module[];
+  const selectedLevel = "7higher";
+  const featuredLessons = extractLessons(modulesWithLessons)
+    .filter((item) => item.level === selectedLevel)
+    .sort(() => 0.5 - Math.random())
+    .slice(0, 2);
   return (
     <div className="container mx-auto px-4 py-8">
       <section className="mb-12">
@@ -116,20 +59,7 @@ export default function HomePage() {
               lessons, quizzes, and personalized learning paths.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Link href="/modules/world-advent-islam">
-                <Button
-                  size="lg"
-                  className="bg-white text-emerald-800 hover:bg-gray-100">
-                  Continue Learning
-                </Button>
-              </Link>
-              <Link href="/dashboard">
-                <Button
-                  size="lg"
-                  className="border-white text-white hover:bg-emerald-700/40">
-                  Go to Dashboard
-                </Button>
-              </Link>
+              <GradeLevelWrapper showBadge={false} />
             </div>
           </div>
         </div>
@@ -137,128 +67,125 @@ export default function HomePage() {
 
       <section className="mb-12">
         <div className="flex justify-between items-center mb-6">
-          <h2 className="text-2xl font-bold">Your Learning Progress</h2>
-          <Link href="/dashboard">
-            <Button variant="ghost" className="flex items-center gap-2">
-              View Dashboard <ArrowRight className="h-4 w-4" />
-            </Button>
-          </Link>
+          <h2 className="text-2xl font-bold">Featured Modules</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {featuredModules.map((module) => (
-            <Card key={module.id} className="overflow-hidden">
-              <CardHeader className="pb-2">
-                <div className="flex justify-between items-start">
-                  <CardTitle className="text-lg">{module.title}</CardTitle>
-                  <Badge
-                    variant={
-                      module.level === "Beginner" ? "default" : "secondary"
-                    }>
-                    {module.level}
-                  </Badge>
-                </div>
-                <CardDescription>{module.description}</CardDescription>
+          {modules.map((module) => {
+            const all_lessons = module.lessons as Lesson[];
+            const level_lessons = all_lessons?.filter(
+              (item) => item.level === selectedLevel
+            );
+            return (
+              <Card key={module.id} className="overflow-hidden">
+                <CardHeader className="pb-2">
+                  <div className="flex justify-between items-start">
+                    <CardTitle className="text-lg">{module.title}</CardTitle>
+                  </div>
+                  <CardDescription>
+                    <RichText
+                      data={
+                        module.description as SerializedEditorState<SerializedLexicalNode>
+                      }
+                    />
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex justify-between text-sm text-muted-foreground">
+                    <div className="flex items-center gap-1">
+                      <BookOpen className="h-4 w-4" />
+                      <span>
+                        {level_lessons && level_lessons.length > 0
+                          ? `${level_lessons.length} lessons`
+                          : `No lessons available`}
+                      </span>
+                    </div>
+                  </div>
+                  <div>
+                    {level_lessons && level_lessons.length > 0 && (
+                      <ul className="list-disc list-outside ml-4 mt-2">
+                        {level_lessons.map((item) => (
+                          <li className="underline hover:no-underline">
+                            <Link
+                              href={`/lessons/${item.slug}/${selectedLevel}`}>
+                              {item.title}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
+                </CardContent>
+                <CardFooter className="pt-2">
+                  {level_lessons && level_lessons.length > 0 ? (
+                    <Link
+                      href={`/lessons/${level_lessons[0].slug}/7higher`}
+                      className="w-full">
+                      <Button className="w-full">Start Learning</Button>
+                    </Link>
+                  ) : (
+                    <Button className="w-full" disabled>
+                      Start Learning
+                    </Button>
+                  )}
+                </CardFooter>
+              </Card>
+            );
+          })}
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-2xl font-bold mb-6">Featured Lessons</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {featuredLessons.map((item) => (
+            <Card>
+              <CardHeader>
+                <CardTitle>{item.title}</CardTitle>
+                <CardDescription></CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="mb-4">
-                  <div className="flex justify-between text-sm mb-1">
-                    <span>Progress</span>
-                    <span>{module.progress}%</span>
-                  </div>
-                  <Progress value={module.progress} className="h-2" />
-                </div>
-                <div className="flex justify-between text-sm text-muted-foreground">
-                  <div className="flex items-center gap-1">
-                    <BookOpen className="h-4 w-4" />
-                    <span>{module.lessons} lessons</span>
-                  </div>
-                  <div className="flex items-center gap-1">
-                    <Clock className="h-4 w-4" />
-                    <span>{module.duration}</span>
-                  </div>
-                </div>
+                <p className="text-muted-foreground">
+                  Learn about the two great empires that dominated the world,
+                  the Eastern Roman Empire and the Persian Empire, and how they
+                  competed for territory and military superiority.
+                </p>
               </CardContent>
-              <CardFooter className="pt-2">
-                <Link href={`/modules/${module.id}`} className="w-full">
-                  <Button className="w-full">
-                    {module.progress > 0 ? "Continue" : "Start Learning"}
-                  </Button>
+              <CardFooter>
+                <Link
+                  href={`/modules/${item.slug}/${selectedLevel}`}
+                  className="w-full">
+                  <Button className="w-full">Start Lesson</Button>
                 </Link>
               </CardFooter>
             </Card>
           ))}
         </div>
       </section>
-
-      <section className="mb-12">
-        <h2 className="text-2xl font-bold mb-6">Your Achievements</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          {achievements.map((achievement) => (
-            <Card
-              key={achievement.id}
-              className={`${!achievement.unlocked ? "opacity-50" : ""}`}>
-              <CardContent className="pt-6 flex items-center gap-4">
-                {achievement.icon}
-                <div>
-                  <h3 className="font-medium">{achievement.title}</h3>
-                  <p className="text-sm text-muted-foreground">
-                    {achievement.unlocked ? "Unlocked" : "Locked"}
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </section>
-
-      <section>
-        <h2 className="text-2xl font-bold mb-6">Recommended For You</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <Card>
-            <CardHeader>
-              <CardTitle>The World at The Advent of Islam</CardTitle>
-              <CardDescription>
-                Explore the state of the world just before the emergence of
-                Islam.
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground">
-                Learn about the two great empires that dominated the world, the
-                Eastern Roman Empire and the Persian Empire, and how they
-                competed for territory and military superiority.
-              </p>
-            </CardContent>
-            <CardFooter>
-              <Link href="/modules/world-advent-islam" className="w-full">
-                <Button className="w-full">Start Module</Button>
-              </Link>
-            </CardFooter>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle>The Prophet Muhammad ﷺ</CardTitle>
-              <CardDescription>
-                Learn about the life and mission of the final Messenger of God.
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground">
-                Discover the early life of Muhammad ﷺ, his reception of
-                revelation, the Makkan and Medinan periods, and the
-                establishment of the first Islamic Realm.
-              </p>
-            </CardContent>
-            <CardFooter>
-              <Link href="/modules/prophet-muhammad" className="w-full">
-                <Button className="w-full">Start Module</Button>
-              </Link>
-            </CardFooter>
-          </Card>
-        </div>
-      </section>
     </div>
   );
 }
+
+const queryModules = cache(async () => {
+  const { isEnabled: draft } = await draftMode();
+  const payload = await getPayload({ config: configPromise });
+
+  const result = await payload.find({
+    collection: "modules",
+    draft,
+    depth: 2,
+    page: 1,
+    limit: 100,
+    pagination: false,
+    overrideAccess: draft,
+    select: {
+      title: true,
+      description: true,
+      slug: true,
+      lessons: true,
+    },
+    sort: "order",
+  });
+
+  return result.docs || null;
+});

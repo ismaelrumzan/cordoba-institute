@@ -1,32 +1,42 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { BookOpen, Brain, Target } from "lucide-react"
-import Link from "next/link"
+import { useState, useEffect } from "react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { BookOpen, Brain, Target } from "lucide-react";
+import Link from "next/link";
 
 export function AiLearningRecommendation() {
-  const [isLoading, setIsLoading] = useState(true)
-  const [recommendations, setRecommendations] = useState<any>(null)
+  const [isLoading, setIsLoading] = useState(true);
+  const [recommendations, setRecommendations] = useState<any>(null);
 
   useEffect(() => {
     // Simulate API call to get AI recommendations
     const fetchRecommendations = async () => {
-      setIsLoading(true)
+      setIsLoading(true);
       // In a real app, this would be an API call to your AI service
-      await new Promise((resolve) => setTimeout(resolve, 1000))
+      await new Promise((resolve) => setTimeout(resolve, 1000));
 
       setRecommendations({
         nextModule: {
           id: "umar-just",
           title: "Umar the Just",
-          reason: "Based on your completion of Abu Bakr's module and your interest in the Rashidun period",
+          reason:
+            "Based on your completion of Abu Bakr's module and your interest in the Rashidun period",
         },
         learningStyle: "Visual-Historical",
         strengths: ["Early Islamic History", "Biographical Knowledge"],
-        areasToImprove: ["Contextual Understanding", "Chronological Sequencing"],
+        areasToImprove: [
+          "Contextual Understanding",
+          "Chronological Sequencing",
+        ],
         pace: "Accelerated",
         suggestedResources: [
           {
@@ -38,21 +48,24 @@ export function AiLearningRecommendation() {
             type: "Interactive Exercise",
           },
         ],
-      })
+      });
 
-      setIsLoading(false)
-    }
+      setIsLoading(false);
+    };
 
-    fetchRecommendations()
-  }, [])
+    fetchRecommendations();
+  }, []);
 
   if (isLoading) {
     return (
       <Card>
         <CardHeader>
-          <CardTitle className="text-lg">Analyzing your learning patterns...</CardTitle>
+          <CardTitle className="text-lg">
+            Analyzing your learning patterns...
+          </CardTitle>
           <CardDescription>
-            Our AI is personalizing recommendations based on your progress and performance
+            Our AI is personalizing recommendations based on your progress and
+            performance
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -73,7 +86,7 @@ export function AiLearningRecommendation() {
           </div>
         </CardContent>
       </Card>
-    )
+    );
   }
 
   return (
@@ -86,9 +99,13 @@ export function AiLearningRecommendation() {
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <h3 className="font-semibold text-lg mb-1">{recommendations.nextModule.title}</h3>
-          <p className="text-sm text-muted-foreground mb-3">{recommendations.nextModule.reason}</p>
-          <Link href={`/modules/${recommendations.nextModule.id}`}>
+          <h3 className="font-semibold text-lg mb-1">
+            {recommendations.nextModule.title}
+          </h3>
+          <p className="text-sm text-muted-foreground mb-3">
+            {recommendations.nextModule.reason}
+          </p>
+          <Link href={`/lessons/${recommendations.nextModule.id}`}>
             <Button className="w-full">Start Module</Button>
           </Link>
         </CardContent>
@@ -116,31 +133,45 @@ export function AiLearningRecommendation() {
             <div>
               <h3 className="text-sm font-medium mb-1">Strengths</h3>
               <div className="flex flex-wrap gap-2">
-                {recommendations.strengths.map((strength: string, index: number) => (
-                  <Badge key={index} variant="outline" className="bg-green-50 text-green-700 border-green-200">
-                    {strength}
-                  </Badge>
-                ))}
+                {recommendations.strengths.map(
+                  (strength: string, index: number) => (
+                    <Badge
+                      key={index}
+                      variant="outline"
+                      className="bg-green-50 text-green-700 border-green-200">
+                      {strength}
+                    </Badge>
+                  )
+                )}
               </div>
             </div>
 
             <div>
               <h3 className="text-sm font-medium mb-1">Areas to Improve</h3>
               <div className="flex flex-wrap gap-2">
-                {recommendations.areasToImprove.map((area: string, index: number) => (
-                  <Badge key={index} variant="outline" className="bg-amber-50 text-amber-700 border-amber-200">
-                    {area}
-                  </Badge>
-                ))}
+                {recommendations.areasToImprove.map(
+                  (area: string, index: number) => (
+                    <Badge
+                      key={index}
+                      variant="outline"
+                      className="bg-amber-50 text-amber-700 border-amber-200">
+                      {area}
+                    </Badge>
+                  )
+                )}
               </div>
             </div>
 
             <div>
               <h3 className="text-sm font-medium mb-1">Recommended Pace</h3>
-              <Badge variant="outline" className="bg-blue-50 text-blue-700 border-blue-200">
+              <Badge
+                variant="outline"
+                className="bg-blue-50 text-blue-700 border-blue-200">
                 {recommendations.pace}
               </Badge>
-              <p className="text-xs text-muted-foreground mt-1">Based on your quick mastery of previous modules</p>
+              <p className="text-xs text-muted-foreground mt-1">
+                Based on your quick mastery of previous modules
+              </p>
             </div>
           </div>
         </CardContent>
@@ -155,12 +186,14 @@ export function AiLearningRecommendation() {
         </CardHeader>
         <CardContent>
           <ul className="space-y-3">
-            {recommendations.suggestedResources.map((resource: any, index: number) => (
-              <li key={index} className="flex justify-between items-center">
-                <span className="font-medium text-sm">{resource.title}</span>
-                <Badge variant="secondary">{resource.type}</Badge>
-              </li>
-            ))}
+            {recommendations.suggestedResources.map(
+              (resource: any, index: number) => (
+                <li key={index} className="flex justify-between items-center">
+                  <span className="font-medium text-sm">{resource.title}</span>
+                  <Badge variant="secondary">{resource.type}</Badge>
+                </li>
+              )
+            )}
           </ul>
           <Button variant="outline" className="w-full mt-4">
             View All Resources
@@ -168,6 +201,5 @@ export function AiLearningRecommendation() {
         </CardContent>
       </Card>
     </div>
-  )
+  );
 }
-
