@@ -33,6 +33,7 @@ export const extractLessons = (data: Module[]): Lesson[] => {
           title: lesson.title,
           slug: lesson.slug,
           level: lesson.level,
+          description: lesson.description,
           moduleTitle: moduleInfo.title,
           moduleSlug: moduleInfo.slug,
           createdAt: lesson.createdAt,

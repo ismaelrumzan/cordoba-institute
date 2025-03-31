@@ -80,7 +80,7 @@ export default async function Lesson({ params: paramsPromise }: Args) {
       <RefreshRouteOnSave />
       <div className="container mx-auto px-4 py-8">
         <div className="flex items-center gap-2 mb-6">
-          <Link href="/">
+          <Link href={`/?level=${grade}`}>
             <Button variant="ghost" size="sm" className="gap-1">
               <ArrowLeft className="h-4 w-4" /> Back
             </Button>

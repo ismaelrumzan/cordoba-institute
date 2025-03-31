@@ -216,6 +216,7 @@ export interface Module {
 export interface Lesson {
   id: string;
   title: string;
+  description?: string | null;
   level?: ('6less' | '7higher') | null;
   audio?: (string | null) | Media;
   learningcontent?: {
@@ -469,6 +470,7 @@ export interface ModulesSelect<T extends boolean = true> {
  */
 export interface LessonsSelect<T extends boolean = true> {
   title?: T;
+  description?: T;
   level?: T;
   audio?: T;
   learningcontent?: T;
