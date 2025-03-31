@@ -2,7 +2,7 @@ import configPromise from "@payload-config";
 import { getPayload } from "payload";
 import { draftMode } from "next/headers";
 import { RefreshRouteOnSave } from "@/components/refresh-route";
-import React, { cache } from "react";
+import React, { cache, Suspense } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -87,7 +87,9 @@ export default async function Lesson({ params: paramsPromise }: Args) {
           </Link>
           <h1 className="text-2xl font-bold">{queryContent.title}</h1>
         </div>
-        <GradeLevelWrapper />
+        <Suspense>
+          <GradeLevelWrapper />
+        </Suspense>
         {moduleLessons[currentLessonIndex].audio && (
           <ModuleAudioPlayer
             title={queryContent.title}

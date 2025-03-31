@@ -47,9 +47,15 @@ export function GradeLevelSelector({
       const levelParam = searchParams.get("level");
       if (levelParam === "6less") {
         setGradeLevel("elementary");
+        if (onChange) {
+          onChange("elementary");
+        }
       } else {
         // Default to "7higher" if no param or any other value
         setGradeLevel("secondary");
+        if (onChange) {
+          onChange("secondary");
+        }
       }
     }
   }, [gradeLevel]);

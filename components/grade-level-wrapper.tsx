@@ -1,6 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
-import { useSearchParams } from "next/navigation";
+import { useState } from "react";
 import { GradeLevelSelector } from "./grade-level-selector";
 
 export function GradeLevelWrapper({
@@ -15,19 +14,6 @@ export function GradeLevelWrapper({
   const [gradeLevel, setGradeLevel] = useState<"elementary" | "secondary">(
     "secondary"
   );
-  const searchParams = useSearchParams();
-  useEffect(() => {
-    // Get the level from query params
-    const levelParam = searchParams.get("level");
-
-    // Set the grade level based on the query param or default to "7higher" (secondary)
-    if (levelParam === "6less") {
-      setGradeLevel("elementary");
-    } else {
-      // Default to "7higher" if no param or any other value
-      setGradeLevel("secondary");
-    }
-  }, [searchParams]);
   return (
     <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
       {showSelector && (
