@@ -19,6 +19,11 @@ export const Modules: CollectionConfig = {
     { name: "description", type: "richText" },
     { name: "order", type: "number" },
     {
+      name: "series",
+      type: "relationship",
+      relationTo: "series",
+    },
+    {
       name: "lessons",
       type: "relationship",
       relationTo: "lessons",

@@ -70,6 +70,7 @@ export interface Config {
     users: User;
     media: Media;
     modules: Module;
+    series: Series;
     lessons: Lesson;
     quizzes: Quiz;
     tags: Tag;
@@ -82,6 +83,7 @@ export interface Config {
     users: UsersSelect<false> | UsersSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
     modules: ModulesSelect<false> | ModulesSelect<true>;
+    series: SeriesSelect<false> | SeriesSelect<true>;
     lessons: LessonsSelect<false> | LessonsSelect<true>;
     quizzes: QuizzesSelect<false> | QuizzesSelect<true>;
     tags: TagsSelect<false> | TagsSelect<true>;
@@ -180,6 +182,7 @@ export interface Module {
     [k: string]: unknown;
   } | null;
   order?: number | null;
+  series?: (string | null) | Series;
   lessons?: (string | Lesson)[] | null;
   assignments?:
     | {
@@ -204,6 +207,24 @@ export interface Module {
         id?: string | null;
       }[]
     | null;
+  slug?: string | null;
+  slugLock?: boolean | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "series".
+ */
+export interface Series {
+  id: string;
+  title?: string | null;
+  description?: string | null;
+  sourceText?: string | null;
+  sourceLink?: string | null;
+  order?: number | null;
+  timelabel?: string | null;
+  image?: (string | null) | Media;
   slug?: string | null;
   slugLock?: boolean | null;
   updatedAt: string;
@@ -355,6 +376,10 @@ export interface PayloadLockedDocument {
         value: string | Module;
       } | null)
     | ({
+        relationTo: 'series';
+        value: string | Series;
+      } | null)
+    | ({
         relationTo: 'lessons';
         value: string | Lesson;
       } | null)
@@ -449,6 +474,7 @@ export interface ModulesSelect<T extends boolean = true> {
   title?: T;
   description?: T;
   order?: T;
+  series?: T;
   lessons?: T;
   assignments?:
     | T
@@ -459,6 +485,23 @@ export interface ModulesSelect<T extends boolean = true> {
         content?: T;
         id?: T;
       };
+  slug?: T;
+  slugLock?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "series_select".
+ */
+export interface SeriesSelect<T extends boolean = true> {
+  title?: T;
+  description?: T;
+  sourceText?: T;
+  sourceLink?: T;
+  order?: T;
+  timelabel?: T;
+  image?: T;
   slug?: T;
   slugLock?: T;
   updatedAt?: T;

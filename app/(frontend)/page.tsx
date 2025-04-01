@@ -2,13 +2,14 @@ import configPromise from "@payload-config";
 import { cache, Suspense } from "react";
 import { draftMode } from "next/headers";
 import { getPayload } from "payload";
-import { Module } from "@/payload-types";
+import { Media, Module, Series } from "@/payload-types";
 import { GradeLevelWrapper } from "@/components/grade-level-wrapper";
 import { FeaturedLessons } from "./featured-lessons";
 import { FeaturedModules } from "./featured-modules";
+import { ModuleSeries } from "./module-series";
 
 export default async function HomePage() {
-  const modules = await queryModules();
+  const { modules, series } = await queryModules();
   const modulesWithLessons = modules.filter(
     (item) => item.lessons && item.lessons?.length > 0
   ) as Module[];
@@ -45,17 +46,28 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <section className="mb-12">
-        <div className="flex justify-between items-center mb-6">
-          <h2 className="text-2xl font-bold">Featured Modules</h2>
-        </div>
-        <Suspense>
-          <FeaturedModules modules={modules as Module[]} />
-        </Suspense>
-      </section>
-      <Suspense>
-        <FeaturedLessons data={modulesWithLessons} />
-      </Suspense>
+      {series.map((item) => {
+        const serieModules = modules.filter((moduleItem) => {
+          const seriesItem = moduleItem.series as Series;
+          return seriesItem.id === item.id;
+        });
+        const imageItem = item.image as Media;
+        return (
+          <ModuleSeries
+            title={item.title as string}
+            description={item.description as string}
+            source={{
+              sourceLink: item.sourceLink as string,
+              sourceText: item.sourceText as string,
+            }}
+            timelabel={item.timelabel as string}
+            modules={serieModules as Module[]}
+            index={item.order as number}
+            backgroundImage={imageItem.url as string}
+            borderStyle="thin"
+          />
+        );
+      })}
     </div>
   );
 }
@@ -75,11 +87,23 @@ const queryModules = cache(async () => {
     select: {
       title: true,
       description: true,
+      series: true,
       slug: true,
       lessons: true,
     },
     sort: "order",
   });
 
-  return result.docs || null;
+  const series = await payload.find({
+    collection: "series",
+    draft,
+    depth: 2,
+    page: 1,
+    limit: 100,
+    pagination: false,
+    overrideAccess: draft,
+    sort: "order",
+  });
+
+  return { modules: result.docs, series: series.docs };
 });

@@ -15,6 +15,7 @@ import sharp from "sharp";
 import { Users } from "./collections/Users";
 import { Media } from "./collections/Media";
 import { Lessons } from "./collections/Lessons";
+import { Series } from "./collections/Series";
 import { Modules } from "./collections/Modules";
 import { Quizzes } from "./collections/Quizzes";
 import { Tags } from "./collections/Tags";
@@ -29,7 +30,7 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
-  collections: [Users, Media, Modules, Lessons, Quizzes, Tags],
+  collections: [Users, Media, Modules, Series, Lessons, Quizzes, Tags],
   editor: lexicalEditor({
     features: ({ defaultFeatures }) => [
       ...defaultFeatures,
