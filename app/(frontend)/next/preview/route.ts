@@ -5,12 +5,7 @@ import { draftMode } from "next/headers";
 import { redirect } from "next/navigation";
 
 import configPromise from "@payload-config";
-
-interface LessonDoc {
-  id: string;
-  slug: string;
-  content: { level: string }[];
-}
+import { Lesson } from "@/payload-types";
 
 export async function GET(
   req: {
@@ -26,30 +21,10 @@ export async function GET(
   const { searchParams } = new URL(req.url);
 
   const path = searchParams.get("path");
+  const level = searchParams.get("level");
   const collection = searchParams.get("collection") as CollectionSlug;
   const slug = searchParams.get("slug");
   const previewSecret = searchParams.get("previewSecret");
-
-  const query = await payload.find({
-    collection: "lessons",
-    draft: true,
-    limit: 1,
-    overrideAccess: true,
-    pagination: false,
-    where: {
-      slug: {
-        equals: slug,
-      },
-    },
-  });
-
-  const lesson_doc = (query.docs?.[0] as unknown as LessonDoc) || null;
-
-  let level_slug;
-
-  if (lesson_doc) {
-    level_slug = lesson_doc.content[0].level;
-  }
 
   if (previewSecret !== process.env.PREVIEW_SECRET) {
     return new Response("You are not allowed to preview this page", {
@@ -98,5 +73,7 @@ export async function GET(
 
   draft.enable();
 
-  redirect(`${path}/${slug}/${level_slug}`);
+  console.log(`${path}/${slug}/${level}`);
+
+  redirect(`${path}/${slug}/${level}`);
 }

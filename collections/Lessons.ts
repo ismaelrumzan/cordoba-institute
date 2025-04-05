@@ -3,6 +3,8 @@ import { anyone } from "@/access/anyone";
 import { slugField } from "@/fields/slug";
 import { generatePreviewPath } from "@/utilities/generate-preview-path";
 import type { CollectionConfig } from "payload";
+import { revalidateDelete, revalidateLesson } from "./hooks/revalidateLesson";
+import { populatePublishedAt } from "@/hooks/populatePublishedAt";
 
 export const Lessons: CollectionConfig = {
   slug: "lessons",
@@ -11,6 +13,7 @@ export const Lessons: CollectionConfig = {
     preview: (data, { req }) =>
       generatePreviewPath({
         slug: typeof data?.slug === "string" ? data.slug : "",
+        level: typeof data?.level === "string" ? data.level : "",
         collection: "lessons",
         req,
       }),
@@ -18,6 +21,7 @@ export const Lessons: CollectionConfig = {
       url: ({ data, req }) => {
         const path = generatePreviewPath({
           slug: typeof data?.slug === "string" ? data.slug : "",
+          level: typeof data?.level === "string" ? data.level : "",
           collection: "lessons",
           req,
         });
@@ -110,6 +114,11 @@ export const Lessons: CollectionConfig = {
     },
     ...slugField(),
   ],
+  hooks: {
+    afterChange: [revalidateLesson],
+    beforeChange: [populatePublishedAt],
+    afterDelete: [revalidateDelete],
+  },
   versions: {
     drafts: {
       autosave: {

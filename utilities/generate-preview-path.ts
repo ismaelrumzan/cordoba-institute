@@ -1,12 +1,13 @@
 import type { PayloadRequest, CollectionSlug } from "payload";
 
 const collectionPrefixMap: Partial<Record<CollectionSlug, string>> = {
-  lessons: "/modules",
+  lessons: "/lessons",
 };
 
 type Props = {
   collection: keyof typeof collectionPrefixMap;
   slug: string;
+  level: string;
   req: PayloadRequest;
   data?: {
     lesson?: {
@@ -16,7 +17,12 @@ type Props = {
   };
 };
 
-export const generatePreviewPath = ({ collection, slug, data }: Props) => {
+export const generatePreviewPath = ({
+  collection,
+  slug,
+  data,
+  level,
+}: Props) => {
   const prefix = collectionPrefixMap[collection];
   const path = `${prefix}`;
 
@@ -24,6 +30,7 @@ export const generatePreviewPath = ({ collection, slug, data }: Props) => {
     slug,
     collection,
     path,
+    level,
     previewSecret: process.env.PREVIEW_SECRET || "",
   });
 
