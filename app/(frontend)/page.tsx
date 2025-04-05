@@ -4,17 +4,10 @@ import { draftMode } from "next/headers";
 import { getPayload } from "payload";
 import { Media, Module, Series } from "@/payload-types";
 import { GradeLevelWrapper } from "@/components/grade-level-wrapper";
-import { FeaturedLessons } from "./featured-lessons";
-import { FeaturedModules } from "./featured-modules";
 import { ModuleSeries } from "./module-series";
 
 export default async function HomePage() {
   const { modules, series } = await queryModules();
-  console.log();
-  const modulesWithLessons = modules.filter(
-    (item) => item.lessons && item.lessons?.length > 0
-  ) as Module[];
-
   return (
     <div className="container mx-auto px-4 py-8">
       <section className="mb-12">
