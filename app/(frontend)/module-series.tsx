@@ -154,6 +154,13 @@ export function ModuleSeries({
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
+                  {module.timelabel && (
+                    <Badge
+                      variant="outline"
+                      className="border-emerald-200 text-emerald-700 bg-white/80">
+                      {module.timelabel}
+                    </Badge>
+                  )}
                   <div className="flex justify-between text-sm text-muted-foreground">
                     <div className="flex items-center gap-1">
                       <BookOpen className="h-4 w-4" />

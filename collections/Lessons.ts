@@ -3,7 +3,7 @@ import { anyone } from "@/access/anyone";
 import { slugField } from "@/fields/slug";
 import { generatePreviewPath } from "@/utilities/generate-preview-path";
 import type { CollectionConfig } from "payload";
-import { revalidateDelete, revalidateLesson } from "./hooks/revalidateLesson";
+import { revalidateLesson } from "./hooks/revalidateLesson";
 import { populatePublishedAt } from "@/hooks/populatePublishedAt";
 
 export const Lessons: CollectionConfig = {
@@ -117,7 +117,6 @@ export const Lessons: CollectionConfig = {
   hooks: {
     afterChange: [revalidateLesson],
     beforeChange: [populatePublishedAt],
-    afterDelete: [revalidateDelete],
   },
   versions: {
     drafts: {

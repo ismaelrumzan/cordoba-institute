@@ -182,6 +182,7 @@ export interface Module {
     [k: string]: unknown;
   } | null;
   order?: number | null;
+  timelabel?: string | null;
   series?: (string | null) | Series;
   lessons?: (string | Lesson)[] | null;
   assignments?:
@@ -475,6 +476,7 @@ export interface ModulesSelect<T extends boolean = true> {
   title?: T;
   description?: T;
   order?: T;
+  timelabel?: T;
   series?: T;
   lessons?: T;
   assignments?:

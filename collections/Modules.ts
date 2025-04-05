@@ -3,7 +3,7 @@ import type { CollectionConfig } from "payload";
 import { authenticated } from "@/access/authenticated";
 import { anyone } from "@/access/anyone";
 import { populatePublishedAt } from "@/hooks/populatePublishedAt";
-import { revalidateModule, revalidateDelete } from "./hooks/revalidateModule";
+import { revalidateModule } from "./hooks/revalidateModule";
 
 export const Modules: CollectionConfig = {
   slug: "modules",
@@ -20,6 +20,7 @@ export const Modules: CollectionConfig = {
     { name: "title", type: "text" },
     { name: "description", type: "richText" },
     { name: "order", type: "number" },
+    { name: "timelabel", type: "text" },
     {
       name: "series",
       type: "relationship",
@@ -62,7 +63,6 @@ export const Modules: CollectionConfig = {
   hooks: {
     afterChange: [revalidateModule],
     beforeChange: [populatePublishedAt],
-    afterDelete: [revalidateDelete],
   },
   versions: {
     drafts: {

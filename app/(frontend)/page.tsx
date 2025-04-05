@@ -10,6 +10,7 @@ import { ModuleSeries } from "./module-series";
 
 export default async function HomePage() {
   const { modules, series } = await queryModules();
+  console.log();
   const modulesWithLessons = modules.filter(
     (item) => item.lessons && item.lessons?.length > 0
   ) as Module[];
@@ -49,7 +50,7 @@ export default async function HomePage() {
       {series.map((item) => {
         const serieModules = modules.filter((moduleItem) => {
           const seriesItem = moduleItem.series as Series;
-          return seriesItem.id === item.id;
+          return seriesItem?.id === item.id;
         });
         const imageItem = item.image as Media;
         return (
