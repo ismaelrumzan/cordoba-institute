@@ -25,11 +25,12 @@ export default async function HomePage() {
           {/* Content */}
           <div className="relative p-8 md:p-12 text-white">
             <h1 className="text-4xl font-bold mb-4">
-              Islamic History Learning Journey
+              World History Learning Journey
             </h1>
             <p className="text-xl mb-6 max-w-3xl">
-              Explore the rich tapestry of Islamic history through interactive
-              lessons, quizzes, and personalized learning paths.
+              Explore the rich tapestry of world history with an Islamic
+              perspective through rich media content, interactive lessons,
+              quizzes and engaging project-based learning assignments.
             </p>
             <div className="flex flex-wrap gap-4">
               <Suspense>
