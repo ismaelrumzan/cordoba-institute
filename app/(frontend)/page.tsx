@@ -84,6 +84,7 @@ const queryModules = cache(async () => {
       series: true,
       slug: true,
       lessons: true,
+      timelabel: true,
     },
     sort: "order",
   });

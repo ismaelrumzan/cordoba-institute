@@ -155,11 +155,9 @@ export function ModuleSeries({
                 </CardHeader>
                 <CardContent>
                   {module.timelabel && (
-                    <Badge
-                      variant="outline"
-                      className="border-emerald-200 text-emerald-700 bg-white/80">
-                      {module.timelabel}
-                    </Badge>
+                    <div className="mb-2">
+                      <Badge variant="secondary">{module.timelabel} CE</Badge>
+                    </div>
                   )}
                   <div className="flex justify-between text-sm text-muted-foreground">
                     <div className="flex items-center gap-1">
