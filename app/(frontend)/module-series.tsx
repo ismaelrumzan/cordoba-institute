@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 import {
   Card,
   CardContent,
@@ -72,14 +73,16 @@ export function ModuleSeries({
         {/* Background image with gradient overlay */}
         <div className="absolute inset-0 overflow-hidden">
           {backgroundImage && (
-            <>
-              <img
-                src={backgroundImage}
+            <div className="relative w-full h-full">
+              <Image
+                src={backgroundImage || "/placeholder.svg"}
                 alt={`${title} background`}
-                className="w-full h-full object-cover opacity-15"
+                fill
+                priority
+                className="object-cover opacity-15"
               />
               <div className="absolute inset-0 bg-gradient-to-l from-emerald-700/20 via-emerald-50/70 to-white/90"></div>
-            </>
+            </div>
           )}
         </div>
 
