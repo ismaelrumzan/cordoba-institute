@@ -23,6 +23,7 @@ import {
   LinkIcon,
   CircleX,
   FileText,
+  XCircle,
 } from "lucide-react";
 import { ModuleAudioPlayer } from "@/components/module-audio-player";
 import { GradeLevelWrapper } from "@/components/grade-level-wrapper";
@@ -254,33 +255,55 @@ export default async function Lesson({ params: paramsPromise }: Args) {
             </div>
           </div>
           <div>
-            {moduleLessons[currentLessonIndex].keyconcepts && (
-              <Card className="mb-6">
-                <CardHeader className="flex flex-row items-center gap-2">
-                  <ClipboardList className="h-6 w-6 text-amber-600 mt-0.5" />
-                  <h2 className="text-xl font-medium">Lesson Review</h2>
-                </CardHeader>
-                <CardContent>
-                  <RichText
-                    className="text-sm [&_ul]:list-outside [&_ul]:ml-3"
-                    data={
-                      moduleLessons[currentLessonIndex]
-                        .keyconcepts as SerializedEditorState<SerializedLexicalNode>
-                    }
-                  />
-                </CardContent>
-                <CardFooter>
-                  {moduleLessons[currentLessonIndex].quizzes &&
-                    moduleLessons[currentLessonIndex].quizzes.length > 0 && (
-                      <div>
-                        <Link href={`/quizzes/${slug}/${grade}`}>
-                          <Button className="w-full">Take Lesson Quiz</Button>
-                        </Link>
-                      </div>
-                    )}
-                </CardFooter>
-              </Card>
-            )}
+            <Card className="mb-6">
+              <CardHeader className="flex flex-row items-center gap-2">
+                <ClipboardList className="h-6 w-6 text-amber-600 mt-0.5" />
+                <h2 className="text-xl font-medium">Review</h2>
+              </CardHeader>
+              <CardContent>
+                <h3 className="text-lg pb-3">Module: {module.title}</h3>
+                {moduleLessons?.length > 0 && (
+                  <ul className="list-none">
+                    {moduleLessons?.map((item, i) => (
+                      <li className="flex gap-2 items-center">
+                        {i === currentLessonIndex ? (
+                          <Loader className="w-5 h-5 text-primary" />
+                        ) : i < currentLessonIndex ? (
+                          <CheckCircle className="w-5 h-5 text-primary" />
+                        ) : (
+                          <XCircle className="w-5 h-5 text-primary" />
+                        )}
+                        {item.title}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+
+                {moduleLessons[currentLessonIndex].keyconcepts && (
+                  <>
+                    <h3 className="text-xl pt-4 pb-2">Key Concepts</h3>
+                    <RichText
+                      className="text-sm [&_ul]:list-outside [&_ul]:ml-3"
+                      data={
+                        moduleLessons[currentLessonIndex]
+                          .keyconcepts as SerializedEditorState<SerializedLexicalNode>
+                      }
+                    />
+                  </>
+                )}
+              </CardContent>
+              <CardFooter>
+                {moduleLessons[currentLessonIndex].quizzes &&
+                  moduleLessons[currentLessonIndex].quizzes.length > 0 && (
+                    <div>
+                      <Link href={`/quizzes/${slug}/${grade}`}>
+                        <Button className="w-full">Take Lesson Quiz</Button>
+                      </Link>
+                    </div>
+                  )}
+              </CardFooter>
+            </Card>
+
             {assignments && assignments.length > 0 && (
               <Card className="bg-amber-50">
                 <CardHeader className="flex flex-row items-center gap-2">
@@ -351,7 +374,7 @@ const queryPostByLesson = cache(
       },
     });
 
-    return { lesson: result.docs?.[0], module: modules.docs?.[0] };
+    return { lesson: result.docs?.[0], module: modules?.docs?.[0] || [] };
   }
 );
 
