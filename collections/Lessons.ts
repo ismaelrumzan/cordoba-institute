@@ -89,14 +89,6 @@ export const Lessons: CollectionConfig = {
       ],
     },
     {
-      name: "module",
-      type: "relationship",
-      relationTo: "modules",
-      admin: {
-        position: "sidebar",
-      },
-    },
-    {
       name: "keyconcepts",
       label: "Key Concepts",
       type: "richText",

@@ -280,7 +280,6 @@ export interface Lesson {
         id?: string | null;
       }[]
     | null;
-  module?: (string | null) | Module;
   keyconcepts?: {
     root: {
       type: string;
@@ -530,7 +529,6 @@ export interface LessonsSelect<T extends boolean = true> {
         src?: T;
         id?: T;
       };
-  module?: T;
   keyconcepts?: T;
   quizzes?:
     | T

@@ -38,9 +38,10 @@ import {
   SerializedEditorState,
   SerializedLexicalNode,
 } from "@payloadcms/richtext-lexical/lexical";
+import Image from "next/image";
 import Link from "next/link";
 import RichText from "@/components/RichText";
-import { Lesson as LessonType, Media, Module } from "@/payload-types";
+import { Lesson as LessonType, Media, Series } from "@/payload-types";
 
 type Args = {
   params: Promise<{
@@ -52,14 +53,16 @@ type Args = {
 export default async function Lesson({ params: paramsPromise }: Args) {
   const { slug = "", grade = "" } = await paramsPromise;
   const queryContent = await queryPostByLesson({ slug, grade });
-  const lessonContent = queryContent.learningcontent;
-  const audioContent = queryContent?.audio as Media;
-  const module = queryContent.module as Module;
+  const lessonContent = queryContent.lesson.learningcontent;
+  const audioContent = queryContent?.lesson.audio as Media;
+  const module = queryContent.module;
   const lessons = module.lessons as LessonType[];
-  const moduleLessons = lessons.filter((item) => item.level === grade);
+  const moduleLessons = lessons?.filter((item) => item.level === grade);
   const currentLessonIndex = moduleLessons.findIndex(
     (item) => item.slug === slug
   );
+  const moduleSeries = module.series as Series;
+  const seriesImage = moduleSeries.image as Media;
   const progress =
     currentLessonIndex === 0
       ? currentLessonIndex + 1 / moduleLessons.length
@@ -78,21 +81,49 @@ export default async function Lesson({ params: paramsPromise }: Args) {
   return (
     <>
       <RefreshRouteOnSave />
-      <div className="container mx-auto px-4 py-8">
-        <div className="flex items-center gap-2 mb-6">
-          <Link href={`/?level=${grade}`}>
-            <Button variant="ghost" size="sm" className="gap-1">
-              <ArrowLeft className="h-4 w-4" /> Back
-            </Button>
-          </Link>
-          <h1 className="text-2xl font-bold">{queryContent.title}</h1>
+      <header className="overflow-hidden w-full h-[100px] fixed">
+        <div>
+          {/* Background image with overlay */}
+          <div className="absolute inset-0">
+            <div className="relative w-full h-full">
+              <Image
+                src={seriesImage.url as string}
+                alt={moduleSeries.title as string}
+                fill
+                priority
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-emerald-900/80 to-teal-800/30"></div>
+            </div>
+          </div>
+          <div className="relative container mx-auto text-white py-3">
+            <div className="flex gap-2 mb-3">
+              <div className="grow">
+                <Link href={`/`}>
+                  <h1 className="text-4xl font-bold mb-2 hover:underline">
+                    {moduleSeries.title as string}
+                  </h1>
+                </Link>
+                <h2 className="text-2xl font-bold grow">
+                  {queryContent.lesson.title}
+                </h2>
+              </div>
+              <Link href={`/?level=${grade}`}>
+                <Button variant="ghost" size="sm" className="gap-1">
+                  <ArrowLeft className="h-4 w-4" /> Back
+                </Button>
+              </Link>
+            </div>
+          </div>
         </div>
+      </header>
+      <div className="container mx-auto px-4 pb-3 pt-[120px]">
         <Suspense>
           <GradeLevelWrapper />
         </Suspense>
         {moduleLessons[currentLessonIndex].audio && (
           <ModuleAudioPlayer
-            title={queryContent.title}
+            title={queryContent.lesson.title}
             audioSrc={audioContent?.url as string}
           />
         )}
@@ -132,7 +163,7 @@ export default async function Lesson({ params: paramsPromise }: Args) {
                           Additional Resources
                         </h3>
                         <ul className="space-y-4">
-                          {queryContent.resources?.map((resource) => {
+                          {queryContent.lesson.resources?.map((resource) => {
                             let icon;
                             if (resource.type === "book") {
                               icon = (
@@ -306,7 +337,21 @@ const queryPostByLesson = cache(
       },
     });
 
-    return result.docs?.[0] || null;
+    const modules = await payload.find({
+      collection: "modules",
+      draft,
+      limit: 1,
+      depth: 2,
+      overrideAccess: draft,
+      pagination: false,
+      where: {
+        "lessons.slug": {
+          equals: slug,
+        },
+      },
+    });
+
+    return { lesson: result.docs?.[0], module: modules.docs?.[0] };
   }
 );
 
