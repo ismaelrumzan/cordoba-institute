@@ -2,7 +2,8 @@ import configPromise from "@payload-config";
 import { getPayload } from "payload";
 import { draftMode } from "next/headers";
 import { RefreshRouteOnSave } from "@/components/refresh-route";
-import React, { cache, Suspense } from "react";
+import { unstable_cache } from "next/cache";
+import React, { Suspense } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -338,7 +339,7 @@ export default async function Lesson({ params: paramsPromise }: Args) {
   );
 }
 
-const queryPostByLesson = cache(
+const queryPostByLesson = unstable_cache(
   async ({ slug, grade }: { slug: string; grade: string }) => {
     const { isEnabled: draft } = await draftMode();
     const payload = await getPayload({ config: configPromise });
