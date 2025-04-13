@@ -1,4 +1,4 @@
-import type { QuizItem } from "@/lib/data/types";
+import type { QuizItem } from "@/lib/types";
 
 export const lesson187higher: QuizItem[] = [
   {
@@ -9,15 +9,36 @@ export const lesson187higher: QuizItem[] = [
       { title: "True", correct: false },
       { title: "False", correct: true },
     ],
-    feedback: [
-      {
+    feedback: {
+      root: {
+        type: "root",
         children: [
           {
-            text: "False. The Buyids did not remove the Abbasid Caliph. Instead, they reduced his power and made most of the major decisions themselves while keeping the Caliph as a figurehead.",
+            type: "paragraph",
+            children: [
+              {
+                type: "text",
+                detail: 0,
+                format: 0,
+                mode: "normal",
+                style: "",
+                text: "False. The Buyids did not remove the Abbasid Caliph. Instead, they reduced his power and made most of the major decisions themselves while keeping the Caliph as a figurehead.",
+                version: 1,
+              },
+            ],
+            direction: "ltr",
+            format: "",
+            indent: 0,
+            textFormat: 0,
+            version: 1,
           },
         ],
+        direction: "ltr",
+        format: "",
+        indent: 0,
+        version: 1,
       },
-    ],
+    },
     tags: ["7higher", "the-middle-period"],
   },
   {
@@ -28,16 +49,37 @@ export const lesson187higher: QuizItem[] = [
       { title: "True", correct: false },
       { title: "False", correct: true },
     ],
-    feedback: [
-      {
+    feedback: {
+      root: {
+        type: "root",
         children: [
           {
-            text: "False. The period is called the 'Shi'a Century' because Shi'a dynasties like the Buyids, Fatimids, and Hamdanids were in power and supported Shi'a learning. However, most Muslims remained Sunni during this period.",
+            type: "paragraph",
+            children: [
+              {
+                type: "text",
+                detail: 0,
+                format: 0,
+                mode: "normal",
+                style: "",
+                text: "False. The period is called the 'Shi'a Century' because Shi'a dynasties like the Buyids, Fatimids, and Hamdanids were in power and supported Shi'a learning. However, most Muslims remained Sunni during this period.",
+                version: 1,
+              },
+            ],
+            direction: "ltr",
+            format: "",
+            indent: 0,
+            textFormat: 0,
+            version: 1,
           },
         ],
+        direction: "ltr",
+        format: "",
+        indent: 0,
+        version: 1,
       },
-    ],
-    tags: ["chapter18", "middle-period", "shia-century", "islamic-sects"],
+    },
+    tags: ["7higher", "the-middle-period"],
   },
   {
     title:
@@ -47,15 +89,36 @@ export const lesson187higher: QuizItem[] = [
       { title: "True", correct: true },
       { title: "False", correct: false },
     ],
-    feedback: [
-      {
+    feedback: {
+      root: {
+        type: "root",
         children: [
           {
-            text: "True. Imam Ghazali is considered to be the Revivor ('mujaddid') of the 6th Islamic century and was given the unique title 'Hujjatul-Islam' ('the Proof of Islam') due to his significant contributions to Islamic thought.",
+            type: "paragraph",
+            children: [
+              {
+                type: "text",
+                detail: 0,
+                format: 0,
+                mode: "normal",
+                style: "",
+                text: "True. Imam Ghazali is considered to be the Revivor ('mujaddid') of the 6th Islamic century and was given the unique title 'Hujjatul-Islam' ('the Proof of Islam') due to his significant contributions to Islamic thought.",
+                version: 1,
+              },
+            ],
+            direction: "ltr",
+            format: "",
+            indent: 0,
+            textFormat: 0,
+            version: 1,
           },
         ],
+        direction: "ltr",
+        format: "",
+        indent: 0,
+        version: 1,
       },
-    ],
+    },
     tags: ["7higher", "the-middle-period"],
   },
   {
@@ -68,15 +131,36 @@ export const lesson187higher: QuizItem[] = [
       { title: "The Seljuks", correct: true },
       { title: "The Hamdanids", correct: false },
     ],
-    feedback: [
-      {
+    feedback: {
+      root: {
+        type: "root",
         children: [
           {
-            text: "The Seljuks, a Turkic tribe, took control of Baghdad in 1055. They were Sunni, and their arrival brought about a 'Sunni revival.' They restored the power of the Abbasid Sunni Caliphate, though they maintained military and political control.",
+            type: "paragraph",
+            children: [
+              {
+                type: "text",
+                detail: 0,
+                format: 0,
+                mode: "normal",
+                style: "",
+                text: "The Seljuks, a Turkic tribe, took control of Baghdad in 1055. They were Sunni, and their arrival brought about a 'Sunni revival.' They restored the power of the Abbasid Sunni Caliphate, though they maintained military and political control.",
+                version: 1,
+              },
+            ],
+            direction: "ltr",
+            format: "",
+            indent: 0,
+            textFormat: 0,
+            version: 1,
           },
         ],
+        direction: "ltr",
+        format: "",
+        indent: 0,
+        version: 1,
       },
-    ],
+    },
     tags: ["7higher", "the-middle-period"],
   },
   {
@@ -91,15 +175,36 @@ export const lesson187higher: QuizItem[] = [
       },
       { title: "Muqaddimah (Introduction to History)", correct: false },
     ],
-    feedback: [
-      {
+    feedback: {
+      root: {
+        type: "root",
         children: [
           {
-            text: "Imam Ghazali's famous magnum opus was 'Ihya Ulum al-Deen' (Revival of the Religious Sciences), which he wrote after returning from his 10-year spiritual journey.",
+            type: "paragraph",
+            children: [
+              {
+                type: "text",
+                detail: 0,
+                format: 0,
+                mode: "normal",
+                style: "",
+                text: "Imam Ghazali's famous magnum opus was 'Ihya Ulum al-Deen' (Revival of the Religious Sciences), which he wrote after returning from his 10-year spiritual journey.",
+                version: 1,
+              },
+            ],
+            direction: "ltr",
+            format: "",
+            indent: 0,
+            textFormat: 0,
+            version: 1,
           },
         ],
+        direction: "ltr",
+        format: "",
+        indent: 0,
+        version: 1,
       },
-    ],
+    },
     tags: ["7higher", "the-middle-period"],
   },
   {
@@ -112,15 +217,36 @@ export const lesson187higher: QuizItem[] = [
       { title: "Qarawiyyin University in Fez", correct: true },
       { title: "University of Bologna in Italy", correct: false },
     ],
-    feedback: [
-      {
+    feedback: {
+      root: {
+        type: "root",
         children: [
           {
-            text: "The Qarawiyyin University in Fez, Morocco, founded by Fatima al-Fihri in 859 CE, is considered to be the oldest operational university in the world.",
+            type: "paragraph",
+            children: [
+              {
+                type: "text",
+                detail: 0,
+                format: 0,
+                mode: "normal",
+                style: "",
+                text: "The Qarawiyyin University in Fez, Morocco, founded by Fatima al-Fihri in 859 CE, is considered to be the oldest operational university in the world.",
+                version: 1,
+              },
+            ],
+            direction: "ltr",
+            format: "",
+            indent: 0,
+            textFormat: 0,
+            version: 1,
           },
         ],
+        direction: "ltr",
+        format: "",
+        indent: 0,
+        version: 1,
       },
-    ],
+    },
     tags: ["7higher", "the-middle-period"],
   },
   {
@@ -134,15 +260,36 @@ export const lesson187higher: QuizItem[] = [
       { title: "Seljuks", correct: false },
       { title: "Abbasids", correct: false },
     ],
-    feedback: [
-      {
+    feedback: {
+      root: {
+        type: "root",
         children: [
           {
-            text: "The Buyids, Fatimids, and Hamdanids were all Shi'a dynasties during the 'Shi'a Century' (945-1055). The Seljuks were Sunni, and the Abbasids, while reduced to figureheads during this period, were also Sunni.",
+            type: "paragraph",
+            children: [
+              {
+                type: "text",
+                detail: 0,
+                format: 0,
+                mode: "normal",
+                style: "",
+                text: "The Buyids, Fatimids, and Hamdanids were all Shi'a dynasties during the 'Shi'a Century' (945-1055). The Seljuks were Sunni, and the Abbasids, while reduced to figureheads during this period, were also Sunni.",
+                version: 1,
+              },
+            ],
+            direction: "ltr",
+            format: "",
+            indent: 0,
+            textFormat: 0,
+            version: 1,
           },
         ],
+        direction: "ltr",
+        format: "",
+        indent: 0,
+        version: 1,
       },
-    ],
+    },
     tags: ["7higher", "the-middle-period"],
   },
   {
@@ -156,15 +303,36 @@ export const lesson187higher: QuizItem[] = [
       { title: "Khaniqahs (Sufi lodges)", correct: true },
       { title: "Caliphate", correct: false },
     ],
-    feedback: [
-      {
+    feedback: {
+      root: {
+        type: "root",
         children: [
           {
-            text: "Madhhabs (schools of law), tariqas (Sufi orders), madrasahs (colleges), and khaniqahs (Sufi lodges) were all social institutions that helped maintain cultural unity across the Islamic world during the Middle Period. The Caliphate, while historically a unifying institution, had lost much of its power and was no longer the primary source of unity during this period.",
+            type: "paragraph",
+            children: [
+              {
+                type: "text",
+                detail: 0,
+                format: 0,
+                mode: "normal",
+                style: "",
+                text: "Madhhabs (schools of law), tariqas (Sufi orders), madrasahs (colleges), and khaniqahs (Sufi lodges) were all social institutions that helped maintain cultural unity across the Islamic world during the Middle Period. The Caliphate, while historically a unifying institution, had lost much of its power and was no longer the primary source of unity during this period.",
+                version: 1,
+              },
+            ],
+            direction: "ltr",
+            format: "",
+            indent: 0,
+            textFormat: 0,
+            version: 1,
           },
         ],
+        direction: "ltr",
+        format: "",
+        indent: 0,
+        version: 1,
       },
-    ],
+    },
     tags: ["7higher", "the-middle-period"],
   },
   {
@@ -194,15 +362,36 @@ export const lesson187higher: QuizItem[] = [
       },
       { title: "They were controlled directly by the Caliph", correct: false },
     ],
-    feedback: [
-      {
+    feedback: {
+      root: {
+        type: "root",
         children: [
           {
-            text: "Madrasahs were the first institutions specifically set up to train scholars, they welcomed students from different social backgrounds, and they taught various subjects including Qur'anic studies, hadith, theology, law, and Arabic grammar. They were not exclusively for religious education and were generally independent from government control.",
+            type: "paragraph",
+            children: [
+              {
+                type: "text",
+                detail: 0,
+                format: 0,
+                mode: "normal",
+                style: "",
+                text: "Madrasahs were the first institutions specifically set up to train scholars, they welcomed students from different social backgrounds, and they taught various subjects including Qur'anic studies, hadith, theology, law, and Arabic grammar. They were not exclusively for religious education and were generally independent from government control.",
+                version: 1,
+              },
+            ],
+            direction: "ltr",
+            format: "",
+            indent: 0,
+            textFormat: 0,
+            version: 1,
           },
         ],
+        direction: "ltr",
+        format: "",
+        indent: 0,
+        version: 1,
       },
-    ],
+    },
     tags: ["7higher", "the-middle-period"],
   },
   {
@@ -230,15 +419,36 @@ export const lesson187higher: QuizItem[] = [
         correct: false,
       },
     ],
-    feedback: [
-      {
+    feedback: {
+      root: {
+        type: "root",
         children: [
           {
-            text: "Imam Ghazali was born in Tus, Persia, became a professor at the Nizamiyya University in Baghdad, experienced a spiritual crisis that led him to leave his position at the height of his fame, and spent 10 years on a spiritual journey before returning to teaching. He was a Sunni scholar, not a Shi'a scholar, and lived during the Seljuk period, not the Buyid dynasty.",
+            type: "paragraph",
+            children: [
+              {
+                type: "text",
+                detail: 0,
+                format: 0,
+                mode: "normal",
+                style: "",
+                text: "Imam Ghazali was born in Tus, Persia, became a professor at the Nizamiyya University in Baghdad, experienced a spiritual crisis that led him to leave his position at the height of his fame, and spent 10 years on a spiritual journey before returning to teaching. He was a Sunni scholar, not a Shi'a scholar, and lived during the Seljuk period, not the Buyid dynasty.",
+                version: 1,
+              },
+            ],
+            direction: "ltr",
+            format: "",
+            indent: 0,
+            textFormat: 0,
+            version: 1,
           },
         ],
+        direction: "ltr",
+        format: "",
+        indent: 0,
+        version: 1,
       },
-    ],
+    },
     tags: ["7higher", "the-middle-period"],
   },
 ];

@@ -1,3 +1,5 @@
+import { Quiz } from "@/payload-types";
+
 // Define the structure of a quiz item
 export interface QuizItem {
   title: string;
@@ -6,10 +8,6 @@ export interface QuizItem {
     title: string;
     correct: boolean;
   }[];
-  feedback: {
-    children: {
-      text: string;
-    }[];
-  }[];
+  feedback: Quiz["feedback"];
   tags: string[];
 }

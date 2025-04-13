@@ -1,4 +1,4 @@
-import type { QuizItem } from "../types";
+import type { QuizItem } from "@/lib/types";
 
 export const lesson186less: QuizItem[] = [
   {
@@ -9,15 +9,36 @@ export const lesson186less: QuizItem[] = [
       { title: "True", correct: false },
       { title: "False", correct: true },
     ],
-    feedback: [
-      {
+    feedback: {
+      root: {
+        type: "root",
         children: [
           {
-            text: "False. The Buyids did not remove the Abbasid Caliph. They let him stay as a religious leader, but they made all the important decisions themselves.",
+            type: "paragraph",
+            children: [
+              {
+                type: "text",
+                detail: 0,
+                format: 0,
+                mode: "normal",
+                style: "",
+                text: "False. The Buyids did not remove the Abbasid Caliph. They let him stay as a religious leader, but they made all the important decisions themselves.",
+                version: 1,
+              },
+            ],
+            direction: "ltr",
+            format: "",
+            indent: 0,
+            textFormat: 0,
+            version: 1,
           },
         ],
+        direction: "ltr",
+        format: "",
+        indent: 0,
+        version: 1,
       },
-    ],
+    },
     tags: ["6less", "the-middle-period"],
   },
   {
@@ -28,15 +49,36 @@ export const lesson186less: QuizItem[] = [
       { title: "True", correct: true },
       { title: "False", correct: false },
     ],
-    feedback: [
-      {
+    feedback: {
+      root: {
+        type: "root",
         children: [
           {
-            text: "True. After his 10-year spiritual journey, Imam Ghazali returned to teaching and wrote his famous book called 'Revival of the Religious Sciences.'",
+            type: "paragraph",
+            children: [
+              {
+                type: "text",
+                detail: 0,
+                format: 0,
+                mode: "normal",
+                style: "",
+                text: "True. After his 10-year spiritual journey, Imam Ghazali returned to teaching and wrote his famous book called 'Revival of the Religious Sciences.'",
+                version: 1,
+              },
+            ],
+            direction: "ltr",
+            format: "",
+            indent: 0,
+            textFormat: 0,
+            version: 1,
           },
         ],
+        direction: "ltr",
+        format: "",
+        indent: 0,
+        version: 1,
       },
-    ],
+    },
     tags: ["6less", "the-middle-period"],
   },
   {
@@ -49,15 +91,36 @@ export const lesson186less: QuizItem[] = [
       { title: "The Seljuks", correct: true },
       { title: "The Hamdanids", correct: false },
     ],
-    feedback: [
-      {
+    feedback: {
+      root: {
+        type: "root",
         children: [
           {
-            text: "The Seljuks took control of Baghdad in 1055. They were Sunni Muslims, and they brought back Sunni leadership. This is called the 'Sunni revival.'",
+            type: "paragraph",
+            children: [
+              {
+                type: "text",
+                detail: 0,
+                format: 0,
+                mode: "normal",
+                style: "",
+                text: "The Seljuks took control of Baghdad in 1055. They were Sunni Muslims, and they brought back Sunni leadership. This is called the 'Sunni revival.'",
+                version: 1,
+              },
+            ],
+            direction: "ltr",
+            format: "",
+            indent: 0,
+            textFormat: 0,
+            version: 1,
           },
         ],
+        direction: "ltr",
+        format: "",
+        indent: 0,
+        version: 1,
       },
-    ],
+    },
     tags: ["6less", "the-middle-period"],
   },
   {
@@ -70,15 +133,36 @@ export const lesson186less: QuizItem[] = [
       { title: "Qarawiyyin University", correct: true },
       { title: "Oxford University", correct: false },
     ],
-    feedback: [
-      {
+    feedback: {
+      root: {
+        type: "root",
         children: [
           {
-            text: "The Qarawiyyin University in Fez, Morocco is considered the oldest university in the world that's still operating today. It was founded by a woman named Fatima al-Fihri in 859 CE.",
+            type: "paragraph",
+            children: [
+              {
+                type: "text",
+                detail: 0,
+                format: 0,
+                mode: "normal",
+                style: "",
+                text: "The Qarawiyyin University in Fez, Morocco is considered the oldest university in the world that's still operating today. It was founded by a woman named Fatima al-Fihri in 859 CE.",
+                version: 1,
+              },
+            ],
+            direction: "ltr",
+            format: "",
+            indent: 0,
+            textFormat: 0,
+            version: 1,
           },
         ],
+        direction: "ltr",
+        format: "",
+        indent: 0,
+        version: 1,
       },
-    ],
+    },
     tags: ["6less", "the-middle-period"],
   },
   {
@@ -92,15 +176,36 @@ export const lesson186less: QuizItem[] = [
       { title: "Seljuks", correct: false },
       { title: "Abbasids", correct: false },
     ],
-    feedback: [
-      {
+    feedback: {
+      root: {
+        type: "root",
         children: [
           {
-            text: "The Buyids, Fatimids, and Hamdanids were all Shi'a Muslim groups who ruled during the 'Shi'a Century' (945-1055). The Seljuks were Sunni Muslims, and the Abbasids were also Sunni.",
+            type: "paragraph",
+            children: [
+              {
+                type: "text",
+                detail: 0,
+                format: 0,
+                mode: "normal",
+                style: "",
+                text: "The Buyids, Fatimids, and Hamdanids were all Shi'a Muslim groups who ruled during the 'Shi'a Century' (945-1055). The Seljuks were Sunni Muslims, and the Abbasids were also Sunni.",
+                version: 1,
+              },
+            ],
+            direction: "ltr",
+            format: "",
+            indent: 0,
+            textFormat: 0,
+            version: 1,
           },
         ],
+        direction: "ltr",
+        format: "",
+        indent: 0,
+        version: 1,
       },
-    ],
+    },
     tags: ["6less", "the-middle-period"],
   },
   {
@@ -120,15 +225,36 @@ export const lesson186less: QuizItem[] = [
       { title: "Places only for rich people", correct: false },
       { title: "Buildings only used for prayer", correct: false },
     ],
-    feedback: [
-      {
+    feedback: {
+      root: {
+        type: "root",
         children: [
           {
-            text: "Madrasahs were schools where scholars were trained. Students from all backgrounds could learn there. They taught subjects like Quran, Islamic law, and Arabic grammar. They were not only for rich people, and they were not just buildings for prayer.",
+            type: "paragraph",
+            children: [
+              {
+                type: "text",
+                detail: 0,
+                format: 0,
+                mode: "normal",
+                style: "",
+                text: "Madrasahs were schools where scholars were trained. Students from all backgrounds could learn there. They taught subjects like Quran, Islamic law, and Arabic grammar. They were not only for rich people, and they were not just buildings for prayer.",
+                version: 1,
+              },
+            ],
+            direction: "ltr",
+            format: "",
+            indent: 0,
+            textFormat: 0,
+            version: 1,
           },
         ],
+        direction: "ltr",
+        format: "",
+        indent: 0,
+        version: 1,
       },
-    ],
+    },
     tags: ["6less", "the-middle-period"],
   },
   {
@@ -148,15 +274,36 @@ export const lesson186less: QuizItem[] = [
       },
       { title: "He never wrote any books", correct: false },
     ],
-    feedback: [
-      {
+    feedback: {
+      root: {
+        type: "root",
         children: [
           {
-            text: "Imam Ghazali was born in Tus, Persia (now Iran). He was a teacher at the Nizamiyya University in Baghdad. He left his job to go on a spiritual journey for 10 years. He was a Sunni Muslim, not a Shi'a Muslim. And he wrote many books, including his famous 'Revival of the Religious Sciences.'",
+            type: "paragraph",
+            children: [
+              {
+                type: "text",
+                detail: 0,
+                format: 0,
+                mode: "normal",
+                style: "",
+                text: "Imam Ghazali was born in Tus, Persia (now Iran). He was a teacher at the Nizamiyya University in Baghdad. He left his job to go on a spiritual journey for 10 years. He was a Sunni Muslim, not a Shi'a Muslim. And he wrote many books, including his famous 'Revival of the Religious Sciences.'",
+                version: 1,
+              },
+            ],
+            direction: "ltr",
+            format: "",
+            indent: 0,
+            textFormat: 0,
+            version: 1,
           },
         ],
+        direction: "ltr",
+        format: "",
+        indent: 0,
+        version: 1,
       },
-    ],
+    },
     tags: ["6less", "the-middle-period"],
   },
 ];
