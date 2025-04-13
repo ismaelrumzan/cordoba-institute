@@ -53,21 +53,19 @@ export default async function HomePage() {
         });
         const imageItem = item.image as Media;
         return (
-          <Suspense fallback={<div>Loading</div>}>
-            <ModuleSeries
-              title={item.title as string}
-              description={item.description as string}
-              source={{
-                sourceLink: item.sourceLink as string,
-                sourceText: item.sourceText as string,
-              }}
-              timelabel={item.timelabel as string}
-              modules={serieModules as Module[]}
-              index={item.order as number}
-              backgroundImage={imageItem.url as string}
-              borderStyle="thin"
-            />
-          </Suspense>
+          <ModuleSeries
+            title={item.title as string}
+            description={item.description as string}
+            source={{
+              sourceLink: item.sourceLink as string,
+              sourceText: item.sourceText as string,
+            }}
+            timelabel={item.timelabel as string}
+            modules={serieModules as Module[]}
+            index={item.order as number}
+            backgroundImage={imageItem.url as string}
+            borderStyle="thin"
+          />
         );
       })}
     </div>
