@@ -1,0 +1,319 @@
+{
+  "lesson": "the-amazing-adventures-of-ibn-battuta",
+  "module": "the-middle-period",
+  "level": "6less",
+  "questions": [
+    {
+      "title": "True or False: Ibn Battuta traveled for 30 years and went around the world three times.",
+      "type": "t/f",
+      "answers": [
+        { "title": "True", "correct": true },
+        { "title": "False", "correct": false }
+      ],
+      "feedback": {
+        "root": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "Correct! Ibn Battuta traveled for 30 years and covered about 75,000 miles, which is like going around the Earth three times.",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "textFormat": 0,
+              "version": 1
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1
+        }
+      },
+      "tags": ["chapter21-simplified", "ibn-battuta", "travel-distance"]
+    },
+    {
+      "title": "True or False: Ibn Battuta needed a passport to travel between different Muslim countries.",
+      "type": "t/f",
+      "answers": [
+        { "title": "True", "correct": false },
+        { "title": "False", "correct": true }
+      ],
+      "feedback": {
+        "root": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "Correct! Ibn Battuta did not need a passport. He could travel freely between Muslim countries because they recognized his knowledge of Islamic law.",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "textFormat": 0,
+              "version": 1
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1
+        }
+      },
+      "tags": ["chapter21-simplified", "ibn-battuta", "travel-documents"]
+    },
+    {
+      "title": "Why did Ibn Battuta start his journey?",
+      "type": "single",
+      "answers": [
+        { "title": "To find gold and become rich", "correct": false },
+        { "title": "To make a pilgrimage to Mecca", "correct": true },
+        { "title": "To escape from enemies", "correct": false },
+        { "title": "To find new trade routes", "correct": false }
+      ],
+      "feedback": {
+        "root": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "Correct! Ibn Battuta started his journey to make a pilgrimage to Mecca, which is a holy city for Muslims.",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "textFormat": 0,
+              "version": 1
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1
+        }
+      },
+      "tags": [
+        "chapter21-simplified",
+        "ibn-battuta",
+        "journey-purpose",
+        "mecca"
+      ]
+    },
+    {
+      "title": "What amazing thing did Ibn Battuta see in Constantinople?",
+      "type": "single",
+      "answers": [
+        { "title": "A flying carpet", "correct": false },
+        {
+          "title": "A mechanical throne that moved by itself",
+          "correct": true
+        },
+        { "title": "A giant elephant", "correct": false },
+        { "title": "A ship made of gold", "correct": false }
+      ],
+      "feedback": {
+        "root": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "Correct! In Constantinople, Ibn Battuta saw a mechanical throne covered in gold and jewels that could move by itself.",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "textFormat": 0,
+              "version": 1
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1
+        }
+      },
+      "tags": [
+        "chapter21-simplified",
+        "ibn-battuta",
+        "constantinople",
+        "mechanical-throne"
+      ]
+    },
+    {
+      "title": "Which places did Ibn Battuta visit? (Select all that apply)",
+      "type": "multiple",
+      "answers": [
+        { "title": "Africa", "correct": true },
+        { "title": "India", "correct": true },
+        { "title": "China", "correct": true },
+        { "title": "America", "correct": false },
+        { "title": "The Maldives", "correct": true }
+      ],
+      "feedback": {
+        "root": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "Correct! Ibn Battuta visited Africa, India, China, and the Maldives during his travels. He did not visit America, which Europeans hadn't discovered yet.",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "textFormat": 0,
+              "version": 1
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1
+        }
+      },
+      "tags": [
+        "chapter21-simplified",
+        "ibn-battuta",
+        "travel-locations",
+        "geography"
+      ]
+    },
+    {
+      "title": "What jobs did Ibn Battuta do during his travels? (Select all that apply)",
+      "type": "multiple",
+      "answers": [
+        { "title": "Judge", "correct": true },
+        { "title": "Teacher", "correct": true },
+        { "title": "Doctor", "correct": false },
+        { "title": "Explorer", "correct": true },
+        { "title": "Soldier", "correct": false }
+      ],
+      "feedback": {
+        "root": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "Correct! Ibn Battuta worked as a judge, taught others about Islam, and explored new places during his travels. There's no mention of him being a doctor or soldier.",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "textFormat": 0,
+              "version": 1
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1
+        }
+      },
+      "tags": ["chapter21-simplified", "ibn-battuta", "occupations", "roles"]
+    },
+    {
+      "title": "What helped Ibn Battuta travel so easily between Muslim countries? (Select all that apply)",
+      "type": "multiple",
+      "answers": [
+        { "title": "He knew Arabic", "correct": true },
+        { "title": "He was a Muslim scholar", "correct": true },
+        { "title": "He had a special passport", "correct": false },
+        {
+          "title": "Muslim countries recognized his knowledge",
+          "correct": true
+        },
+        { "title": "He was very rich", "correct": false }
+      ],
+      "feedback": {
+        "root": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "Correct! Ibn Battuta could travel easily because he knew Arabic, was a Muslim scholar, and Muslim countries recognized his knowledge. He didn't need a special passport, and the text doesn't say he was very rich.",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "textFormat": 0,
+              "version": 1
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1
+        }
+      },
+      "tags": [
+        "chapter21-simplified",
+        "ibn-battuta",
+        "travel-factors",
+        "islamic-world"
+      ]
+    }
+  ]
+}

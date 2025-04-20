@@ -1,30 +1,43 @@
-import { BasePayload, Payload, PayloadRequest } from "payload";
-import { lesson96less } from "@/lib/data/quizzes/lesson9quiz-6less";
-import { lesson97higher } from "@/lib/data/quizzes/lesson9quiz-7higher";
+import { Payload, PayloadRequest } from "payload";
+import { promises as fs } from "fs";
+import path from "path";
 import type { QuizItem } from "@/lib/types";
 
 //In the next iteration, we will save the quiz data in json. Then in the seed front-end we pass the slug for the lesson to seed, load the json and update
+//This needs to be run from the front admin as it requires Auth
 
 export const seed = async ({
   payload,
   req,
+  file,
 }: {
   payload: Payload;
   req: PayloadRequest;
+  file: string;
 }): Promise<void> => {
-  payload.logger.info("Seeding quizzes 18 standard..");
+  payload.logger.info(`Seeding ... ${file}`);
 
-  const level = "6less"; // "6less" "7higher"
-  const lessonSlug = "the-lion-of-god-ali-son-of-abu-talib";
+  const filePath = path.join(
+    process.cwd(),
+    "lib",
+    "data",
+    "quizzes",
+    `${file}.json`
+  );
+  const fileContent = await fs.readFile(filePath, "utf8");
+  const quizData = JSON.parse(fileContent);
+
+  const level = quizData.level; // "6less" "7higher"
+  const lessonSlug = quizData.lesson;
 
   const [tag1, tag2] = await Promise.all([
     getTag(payload, level),
-    getTag(payload, "the-middle-period"),
+    getTag(payload, quizData.module),
   ]);
 
   const tagids = [tag1, tag2];
 
-  const createQuizzes = lesson96less.map(async (item) => {
+  const createQuizzes = quizData.questions.map(async (item: QuizItem) => {
     const result = await payload.create({
       collection: "quizzes",
       data: {
@@ -54,7 +67,7 @@ export const seed = async ({
     },
   });
 
-  payload.logger.info(`Updated ${result.docs[0].title} with quizzes`);
+  payload.logger.info(`Updated with quizzes for ${lessonSlug}`);
 
   payload.logger.info("Seeded completed successfully!");
 };

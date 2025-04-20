@@ -1,11 +1,19 @@
-@import '~@payloadcms/ui/scss';
+@import "~@payloadcms/ui/scss";
 
 .dashboard .before-dashboard {
+  z-index: 100;
   margin-bottom: base(1.5);
 
   &__banner {
     & h4 {
       margin: 0;
+    }
+  }
+
+  &__quiz {
+    & h3 {
+      padding-top: 5px;
+      padding-bottom: 5px;
     }
   }
 

@@ -1,11 +1,9 @@
-import configPromise from "@payload-config";
-import { cache, Suspense } from "react";
-import { draftMode } from "next/headers";
-import { getPayload } from "payload";
+import { Suspense } from "react";
 import { Media, Module, Series } from "@/payload-types";
 import { GradeLevelWrapper } from "@/components/grade-level-wrapper";
 import { ModuleSeries } from "./module-series";
 import Image from "next/image";
+import { queryModules } from "@/lib/queries/modules";
 
 export default async function HomePage() {
   const { modules, series } = await queryModules();
@@ -71,40 +69,3 @@ export default async function HomePage() {
     </div>
   );
 }
-
-const queryModules = cache(async () => {
-  const { isEnabled: draft } = await draftMode();
-  const payload = await getPayload({ config: configPromise });
-
-  const result = await payload.find({
-    collection: "modules",
-    draft,
-    depth: 2,
-    page: 1,
-    limit: 100,
-    pagination: false,
-    overrideAccess: draft,
-    select: {
-      title: true,
-      description: true,
-      series: true,
-      slug: true,
-      lessons: true,
-      timelabel: true,
-    },
-    sort: "order",
-  });
-
-  const series = await payload.find({
-    collection: "series",
-    draft,
-    depth: 2,
-    page: 1,
-    limit: 100,
-    pagination: false,
-    overrideAccess: draft,
-    sort: "order",
-  });
-
-  return { modules: result.docs, series: series.docs };
-});

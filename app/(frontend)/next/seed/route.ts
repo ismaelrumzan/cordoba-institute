@@ -24,12 +24,18 @@ export async function POST(
     return new Response("Action forbidden.", { status: 403 });
   }
 
+  const seedURL = new URL(req.url);
+
   try {
     // Create a Payload request object to pass to the Local API for transactions
     // At this point you should pass in a user, locale, and any other context you need for the Local API
     const payloadReq = await createLocalReq({ user }, payload);
 
-    await seed({ payload, req: payloadReq });
+    await seed({
+      payload,
+      req: payloadReq,
+      file: seedURL.searchParams.get("file") as string,
+    });
 
     return Response.json({ success: true });
   } catch {

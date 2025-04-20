@@ -3,24 +3,22 @@ import React from "react";
 
 import { SeedButton } from "./SeedButton";
 import "./index.scss";
+import { querySeed } from "@/lib/queries/modules";
+import { Module } from "@/payload-types";
 
 const baseClass = "before-dashboard";
 
-const BeforeDashboard: React.FC = () => {
+const BeforeDashboard: React.FC = async () => {
+  const { modules } = await querySeed();
   return (
     <div className={baseClass}>
       <Banner className={`${baseClass}__banner`} type="success">
         <h4>Welcome to your dashboard!</h4>
       </Banner>
-      <h3>Admin Tasks</h3>
-      <ul className={`${baseClass}__instructions`}>
-        <li>
-          <SeedButton />
-          {
-            " with a content that you need to manually pass in the script data first"
-          }
-        </li>
-      </ul>
+      <div className={`${baseClass}__quiz`}>
+        <h3>Quizzes</h3>
+        <SeedButton modules={modules as Module[]} />
+      </div>
     </div>
   );
 };

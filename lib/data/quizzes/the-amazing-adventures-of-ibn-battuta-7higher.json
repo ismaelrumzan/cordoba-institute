@@ -1,0 +1,426 @@
+{
+  "lesson": "the-amazing-adventures-of-ibn-battuta",
+  "module": "the-middle-period",
+  "level": "7higher",
+  "questions": [
+    {
+      "title": "True or False: Ibn Battuta's travels lasted for approximately 30 years and covered over 75,000 miles.",
+      "type": "t/f",
+      "answers": [
+        { "title": "True", "correct": true },
+        { "title": "False", "correct": false }
+      ],
+      "feedback": {
+        "root": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "Correct! Ibn Battuta's incredible journey spanned approximately 30 years (1325-1355) and covered an estimated distance of over 75,000 miles across Africa, the Middle East, and Asia.",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "textFormat": 0,
+              "version": 1
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1
+        }
+      },
+      "tags": ["chapter21", "ibn-battuta", "travel-distance"]
+    },
+    {
+      "title": "True or False: Ibn Battuta's famous travelogue is called 'Safar' which means 'Journey' in Arabic.",
+      "type": "t/f",
+      "answers": [
+        { "title": "True", "correct": false },
+        { "title": "False", "correct": true }
+      ],
+      "feedback": {
+        "root": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "Correct! Ibn Battuta's travelogue is called 'Rihla' (not 'Safar'), which means 'Journey' in Arabic.",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "textFormat": 0,
+              "version": 1
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1
+        }
+      },
+      "tags": ["chapter21", "ibn-battuta", "rihla", "travelogue"]
+    },
+    {
+      "title": "True or False: During his visit to Constantinople, Ibn Battuta witnessed a mechanical throne that could move on its own.",
+      "type": "t/f",
+      "answers": [
+        { "title": "True", "correct": true },
+        { "title": "False", "correct": false }
+      ],
+      "feedback": {
+        "root": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "Correct! Ibn Battuta described seeing a mechanical throne in Constantinople that was adorned with gold and jewels and could move on its own during imperial processions.",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "textFormat": 0,
+              "version": 1
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1
+        }
+      },
+      "tags": [
+        "chapter21",
+        "ibn-battuta",
+        "constantinople",
+        "mechanical-throne"
+      ]
+    },
+    {
+      "title": "In what year did Ibn Battuta begin his journey?",
+      "type": "single",
+      "answers": [
+        { "title": "1304", "correct": false },
+        { "title": "1325", "correct": true },
+        { "title": "1332", "correct": false },
+        { "title": "1353", "correct": false }
+      ],
+      "feedback": {
+        "root": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "Correct! Ibn Battuta began his journey in 1325 when he left his hometown of Tangier to make a pilgrimage to Mecca. 1304 was his birth year, 1332 was when he visited Constantinople, and 1353 was when he visited Timbuktu.",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "textFormat": 0,
+              "version": 1
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1
+        }
+      },
+      "tags": ["chapter21", "ibn-battuta", "journey-beginning", "timeline"]
+    },
+    {
+      "title": "What position did Ibn Battuta hold in the court of the Sultan of Delhi?",
+      "type": "single",
+      "answers": [
+        { "title": "Vizier", "correct": false },
+        { "title": "Military commander", "correct": false },
+        { "title": "Judge (qadi)", "correct": true },
+        { "title": "Royal physician", "correct": false }
+      ],
+      "feedback": {
+        "root": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "Correct! Ibn Battuta served as a judge (qadi) in the court of the Sultan of Delhi, applying Islamic law. His qualifications as a Sunni scholar allowed him to hold this position in a land far from his birthplace.",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "textFormat": 0,
+              "version": 1
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1
+        }
+      },
+      "tags": ["chapter21", "ibn-battuta", "delhi-sultanate", "qadi"]
+    },
+    {
+      "title": "Which dynasty ruled China during Ibn Battuta's visit?",
+      "type": "single",
+      "answers": [
+        { "title": "Ming Dynasty", "correct": false },
+        { "title": "Tang Dynasty", "correct": false },
+        { "title": "Song Dynasty", "correct": false },
+        { "title": "Yuan Dynasty", "correct": true }
+      ],
+      "feedback": {
+        "root": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "Correct! The Yuan Dynasty ruled China during Ibn Battuta's visit. This dynasty was established by the Mongols under Kublai Khan and was in power from 1271 to 1368.",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "textFormat": 0,
+              "version": 1
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1
+        }
+      },
+      "tags": ["chapter21", "ibn-battuta", "china", "yuan-dynasty"]
+    },
+    {
+      "title": "Which of the following regions did Ibn Battuta visit during his travels? (Select all that apply)",
+      "type": "multiple",
+      "answers": [
+        { "title": "North Africa", "correct": true },
+        { "title": "India", "correct": true },
+        { "title": "China", "correct": true },
+        { "title": "The Americas", "correct": false },
+        { "title": "Southeast Asia", "correct": true }
+      ],
+      "feedback": {
+        "root": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "Correct! Ibn Battuta visited North Africa, India, China, and Southeast Asia during his extensive travels. He did not visit the Americas, as European exploration of the Americas began after his lifetime.",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "textFormat": 0,
+              "version": 1
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1
+        }
+      },
+      "tags": ["chapter21", "ibn-battuta", "travel-regions", "geography"]
+    },
+    {
+      "title": "Which of the following cities did Ibn Battuta visit? (Select all that apply)",
+      "type": "multiple",
+      "answers": [
+        { "title": "Cairo", "correct": true },
+        { "title": "Jerusalem", "correct": true },
+        { "title": "Baghdad", "correct": true },
+        { "title": "London", "correct": false },
+        { "title": "Constantinople", "correct": true }
+      ],
+      "feedback": {
+        "root": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "Correct! Ibn Battuta visited Cairo, Jerusalem, Baghdad, and Constantinople during his travels through the Middle East. He did not visit London or other European cities outside the Byzantine Empire.",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "textFormat": 0,
+              "version": 1
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1
+        }
+      },
+      "tags": ["chapter21", "ibn-battuta", "cities", "middle-east"]
+    },
+    {
+      "title": "What factors enabled Ibn Battuta to travel and work across the Muslim world? (Select all that apply)",
+      "type": "multiple",
+      "answers": [
+        { "title": "Knowledge of Arabic language", "correct": true },
+        { "title": "Qualifications as a Sunni scholar", "correct": true },
+        { "title": "Modern passport system", "correct": false },
+        { "title": "Cultural unity of the Islamic world", "correct": true },
+        { "title": "Personal wealth from diamond mining", "correct": false }
+      ],
+      "feedback": {
+        "root": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "Correct! Ibn Battuta's travels were facilitated by his knowledge of Arabic, qualifications as a Sunni scholar, and the cultural unity of the Islamic world. There was no modern passport system then, and he was not wealthy from diamond mining.",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "textFormat": 0,
+              "version": 1
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1
+        }
+      },
+      "tags": ["chapter21", "ibn-battuta", "travel-factors", "islamic-world"]
+    },
+    {
+      "title": "Which of the following statements about Ibn Battuta are true? (Select all that apply)",
+      "type": "multiple",
+      "answers": [
+        { "title": "He was born in Tangier, Morocco", "correct": true },
+        {
+          "title": "His journey began as a pilgrimage to Mecca",
+          "correct": true
+        },
+        { "title": "He visited Timbuktu in West Africa", "correct": true },
+        {
+          "title": "He sailed to the New World with Columbus",
+          "correct": false
+        },
+        { "title": "He worked as a judge in India", "correct": true }
+      ],
+      "feedback": {
+        "root": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "Correct! Ibn Battuta was born in Tangier, began his journey as a pilgrimage to Mecca, visited Timbuktu, and worked as a judge in India. He did not sail to the New World with Columbus, as Columbus's voyages occurred more than a century after Ibn Battuta's death.",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "textFormat": 0,
+              "version": 1
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1
+        }
+      },
+      "tags": ["chapter21", "ibn-battuta", "biography", "facts"]
+    }
+  ]
+}
