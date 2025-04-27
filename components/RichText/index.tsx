@@ -34,7 +34,7 @@ export default function RichText(props: Props) {
       <RichTextWithoutBlocks
         converters={jsxConverters}
         className={cn(
-          "max-w-none prose [&_h1]:mb-5 [&_h2]:my-3 [&_p]:my-3 [&_h3]:my-3 [&_h4]:my-3 [&_h5]:my-2 [&_blockquote]:text-lg [&_blockquote]:my-3 [&_blockquote]:border-l-4 [&_blockquote]:pl-4 [&_blockquote]:italic",
+          "max-w-none prose [&_h1]:mb-5 [&_h2]:my-3 [&_p]:my-3 [&_h3]:my-3 [&_h4]:my-3 [&_h5]:my-2 [&_blockquote]:text-lg [&_blockquote]:my-3 [&_blockquote]:border-l-4 [&_blockquote]:pl-4 [&_blockquote]:italic [&_a]:underline [&_a:hover]:no-underline",
           className
         )}
         {...rest}
