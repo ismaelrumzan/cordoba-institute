@@ -20,6 +20,7 @@ import { Modules } from "./collections/Modules";
 import { Quizzes } from "./collections/Quizzes";
 import { Tags } from "./collections/Tags";
 import { CaptionBlock } from "./blocks/caption/config";
+import { HighlightBox } from "./blocks/highlight-box/config";
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
 
@@ -38,7 +39,7 @@ export default buildConfig({
     features: ({ defaultFeatures }) => [
       ...defaultFeatures,
       BlocksFeature({
-        blocks: [CaptionBlock],
+        blocks: [CaptionBlock, HighlightBox],
       }),
       FixedToolbarFeature(),
     ],
