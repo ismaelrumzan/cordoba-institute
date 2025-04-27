@@ -1,0 +1,462 @@
+{
+  "lesson": "introduction",
+  "module": "introduction--overview",
+  "level": "7higher",
+  "questions": [
+    {
+      "title": "True or False: The Islamic and Western civilizations emerged from the Bedouin tribes of Arabia and the Vikings of Northern Europe respectively.",
+      "type": "t/f",
+      "answers": [
+        { "title": "True", "correct": true },
+        { "title": "False", "correct": false }
+      ],
+      "feedback": {
+        "root": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "Correct! As stated in the chapter, the Islamic and Western civilizations emerged from two distinct groups: the Bedouin tribes from the Arabian Peninsula and the seafaring Vikings from the far North.",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "textFormat": 0,
+              "version": 1
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1
+        }
+      },
+      "tags": ["chapter1", "civilizations", "origins"]
+    },
+    {
+      "title": "True or False: The Roman Empire completely fell in the 5th century CE when Rome was sacked by Barbarians.",
+      "type": "t/f",
+      "answers": [
+        { "title": "True", "correct": false },
+        { "title": "False", "correct": true }
+      ],
+      "feedback": {
+        "root": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "Correct! Only the western half of the Roman Empire fell in the 5th century. The Eastern Roman Empire, with its capital at Constantinople, continued for another thousand years until 1453 when it fell to the Ottoman Turks.",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "textFormat": 0,
+              "version": 1
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1
+        }
+      },
+      "tags": ["chapter1", "roman-empire", "historical-myths"]
+    },
+    {
+      "title": "True or False: Europe is geographically a separate continent from Asia.",
+      "type": "t/f",
+      "answers": [
+        { "title": "True", "correct": false },
+        { "title": "False", "correct": true }
+      ],
+      "feedback": {
+        "root": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "Correct! As explained in the chapter, there is no factual geographical basis for considering Europe a separate continent. Europe can be seen as an extremity or sub-continent of Asia.",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "textFormat": 0,
+              "version": 1
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1
+        }
+      },
+      "tags": ["chapter1", "geography", "europe", "continents"]
+    },
+    {
+      "title": "How long have human beings (Homo sapiens) existed according to the chapter?",
+      "type": "single",
+      "answers": [
+        { "title": "About 1,400 years", "correct": false },
+        { "title": "At least 200,000 years", "correct": true },
+        { "title": "Around 2,000 years", "correct": false },
+        { "title": "Since the 5th century CE", "correct": false }
+      ],
+      "feedback": {
+        "root": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "Correct! The chapter states that human beings like us (Homo sapiens) have existed for at least 200,000 years, with evidence of tool-making going back perhaps as far as two million years.",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "textFormat": 0,
+              "version": 1
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1
+        }
+      },
+      "tags": ["chapter1", "human-history", "timeline"]
+    },
+    {
+      "title": "What were the 'ships of the desert' used by Arab Bedouins?",
+      "type": "single",
+      "answers": [
+        { "title": "Horses", "correct": false },
+        { "title": "Camels", "correct": true },
+        { "title": "Longboats", "correct": false },
+        { "title": "Donkeys", "correct": false }
+      ],
+      "feedback": {
+        "root": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "Correct! The chapter refers to camels as the 'ships of the desert' used by Arab Bedouins to cross vast expanses of hot desert, just as Vikings used longboats to cross the icy seas of the North.",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "textFormat": 0,
+              "version": 1
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1
+        }
+      },
+      "tags": ["chapter1", "bedouins", "camels", "desert-travel"]
+    },
+    {
+      "title": "What was the capital of the Eastern Roman Empire?",
+      "type": "single",
+      "answers": [
+        { "title": "Rome", "correct": false },
+        { "title": "Athens", "correct": false },
+        { "title": "Constantinople", "correct": true },
+        { "title": "Athens", "correct": false },
+        { "title": "Constantinople", "correct": true },
+        { "title": "Alexandria", "correct": false }
+      ],
+      "feedback": {
+        "root": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "Correct! The capital of the Eastern Roman Empire was Constantinople (known as 'the New Rome'), established in 330 CE. The Eastern Roman Empire endured for another thousand years after the fall of Rome until its conquest by the Ottomans in 1453.",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "textFormat": 0,
+              "version": 1
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1
+        }
+      },
+      "tags": ["chapter1", "eastern-roman-empire", "constantinople"]
+    },
+    {
+      "title": "Which of the following were characteristics of the Arabs' expansion according to the chapter? (Select all that apply)",
+      "type": "multiple",
+      "answers": [
+        {
+          "title": "It was inspired by a new Divine revelation",
+          "correct": true
+        },
+        {
+          "title": "It occurred rapidly across Asia and Africa",
+          "correct": true
+        },
+        {
+          "title": "They defeated both the Persian and Roman empires",
+          "correct": true
+        },
+        {
+          "title": "It took several generations to accomplish",
+          "correct": false
+        },
+        { "title": "It was primarily focused on Europe", "correct": false }
+      ],
+      "feedback": {
+        "root": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "Correct! The chapter states that the Arabs, inspired by a new Divine revelation, embarked on a rapid expansion across Asia and Africa. In just one generation, they brought down the mighty Persian and Roman empires. Their expansion was not primarily focused on Europe, and it did not take several generations to accomplish.",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "textFormat": 0,
+              "version": 1
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1
+        }
+      },
+      "tags": ["chapter1", "arab-expansion", "islamic-civilization"]
+    },
+    {
+      "title": "Which of the following were characteristics of the Vikings according to the chapter? (Select all that apply)",
+      "type": "multiple",
+      "answers": [
+        {
+          "title": "They were seafaring people from the far North",
+          "correct": true
+        },
+        { "title": "They engaged in plundering activities", "correct": true },
+        { "title": "They established settlements", "correct": true },
+        {
+          "title": "Their descendants were the Normans and Rus",
+          "correct": true
+        },
+        {
+          "title": "They were primarily from the Arabian Peninsula",
+          "correct": false
+        }
+      ],
+      "feedback": {
+        "root": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "Correct! The chapter describes the Vikings as seafaring people from the far North who engaged in plundering and settlement activities. Their descendants, the Normans in the West and the Rus in the East, continued their legacy. The Vikings were not from the Arabian Peninsula; that was the homeland of the Bedouin tribes.",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "textFormat": 0,
+              "version": 1
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1
+        }
+      },
+      "tags": ["chapter1", "vikings", "western-civilization"]
+    },
+    {
+      "title": "Which of the following were biases in Western historical accounts according to the chapter? (Select all that apply)",
+      "type": "multiple",
+      "answers": [
+        {
+          "title": "Presenting Europeans as the rightful rulers of the world",
+          "correct": true
+        },
+        {
+          "title": "Portraying Europe as a separate continent from Asia",
+          "correct": true
+        },
+        {
+          "title": "Depicting the Middle Ages as regressive and feudalistic",
+          "correct": true
+        },
+        {
+          "title": "Claiming the West as the true inheritor of Greek and Roman civilizations",
+          "correct": true
+        },
+        {
+          "title": "Acknowledging the contributions of Islamic civilization",
+          "correct": false
+        }
+      ],
+      "feedback": {
+        "root": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "Correct! The chapter discusses several biases in Western historical accounts, including presenting Europeans as rightful rulers, portraying Europe as a separate continent, depicting the Middle Ages negatively, and claiming to be the true inheritors of Greek and Roman civilizations. The chapter suggests that Western accounts typically did not adequately acknowledge the contributions of Islamic civilization.",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "textFormat": 0,
+              "version": 1
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1
+        }
+      },
+      "tags": ["chapter1", "historical-bias", "western-history"]
+    },
+    {
+      "title": "Which of the following statements about camels are true according to the chapter? (Select all that apply)",
+      "type": "multiple",
+      "answers": [
+        {
+          "title": "They were used by Arab Bedouins to cross deserts",
+          "correct": true
+        },
+        {
+          "title": "They can drink up to 40 gallons of water in a few minutes",
+          "correct": true
+        },
+        {
+          "title": "They are well-adapted to survive in harsh desert environments",
+          "correct": true
+        },
+        { "title": "They were called 'ships of the desert'", "correct": true },
+        { "title": "They were primarily used by Vikings", "correct": false }
+      ],
+      "feedback": {
+        "root": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "Correct! The chapter describes camels as the 'ships of the desert' used by Arab Bedouins. It mentions that camels are well-adapted to desert environments and can drink up to 40 gallons (around 150 liters) of water in just a few minutes. Camels were not used by Vikings, who instead used longboats for their travels.",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "textFormat": 0,
+              "version": 1
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1
+        }
+      },
+      "tags": ["chapter1", "camels", "desert-travel", "bedouins"]
+    }
+  ]
+}

@@ -1,0 +1,299 @@
+{
+  "lesson": "introduction",
+  "module": "introduction--overview",
+  "level": "6less",
+  "questions": [
+    {
+      "title": "True or False: The Islamic civilization began with the Bedouin tribes from Arabia.",
+      "type": "t/f",
+      "answers": [
+        { "title": "True", "correct": true },
+        { "title": "False", "correct": false }
+      ],
+      "feedback": {
+        "root": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "Correct! The chapter tells us that the Islamic civilization began with the Bedouin tribes from Arabia, who were inspired by the teachings of Islam.",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "textFormat": 0,
+              "version": 1
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1
+        }
+      },
+      "tags": ["chapter1-simplified", "islamic-civilization", "bedouins"]
+    },
+    {
+      "title": "True or False: Europe is actually a separate continent from Asia.",
+      "type": "t/f",
+      "answers": [
+        { "title": "True", "correct": false },
+        { "title": "False", "correct": true }
+      ],
+      "feedback": {
+        "root": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "Correct! The chapter explains that Europe is not really a separate continent from Asia. It's actually just the western part of Asia.",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "textFormat": 0,
+              "version": 1
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1
+        }
+      },
+      "tags": ["chapter1-simplified", "geography", "europe", "continents"]
+    },
+    {
+      "title": "What animals did the Arab Bedouins use to cross the desert?",
+      "type": "single",
+      "answers": [
+        { "title": "Horses", "correct": false },
+        { "title": "Camels", "correct": true },
+        { "title": "Elephants", "correct": false },
+        { "title": "Donkeys", "correct": false }
+      ],
+      "feedback": {
+        "root": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "Correct! The chapter tells us that Arab Bedouins used camels to cross the hot desert. Camels were called the 'ships of the desert' because they helped people travel across the sand just like ships travel across water.",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "textFormat": 0,
+              "version": 1
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1
+        }
+      },
+      "tags": ["chapter1-simplified", "bedouins", "camels", "desert-travel"]
+    },
+    {
+      "title": "How long have humans like us (Homo sapiens) existed?",
+      "type": "single",
+      "answers": [
+        { "title": "About 1,400 years", "correct": false },
+        { "title": "At least 200,000 years", "correct": true },
+        { "title": "Around 2,000 years", "correct": false },
+        { "title": "Since the Vikings came", "correct": false }
+      ],
+      "feedback": {
+        "root": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "Correct! The chapter says that humans like us (Homo sapiens) have existed for at least 200,000 years. That's a very long time compared to the 1,400 years of Islamic and Western civilizations!",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "textFormat": 0,
+              "version": 1
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1
+        }
+      },
+      "tags": ["chapter1-simplified", "human-history", "timeline"]
+    },
+    {
+      "title": "What did the Arabs do after they were inspired by Islam? (Select all that apply)",
+      "type": "multiple",
+      "answers": [
+        {
+          "title": "They spread quickly across Asia and Africa",
+          "correct": true
+        },
+        { "title": "They defeated the Persian Empire", "correct": true },
+        { "title": "They defeated the Roman Empire", "correct": true },
+        { "title": "They built longboats like the Vikings", "correct": false },
+        { "title": "They stayed in Arabia and didn't travel", "correct": false }
+      ],
+      "feedback": {
+        "root": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "Correct! The chapter tells us that the Arabs, inspired by Islam, spread quickly across Asia and Africa. In just one generation (about 30 years), they defeated both the Persian and Roman empires. They did not build longboats like the Vikings, and they definitely did not stay in Arabia.",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "textFormat": 0,
+              "version": 1
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1
+        }
+      },
+      "tags": ["chapter1-simplified", "arab-expansion", "islamic-civilization"]
+    },
+    {
+      "title": "What were the Vikings known for? (Select all that apply)",
+      "type": "multiple",
+      "answers": [
+        { "title": "They came from Northern Europe", "correct": true },
+        { "title": "They traveled in boats", "correct": true },
+        { "title": "They raided and settled in new places", "correct": true },
+        { "title": "They rode camels across deserts", "correct": false },
+        { "title": "They came from Arabia", "correct": false }
+      ],
+      "feedback": {
+        "root": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "Correct! The chapter describes the Vikings as people from Northern Europe who traveled in boats. They were known for raiding places and settling in new lands. They did not ride camels or come from Arabia - that was the Bedouin Arabs.",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "textFormat": 0,
+              "version": 1
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1
+        }
+      },
+      "tags": ["chapter1-simplified", "vikings", "western-civilization"]
+    },
+    {
+      "title": "What special things can camels do? (Select all that apply)",
+      "type": "multiple",
+      "answers": [
+        {
+          "title": "They can drink a lot of water very quickly",
+          "correct": true
+        },
+        { "title": "They can survive in hot deserts", "correct": true },
+        { "title": "They were called 'ships of the desert'", "correct": true },
+        { "title": "They can swim across oceans", "correct": false },
+        { "title": "They were used by Vikings", "correct": false }
+      ],
+      "feedback": {
+        "root": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "Correct! The chapter tells us that camels can drink a lot of water very quickly (up to 40 gallons in a few minutes), they can survive in hot deserts, and they were called 'ships of the desert' because they helped Bedouins travel across the sand. Camels cannot swim across oceans, and they were not used by Vikings.",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "textFormat": 0,
+              "version": 1
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1
+        }
+      },
+      "tags": ["chapter1-simplified", "camels", "desert-travel", "bedouins"]
+    }
+  ]
+}
