@@ -1,0 +1,412 @@
+{
+  "lesson": "the-writing-of-history",
+  "module": "introduction--overview",
+  "level": "7higher",
+  "questions": [
+    {
+      "title": "True or False: History is written objectively without bias from the authors.",
+      "type": "t/f",
+      "answers": [{ "title": "True", "correct": false }, { "title": "False", "correct": true }],
+      "feedback": {
+        "root": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "Correct! History is not neutral. It is often written by conquerors who distort historical events to serve their own interests. The saying 'history is written by the victors' highlights this reality.",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "textFormat": 0,
+              "version": 1
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1
+        }
+      },
+      "tags": ["chapter2", "historical-bias", "objectivity"]
+    },
+    {
+      "title": "True or False: Eurocentric history writing focuses primarily on European achievements while downplaying other civilizations.",
+      "type": "t/f",
+      "answers": [{ "title": "True", "correct": true }, { "title": "False", "correct": false }],
+      "feedback": {
+        "root": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "Correct! Eurocentric history writing overemphasizes European achievements while downplaying or ignoring the contributions of other civilizations. This creates a distorted view of world history that places Europe at the center of human progress.",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "textFormat": 0,
+              "version": 1
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1
+        }
+      },
+      "tags": ["chapter2", "eurocentrism", "historical-bias"]
+    },
+    {
+      "title": "True or False: The Islamic Millennium is divided into four distinct periods.",
+      "type": "t/f",
+      "answers": [{ "title": "True", "correct": false }, { "title": "False", "correct": true }],
+      "feedback": {
+        "root": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "Correct! The Islamic Millennium is divided into three distinct periods: the High Caliphate Period (622-1000 CE), the Middle Period (1000-1500 CE), and the Gunpowder Period (1500-1800 CE).",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "textFormat": 0,
+              "version": 1
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1
+        }
+      },
+      "tags": ["chapter2", "islamic-millennium", "periodization"]
+    },
+    {
+      "title": "What year marks the beginning of the Islamic Age or Islamic Millennium?",
+      "type": "single",
+      "answers": [
+        { "title": "570 CE", "correct": false },
+        { "title": "622 CE", "correct": true },
+        { "title": "632 CE", "correct": false },
+        { "title": "711 CE", "correct": false }
+      ],
+      "feedback": {
+        "root": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "Correct! The year 622 CE marks the beginning of the Islamic Age or Islamic Millennium, corresponding to the Hijra (migration) of Prophet Muhammad from Mecca to Medina, which established the first Islamic community.",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "textFormat": 0,
+              "version": 1
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1
+        }
+      },
+      "tags": ["chapter2", "islamic-millennium", "hijra", "chronology"]
+    },
+    {
+      "title": "Which of the following is an example of Eurocentric bias in visual representation?",
+      "type": "single",
+      "answers": [
+        { "title": "Maps that place Europe at the center and top", "correct": true },
+        { "title": "Maps that use different colors for different continents", "correct": false },
+        { "title": "Maps that show accurate land masses", "correct": false },
+        { "title": "Maps that include latitude and longitude lines", "correct": false }
+      ],
+      "feedback": {
+        "root": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "Correct! Traditional world maps often place Europe at the center or at the top, distorting the relative sizes and positions of other continents and regions. This visual representation reinforces the notion of European centrality and superiority.",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "textFormat": 0,
+              "version": 1
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1
+        }
+      },
+      "tags": ["chapter2", "eurocentrism", "maps", "visual-bias"]
+    },
+    {
+      "title": "How is the history of Islamic civilization often distorted in Western textbooks?",
+      "type": "single",
+      "answers": [
+        { "title": "It is presented as more advanced than it actually was", "correct": false },
+        { "title": "It is fragmented into separate histories of Arabs, Turks, Persians, etc.", "correct": true },
+        { "title": "It is completely omitted from historical accounts", "correct": false },
+        { "title": "It is portrayed as having no scientific achievements", "correct": false }
+      ],
+      "feedback": {
+        "root": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "Correct! Instead of being presented as a unified and significant force in world history, Islamic civilization is often fragmented into separate histories of Arabs, Turks, Persians, etc. This fragmentation downplays the cohesive nature and global impact of Islamic civilization.",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "textFormat": 0,
+              "version": 1
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1
+        }
+      },
+      "tags": ["chapter2", "islamic-civilization", "historical-distortion", "fragmentation"]
+    },
+    {
+      "title": "Which of the following are periods of the Islamic Millennium? (Select all that apply)",
+      "type": "multiple",
+      "answers": [
+        { "title": "The High Caliphate Period (622-1000 CE)", "correct": true },
+        { "title": "The Renaissance Period (1300-1600 CE)", "correct": false },
+        { "title": "The Middle Period (1000-1500 CE)", "correct": true },
+        { "title": "The Gunpowder Period (1500-1800 CE)", "correct": true },
+        { "title": "The Industrial Period (1800-1900 CE)", "correct": false }
+      ],
+      "feedback": {
+        "root": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "Correct! The Islamic Millennium is divided into three periods: the High Caliphate Period (622-1000 CE), the Middle Period (1000-1500 CE), and the Gunpowder Period (1500-1800 CE).",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "textFormat": 0,
+              "version": 1
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1
+        }
+      },
+      "tags": ["chapter2", "islamic-millennium", "periodization", "islamic-history"]
+    },
+    {
+      "title": "Which of the following statements about historical bias are true? (Select all that apply)",
+      "type": "multiple",
+      "answers": [
+        { "title": "Conquerors often distort historical events to serve their own interests", "correct": true },
+        { "title": "Historical accounts are always objective and factual", "correct": false },
+        {
+          "title": "The saying 'history is written by the victors' highlights the bias in historical writing",
+          "correct": true
+        },
+        { "title": "Biases in historical writing are easy to identify and correct", "correct": false },
+        {
+          "title": "Historical bias affects how we understand past civilizations and their contributions",
+          "correct": true
+        }
+      ],
+      "feedback": {
+        "root": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "Correct! Historical accounts are influenced by the biases of those who write them. Conquerors often distort events to serve their interests, and these biases affect our understanding of past civilizations.",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "textFormat": 0,
+              "version": 1
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1
+        }
+      },
+      "tags": ["chapter2", "historical-bias", "objectivity", "historical-understanding"]
+    },
+    {
+      "title": "Which of the following are examples of Eurocentric terminology in historical periodization? (Select all that apply)",
+      "type": "multiple",
+      "answers": [
+        { "title": "The Middle Ages", "correct": true },
+        { "title": "The Islamic Golden Age", "correct": false },
+        { "title": "The Renaissance", "correct": true },
+        { "title": "The Tang Dynasty", "correct": false },
+        { "title": "The Enlightenment", "correct": true }
+      ],
+      "feedback": {
+        "root": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "Correct! Terms like 'Middle Ages,' 'Renaissance,' and 'Enlightenment' reflect European historical experiences but are often applied universally, imposing a European framework on global history.",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "textFormat": 0,
+              "version": 1
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1
+        }
+      },
+      "tags": ["chapter2", "eurocentrism", "periodization", "historical-terminology"]
+    },
+    {
+      "title": "What approaches can help develop a more balanced understanding of world history? (Select all that apply)",
+      "type": "multiple",
+      "answers": [
+        { "title": "Recognizing biases in historical accounts", "correct": true },
+        { "title": "Focusing exclusively on European historical narratives", "correct": false },
+        { "title": "Seeking out diverse perspectives from different civilizations", "correct": true },
+        { "title": "Acknowledging the contributions of all civilizations to human progress", "correct": true },
+        { "title": "Accepting that some civilizations are inherently superior to others", "correct": false }
+      ],
+      "feedback": {
+        "root": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "Correct! To develop a more balanced understanding of world history, it's important to recognize biases, seek diverse perspectives, and acknowledge the contributions of all civilizations.",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "textFormat": 0,
+              "version": 1
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1
+        }
+      },
+      "tags": ["chapter2", "historical-understanding", "diverse-perspectives", "balanced-history"]
+    }
+  ]
+}

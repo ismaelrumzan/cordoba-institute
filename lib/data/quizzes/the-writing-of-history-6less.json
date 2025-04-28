@@ -1,0 +1,284 @@
+{
+  "lesson": "the-writing-of-history",
+  "module": "introduction--overview",
+  "level": "6less",
+  "questions": [
+    {
+      "title": "True or False: History books always tell the complete truth about the past.",
+      "type": "t/f",
+      "answers": [{ "title": "True", "correct": false }, { "title": "False", "correct": true }],
+      "feedback": {
+        "root": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "Correct! History books are written by people who sometimes make themselves look good and others look bad. The winners of wars and conflicts often write history in a way that makes them look better.",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "textFormat": 0,
+              "version": 1
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1
+        }
+      },
+      "tags": ["chapter2-simplified", "bias", "historical-perspective"]
+    },
+    {
+      "title": "True or False: Many history books focus too much on Europe and not enough on other places.",
+      "type": "t/f",
+      "answers": [{ "title": "True", "correct": true }, { "title": "False", "correct": false }],
+      "feedback": {
+        "root": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "Correct! Many history books focus too much on Europe and not enough on other places like Africa, Asia, and the Islamic world. This is called 'Eurocentric' history, and it isn't fair to other cultures and civilizations.",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "textFormat": 0,
+              "version": 1
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1
+        }
+      },
+      "tags": ["chapter2-simplified", "eurocentrism", "bias"]
+    },
+    {
+      "title": "What important event happened in the year 622 CE?",
+      "type": "single",
+      "answers": [
+        { "title": "The Prophet Muhammad was born", "correct": false },
+        { "title": "The Prophet Muhammad moved from Mecca to Medina", "correct": true },
+        { "title": "The Islamic empire ended", "correct": false },
+        { "title": "The first Quran was written", "correct": false }
+      ],
+      "feedback": {
+        "root": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "Correct! In 622 CE, Prophet Muhammad moved from Mecca to Medina. This event is called the Hijra and marks the beginning of the Islamic calendar. It was the start of the first Muslim community.",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "textFormat": 0,
+              "version": 1
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1
+        }
+      },
+      "tags": ["chapter2-simplified", "islamic-history", "timeline", "hijra"]
+    },
+    {
+      "title": "Which of these is NOT a time period in Islamic history?",
+      "type": "single",
+      "answers": [
+        { "title": "The High Caliphate Period", "correct": false },
+        { "title": "The Middle Period", "correct": false },
+        { "title": "The Computer Period", "correct": true },
+        { "title": "The Gunpowder Period", "correct": false }
+      ],
+      "feedback": {
+        "root": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "Correct! The Computer Period is not a time period in Islamic history. The three main periods are the High Caliphate Period, the Middle Period, and the Gunpowder Period.",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "textFormat": 0,
+              "version": 1
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1
+        }
+      },
+      "tags": ["chapter2-simplified", "islamic-history", "periodization", "timeline"]
+    },
+    {
+      "title": "What problems can maps have? (Choose all that are true)",
+      "type": "multiple",
+      "answers": [
+        { "title": "They can put Europe in the center or at the top", "correct": true },
+        { "title": "They can make Europe look bigger than it really is", "correct": true },
+        { "title": "They can show all countries exactly as they are", "correct": false },
+        { "title": "They can make some places seem more important than others", "correct": true }
+      ],
+      "feedback": {
+        "root": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "Correct! Maps can put Europe in the center, make it look bigger than it really is, and make some places seem more important than others. These are all examples of bias in maps.",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "textFormat": 0,
+              "version": 1
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1
+        }
+      },
+      "tags": ["chapter2-simplified", "maps", "eurocentrism", "bias"]
+    },
+    {
+      "title": "Why is it important to look at history from different points of view? (Choose all that are true)",
+      "type": "multiple",
+      "answers": [
+        { "title": "To learn about contributions from many different civilizations", "correct": true },
+        { "title": "To understand that many different people helped make our world", "correct": true },
+        { "title": "To believe only one side of the story", "correct": false },
+        { "title": "To get a more complete picture of what happened", "correct": true }
+      ],
+      "feedback": {
+        "root": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "Correct! Looking at history from different points of view helps us learn about contributions from many civilizations, understand that many different people helped make our world, and get a more complete picture of what happened.",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "textFormat": 0,
+              "version": 1
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1
+        }
+      },
+      "tags": ["chapter2-simplified", "critical-thinking", "historical-perspective", "diversity"]
+    },
+    {
+      "title": "What happens to Islamic history in many history books? (Choose all that are true)",
+      "type": "multiple",
+      "answers": [
+        { "title": "It is often left out", "correct": true },
+        { "title": "It is made to seem less important than it really was", "correct": true },
+        { "title": "It is shown as the most important history", "correct": false },
+        { "title": "It is broken up into small pieces instead of shown as one big story", "correct": true }
+      ],
+      "feedback": {
+        "root": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "Correct! Islamic history is often left out, made to seem less important than it really was, and broken up into small pieces instead of shown as one big story. This doesn't give a fair picture of how important Islamic civilization was in world history.",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "textFormat": 0,
+              "version": 1
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1
+        }
+      },
+      "tags": ["chapter2-simplified", "islamic-history", "eurocentrism", "bias"]
+    }
+  ]
+}
