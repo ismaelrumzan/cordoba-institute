@@ -1,0 +1,435 @@
+{
+  "lesson": "introduction-to-the-gunpowder-period",
+  "module": "the-gunpowder-period",
+  "level": "7higher",
+  "questions": [
+    {
+      "title": "True or False: The Ottoman Empire was the first of the three Muslim gunpowder empires to emerge.",
+      "type": "t/f",
+      "answers": [
+        { "title": "True", "correct": true },
+        { "title": "False", "correct": false }
+      ],
+      "feedback": {
+        "root": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "Correct! The Ottoman Empire was indeed the first of the three Muslim gunpowder empires to emerge, followed by the Safavid Empire in Persia and then the Mughal Empire in India.",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "textFormat": 0,
+              "version": 1
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1
+        }
+      },
+      "tags": ["chapter23", "ottoman-empire", "gunpowder-empires"]
+    },
+    {
+      "title": "True or False: The Protestant Reformation was primarily an economic movement rather than a religious one.",
+      "type": "t/f",
+      "answers": [
+        { "title": "True", "correct": false },
+        { "title": "False", "correct": true }
+      ],
+      "feedback": {
+        "root": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "Correct! While the Protestant Reformation had economic implications, it was primarily a religious movement that challenged the authority and practices of the Catholic Church. Martin Luther's objections to practices like the selling of indulgences were based on religious principles.",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "textFormat": 0,
+              "version": 1
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1
+        }
+      },
+      "tags": ["chapter23", "protestant-reformation", "european-history"]
+    },
+    {
+      "title": "True or False: The Safavid Empire established Shi'a Islam as the official religion of Persia.",
+      "type": "t/f",
+      "answers": [
+        { "title": "True", "correct": true },
+        { "title": "False", "correct": false }
+      ],
+      "feedback": {
+        "root": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "Correct! The Safavid Empire, under Shah Ismail, established Twelver Shi'a Islam as the official religion of Persia (modern-day Iran). This was a significant development that distinguished the Safavids from their Sunni Ottoman neighbors and has influenced the religious landscape of Iran to this day.",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "textFormat": 0,
+              "version": 1
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1
+        }
+      },
+      "tags": ["chapter23", "safavid-empire", "shia-islam", "persia"]
+    },
+    {
+      "title": "Which invention was most crucial to the military success of the Ottoman Empire?",
+      "type": "single",
+      "answers": [
+        { "title": "The printing press", "correct": false },
+        { "title": "Advanced cannons", "correct": true },
+        { "title": "The magnetic compass", "correct": false },
+        { "title": "Mechanical clocks", "correct": false }
+      ],
+      "feedback": {
+        "root": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "Correct! Advanced cannons were crucial to the Ottoman Empire's military success, particularly in the conquest of Constantinople in 1453. The Ottomans developed massive siege cannons that could breach previously impenetrable walls, revolutionizing warfare and helping them expand their territory rapidly.",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "textFormat": 0,
+              "version": 1
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1
+        }
+      },
+      "tags": ["chapter23", "ottoman-empire", "military-technology", "cannons"]
+    },
+    {
+      "title": "Which European development is often associated with the rise of capitalism?",
+      "type": "single",
+      "answers": [
+        { "title": "The Protestant Reformation", "correct": true },
+        { "title": "The Reconquista of Spain", "correct": false },
+        { "title": "The Black Death", "correct": false },
+        { "title": "The Hundred Years' War", "correct": false }
+      ],
+      "feedback": {
+        "root": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "Correct! The Protestant Reformation is often associated with the rise of capitalism in Europe. Max Weber's famous thesis connected Protestant ethics, particularly Calvinism, with the development of capitalist economic practices. The Reformation's emphasis on individual interpretation of scripture and personal relationship with God aligned with capitalist values of individualism and self-reliance.",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "textFormat": 0,
+              "version": 1
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1
+        }
+      },
+      "tags": [
+        "chapter23",
+        "protestant-reformation",
+        "capitalism",
+        "european-history"
+      ]
+    },
+    {
+      "title": "Which Mughal emperor is known for his religious tolerance and attempts to create a syncretic religion called Din-i-Ilahi?",
+      "type": "single",
+      "answers": [
+        { "title": "Babur", "correct": false },
+        { "title": "Humayun", "correct": false },
+        { "title": "Akbar", "correct": true },
+        { "title": "Aurangzeb", "correct": false }
+      ],
+      "feedback": {
+        "root": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "Correct! Emperor Akbar is renowned for his religious tolerance and pluralistic policies. He attempted to create a syncretic religion called Din-i-Ilahi (Divine Faith) that combined elements of various religions including Islam, Hinduism, Zoroastrianism, and Christianity. Akbar's court included scholars from different faiths, and he abolished the jizya tax on non-Muslims.",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "textFormat": 0,
+              "version": 1
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1
+        }
+      },
+      "tags": ["chapter23", "mughal-empire", "akbar", "religious-tolerance"]
+    },
+    {
+      "title": "Which of the following were characteristics of the Ottoman Empire? (Select all that apply)",
+      "type": "multiple",
+      "answers": [
+        { "title": "It conquered Constantinople in 1453", "correct": true },
+        { "title": "It was founded by Osman I", "correct": true },
+        {
+          "title": "It reached its height under Suleiman the Magnificent",
+          "correct": true
+        },
+        {
+          "title": "It controlled the holy cities of Mecca and Medina",
+          "correct": true
+        },
+        {
+          "title": "It established Shi'a Islam as its official religion",
+          "correct": false
+        }
+      ],
+      "feedback": {
+        "root": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "Correct! The Ottoman Empire was founded by Osman I (hence the name 'Ottoman'), conquered Constantinople in 1453 under Mehmed II, reached its height under Suleiman the Magnificent, and controlled the holy cities of Mecca and Medina. The Ottomans were Sunni Muslims, not Shi'a - it was the Safavid Empire that established Shi'a Islam as its official religion.",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "textFormat": 0,
+              "version": 1
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1
+        }
+      },
+      "tags": ["chapter23", "ottoman-empire", "islamic-history"]
+    },
+    {
+      "title": "Which of the following inventions were significant during the Gunpowder Period? (Select all that apply)",
+      "type": "multiple",
+      "answers": [
+        { "title": "Cannons and firearms", "correct": true },
+        { "title": "The printing press", "correct": true },
+        { "title": "The magnetic compass", "correct": true },
+        { "title": "Mechanical clocks", "correct": true },
+        { "title": "Steam engines", "correct": false }
+      ],
+      "feedback": {
+        "root": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "Correct! Cannons and firearms, the printing press, the magnetic compass, and mechanical clocks were all significant inventions during the Gunpowder Period (1450-1700). The steam engine, however, became significant later during the Industrial Revolution in the 18th and 19th centuries, not during the Gunpowder Period.",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "textFormat": 0,
+              "version": 1
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1
+        }
+      },
+      "tags": ["chapter23", "inventions", "technology", "gunpowder-period"]
+    },
+    {
+      "title": "Which of the following were significant developments in Europe during the Gunpowder Period? (Select all that apply)",
+      "type": "multiple",
+      "answers": [
+        { "title": "The Protestant Reformation", "correct": true },
+        { "title": "The Age of Discovery", "correct": true },
+        { "title": "The rise of capitalism", "correct": true },
+        { "title": "The Scientific Revolution", "correct": true },
+        { "title": "The Industrial Revolution", "correct": false }
+      ],
+      "feedback": {
+        "root": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "Correct! The Protestant Reformation, the Age of Discovery, the rise of capitalism, and the Scientific Revolution were all significant developments in Europe during the Gunpowder Period (1450-1700). The Industrial Revolution began in the late 18th century, after the Gunpowder Period had ended.",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "textFormat": 0,
+              "version": 1
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1
+        }
+      },
+      "tags": ["chapter23", "european-history", "gunpowder-period"]
+    },
+    {
+      "title": "Which of the following statements about the Safavid Empire are true? (Select all that apply)",
+      "type": "multiple",
+      "answers": [
+        { "title": "It was founded by Shah Ismail", "correct": true },
+        {
+          "title": "It established Shi'a Islam as the state religion",
+          "correct": true
+        },
+        { "title": "It was centered in Persia (modern Iran)", "correct": true },
+        {
+          "title": "It frequently conflicted with the Ottoman Empire",
+          "correct": true
+        },
+        { "title": "It conquered Constantinople", "correct": false }
+      ],
+      "feedback": {
+        "root": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "Correct! The Safavid Empire was founded by Shah Ismail, established Shi'a Islam as the state religion, was centered in Persia (modern Iran), and frequently conflicted with the Ottoman Empire due to both religious differences (Shi'a vs. Sunni) and territorial disputes. The Safavids did not conquer Constantinople - it was the Ottoman Empire that conquered Constantinople in 1453.",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "textFormat": 0,
+              "version": 1
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1
+        }
+      },
+      "tags": ["chapter23", "safavid-empire", "islamic-history", "persia"]
+    }
+  ]
+}

@@ -1,0 +1,330 @@
+{
+  "lesson": "introduction-to-the-gunpowder-period",
+  "module": "the-gunpowder-period",
+  "level": "6less",
+  "questions": [
+    {
+      "title": "True or False: The Ottoman Empire was the first to use gunpowder weapons effectively.",
+      "type": "t/f",
+      "answers": [
+        { "title": "True", "correct": true },
+        { "title": "False", "correct": false }
+      ],
+      "feedback": {
+        "root": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "Correct! The chapter explains that the Ottoman Empire was the first to use gunpowder weapons effectively in battle, which helped them conquer Constantinople in 1453.",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "textFormat": 0,
+              "version": 1
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1
+        }
+      },
+      "tags": ["chapter23-simplified", "ottoman-empire", "gunpowder-weapons"]
+    },
+    {
+      "title": "True or False: The Gunpowder Period saw three powerful Muslim empires ruling at the same time.",
+      "type": "t/f",
+      "answers": [
+        { "title": "True", "correct": true },
+        { "title": "False", "correct": false }
+      ],
+      "feedback": {
+        "root": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "Correct! The chapter tells us that during the Gunpowder Period, three powerful Muslim empires ruled at the same time: the Ottoman Empire, the Safavid Empire, and the Mughal Empire.",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "textFormat": 0,
+              "version": 1
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1
+        }
+      },
+      "tags": [
+        "chapter23-simplified",
+        "muslim-empires",
+        "ottoman",
+        "safavid",
+        "mughal"
+      ]
+    },
+    {
+      "title": "What important invention changed warfare during the Gunpowder Period?",
+      "type": "single",
+      "answers": [
+        { "title": "Swords", "correct": false },
+        { "title": "Cannons", "correct": true },
+        { "title": "Horses", "correct": false },
+        { "title": "Shields", "correct": false }
+      ],
+      "feedback": {
+        "root": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "Correct! The chapter explains that cannons were a revolutionary invention that changed warfare during the Gunpowder Period. The Ottoman Empire used large cannons to break through the walls of Constantinople in 1453.",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "textFormat": 0,
+              "version": 1
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1
+        }
+      },
+      "tags": [
+        "chapter23-simplified",
+        "gunpowder-weapons",
+        "warfare",
+        "cannons"
+      ]
+    },
+    {
+      "title": "What did European explorers use to find their way across oceans?",
+      "type": "single",
+      "answers": [
+        { "title": "Maps drawn by aliens", "correct": false },
+        { "title": "The compass", "correct": true },
+        { "title": "Smoke signals", "correct": false },
+        { "title": "Carrier pigeons", "correct": false }
+      ],
+      "feedback": {
+        "root": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "Correct! The chapter tells us that European explorers used the compass to navigate across oceans during their voyages of discovery. The compass was one of the important inventions that made long sea voyages possible.",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "textFormat": 0,
+              "version": 1
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1
+        }
+      },
+      "tags": [
+        "chapter23-simplified",
+        "european-exploration",
+        "compass",
+        "navigation"
+      ]
+    },
+    {
+      "title": "What were some important inventions during the Gunpowder Period? (Select all that apply)",
+      "type": "multiple",
+      "answers": [
+        { "title": "The printing press", "correct": true },
+        { "title": "The compass", "correct": true },
+        { "title": "Gunpowder weapons", "correct": true },
+        { "title": "Smartphones", "correct": false },
+        { "title": "Airplanes", "correct": false }
+      ],
+      "feedback": {
+        "root": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "Correct! The chapter mentions three important inventions during the Gunpowder Period: the printing press (which helped spread ideas quickly), the compass (which helped explorers navigate), and gunpowder weapons (which changed warfare). Smartphones and airplanes were invented much later, in the 20th century.",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "textFormat": 0,
+              "version": 1
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1
+        }
+      },
+      "tags": [
+        "chapter23-simplified",
+        "inventions",
+        "printing-press",
+        "compass",
+        "gunpowder"
+      ]
+    },
+    {
+      "title": "What changes happened in Europe during the Gunpowder Period? (Select all that apply)",
+      "type": "multiple",
+      "answers": [
+        { "title": "The Protestant movement started", "correct": true },
+        { "title": "Europeans began exploring by sea", "correct": true },
+        { "title": "Capitalism became more common", "correct": true },
+        { "title": "Everyone became Muslim", "correct": false },
+        {
+          "title": "Europe was conquered by the Ottoman Empire",
+          "correct": false
+        }
+      ],
+      "feedback": {
+        "root": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "Correct! The chapter explains that during the Gunpowder Period, Europe saw the rise of the Protestant movement (a change in Christianity), Europeans began exploring by sea (the Age of Discovery), and capitalism became more common (a new economic system). Europe did not become Muslim, and while the Ottoman Empire conquered parts of Eastern Europe, they did not conquer all of Europe.",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "textFormat": 0,
+              "version": 1
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1
+        }
+      },
+      "tags": [
+        "chapter23-simplified",
+        "europe",
+        "protestant-movement",
+        "exploration",
+        "capitalism"
+      ]
+    },
+    {
+      "title": "Which Muslim empires existed during the Gunpowder Period? (Select all that apply)",
+      "type": "multiple",
+      "answers": [
+        { "title": "The Ottoman Empire", "correct": true },
+        { "title": "The Safavid Empire", "correct": true },
+        { "title": "The Mughal Empire", "correct": true },
+        { "title": "The Umayyad Empire", "correct": false },
+        { "title": "The British Empire", "correct": false }
+      ],
+      "feedback": {
+        "root": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "Correct! The chapter tells us that three Muslim empires existed during the Gunpowder Period: the Ottoman Empire (in Turkey and parts of Europe, the Middle East, and North Africa), the Safavid Empire (in Persia/Iran), and the Mughal Empire (in India). The Umayyad Empire existed much earlier, and the British Empire was not a Muslim empire.",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "textFormat": 0,
+              "version": 1
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1
+        }
+      },
+      "tags": [
+        "chapter23-simplified",
+        "muslim-empires",
+        "ottoman",
+        "safavid",
+        "mughal"
+      ]
+    }
+  ]
+}
