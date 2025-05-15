@@ -50,6 +50,7 @@ export default buildConfig({
   },
   db: mongooseAdapter({
     url: process.env.DATABASE_URI || "",
+    connectOptions: { dbName: process.env.PAYLOAD_DB_NAME },
   }),
   sharp,
   plugins: [
